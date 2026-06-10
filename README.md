@@ -13,7 +13,9 @@ SECD2613 - System Analysis and Design
 
  
  Project Proposal and Planning: Completed   (18/4/2026)
+ 
  Information System Gathering and Requirement : Completed (8/6/2026)
+ 
  Analysis and Design : Ongoing (currently)
  
 
