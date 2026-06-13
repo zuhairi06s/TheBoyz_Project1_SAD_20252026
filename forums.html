@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academia – Forums</title>
+  <link rel="stylesheet" href="css/shared.css"/>
+  <link rel="stylesheet" href="css/forums.css"/>
+</head>
+<body>
+<div class="app">
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <a href="dashboard.html" class="topbar-brand"><div class="brand-icon">🎓</div>Academia</a>
+  <nav class="topbar-nav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="courses.html">Courses</a>
+    <a href="research.html">Research</a>
+    <a href="forums.html" class="active">Forum</a>
+  </nav>
+  <div class="topbar-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="search" placeholder="Search discussions, researchers, or topics..."/>
+  </div>
+  <div class="topbar-actions">
+    <button class="icon-btn" style="position:relative" onclick="showToast('No new notifications')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+    </button>
+    <div class="user-pill" onclick="window.location='profile.html'">
+      <div class="user-avatar">JS</div>
+    </div>
+  </div>
+</header>
+
+<div class="page-wrap">
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-section-label">Main</div>
+  <a href="dashboard.html" class="sidebar-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    Dashboard
+  </a>
+  <a href="forums.html" class="sidebar-item active">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    All Forums
+  </a>
+  <div class="sidebar-section-label" style="margin-top:8px;">Recently Visited</div>
+  <a href="dashboard.html" class="sidebar-sub-item">Performance Analytics</a>
+  <a href="studyguide-ai.html" class="sidebar-sub-item">AI Study Tools</a>
+  <a href="collaboration.html" class="sidebar-sub-item">Student Collab</a>
+  <a href="resources.html" class="sidebar-sub-item">Thesis Methods</a>
+  <div class="sidebar-bottom">
+    <div class="sidebar-promo">
+      <div class="promo-title">Premium Member</div>
+      <div class="promo-body">Access to advanced citation tools.</div>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+  <div class="forums-layout">
+
+    <!-- Center: thread list -->
+    <div class="threads-col">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-bold" style="font-size:1rem;letter-spacing:.04em;text-transform:uppercase;">Discussions</h2>
+        <div class="flex items-center gap-2">
+          <span class="text-sm text-muted">Sort by:</span>
+          <select class="sort-select">
+            <option>Most Recent</option>
+            <option>Most Upvotes</option>
+            <option>Most Viewed</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="thread-list" id="threadList">
+        <div class="thread-card" onclick="openThread('Impact of LLMs on Peer-Reviewed Literature Cycles')">
+          <div class="thread-meta-top">
+            <div class="thread-author-avatar">SC</div>
+            <div style="flex:1;">
+              <div class="thread-title">Impact of LLMs on Peer-Reviewed Literature Cycles</div>
+              <div class="thread-meta-line">Posted by <strong>Sarah Connor</strong> • 2 hours ago</div>
+            </div>
+            <span class="tag tag-primary">Research</span>
+          </div>
+          <p class="thread-excerpt">How are we addressing the influx of AI-assisted manuscripts in high-impact journals? Recent studies suggest a 15% increase in citation velocity but a...</p>
+          <div class="thread-stats">
+            <span>💬 124 Comments</span>
+            <span>👍 56 Upvotes</span>
+            <span>👁 1.2k Views</span>
+          </div>
+        </div>
+
+        <div class="thread-card" onclick="openThread('Cross-Disciplinary Study: Ethics of CRISPR in Agriculture')">
+          <div class="thread-meta-top">
+            <div class="thread-author-avatar" style="background:#1a5276;">MA</div>
+            <div style="flex:1;">
+              <div class="thread-title">Cross-Disciplinary Study: Ethics of CRISPR in Agriculture</div>
+              <div class="thread-meta-line">Posted by <strong>Prof. Marcus Aurelius</strong> • 5 hours ago</div>
+            </div>
+            <span class="tag" style="background:#fff3cd;color:#7d5a00;border-color:#f0d070;">Announcement</span>
+          </div>
+          <p class="thread-excerpt">Looking for co-authors from the Sociology department to collaborate on a new paper regarding the ethical implications of modified crop distribution...</p>
+          <div class="thread-stats">
+            <span>💬 42 Comments</span>
+            <span>👍 128 Upvotes</span>
+            <span>👁 3.4k Views</span>
+          </div>
+        </div>
+
+        <div class="thread-card" onclick="openThread('Best practices for Digital Archiving of Rare Manuscripts?')">
+          <div class="thread-meta-top">
+            <div class="thread-author-avatar" style="background:#1a7a42;">EF</div>
+            <div style="flex:1;">
+              <div class="thread-title">Best practices for Digital Archiving of Rare Manuscripts?</div>
+              <div class="thread-meta-line">Posted by <strong>Dr. Elena Fisher</strong> • 1 day ago</div>
+            </div>
+            <span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;">Question</span>
+          </div>
+          <p class="thread-excerpt">We are initiating a project to digitize 14th-century parchment. What multispectral imaging setups are currently considered industry standard f...</p>
+          <div class="thread-stats">
+            <span>💬 89 Comments</span>
+            <span>👍 31 Upvotes</span>
+            <span>👁 940 Views</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right panel -->
+    <div class="forums-right">
+      <button class="btn btn-primary btn-full mb-4" style="padding:12px;font-size:.9rem;" onclick="openNewThread()">
+        + New Thread
+      </button>
+
+      <!-- Categories -->
+      <div class="right-card mb-3">
+        <div class="flex items-center justify-between mb-2">
+          <div class="font-semi text-sm">Categories</div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="10" y2="18"/></svg>
+        </div>
+        <div class="cat-grid">
+          <button class="cat-btn active">Research</button>
+          <button class="cat-btn">Question</button>
+          <button class="cat-btn">Announcement</button>
+          <button class="cat-btn">Data Science</button>
+          <button class="cat-btn">Humanities</button>
+          <button class="cat-btn">Ethics</button>
+          <button class="cat-btn">Funding</button>
+        </div>
+      </div>
+
+      <!-- Community stats -->
+      <div class="right-card mb-3">
+        <div class="font-semi text-sm mb-2">Community Stats</div>
+        <div class="stat-row"><span class="text-muted">Active Scholars</span><span class="font-bold text-primary">12.4k</span></div>
+        <div class="stat-row"><span class="text-muted">Papers Discussed</span><span class="font-bold text-primary">4.2k</span></div>
+        <div class="stat-row"><span class="text-muted">Open Queries</span><span class="font-bold text-primary">342</span></div>
+      </div>
+
+      <!-- Banner -->
+      <div class="summit-banner">
+        <div class="summit-overlay">
+          <div class="font-bold" style="font-size:.9rem;">Join the upcoming Global Research Summit 2024</div>
+          <button class="btn btn-primary btn-sm btn-pill mt-2" onclick="showToast('Registration opened!')">Register Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /forums-layout -->
+</main>
+</div>
+
+</div><!-- /app -->
+
+<!-- New Thread Modal -->
+<div class="modal-bg" id="modalBg" onclick="closeModal(event)">
+  <div class="modal-box">
+    <h2 class="font-bold mb-3" style="font-size:1rem;">New Thread</h2>
+    <div class="flex gap-3 mb-3">
+      <div style="flex:1;">
+        <label class="dash-label" style="display:block;margin-bottom:4px;">Category</label>
+        <select class="sort-select w-full">
+          <option>Research</option><option>Question</option><option>Announcement</option><option>Ethics</option>
+        </select>
+      </div>
+    </div>
+    <input class="thread-input" type="text" placeholder="Thread title..." style="margin-bottom:10px;"/>
+    <textarea class="thread-input" rows="5" placeholder="Describe your discussion or question..."></textarea>
+    <div class="flex gap-2 mt-3">
+      <button class="btn btn-outline btn-full" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary btn-full" onclick="postThread()">Post Thread</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/shared.js"></script>
+<script>
+document.querySelectorAll('.cat-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.cat-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+  });
+});
+function openThread(title) { showToast('Opening: ' + title.substring(0,30) + '…'); }
+function openNewThread() { document.getElementById('modalBg').classList.add('show'); }
+function closeModal(e) { if (!e || e.target === document.getElementById('modalBg')) document.getElementById('modalBg').classList.remove('show'); }
+function postThread() {
+  closeModal();
+  const list = document.getElementById('threadList');
+  const card = document.createElement('div');
+  card.className = 'thread-card';
+  card.innerHTML = `<div class="thread-meta-top"><div class="thread-author-avatar">JS</div><div style="flex:1;"><div class="thread-title">New Discussion Thread</div><div class="thread-meta-line">Posted by <strong>Dr. Julian Smith</strong> • Just now</div></div><span class="tag tag-primary">Research</span></div><p class="thread-excerpt">Your new thread has been posted successfully.</p><div class="thread-stats"><span>💬 0 Comments</span><span>👍 0 Upvotes</span><span>👁 1 View</span></div>`;
+  list.insertBefore(card, list.firstChild);
+  showToast('Thread posted!');
+}
+</script>
+</body>
+</html>
