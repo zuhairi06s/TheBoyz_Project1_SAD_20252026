@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academia – Performance Analytics</title>
+  <link rel="stylesheet" href="css/shared.css"/>
+  <link rel="stylesheet" href="css/dashboard.css"/>
+</head>
+<body>
+<div class="app">
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <a href="dashboard.html" class="topbar-brand"><div class="brand-icon">🎓</div>Academia</a>
+  <nav class="topbar-nav">
+    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="courses.html">Courses</a>
+    <a href="research.html">Research</a>
+    <a href="forums.html">Forum</a>
+  </nav>
+  <div class="topbar-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="search" placeholder="Search analytics or courses..."/>
+  </div>
+  <div class="topbar-actions">
+    <button class="icon-btn" style="position:relative" onclick="showToast('No new notifications')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      <span class="badge">2</span>
+    </button>
+    <div class="user-pill" onclick="window.location='profile.html'">
+      <div class="user-avatar">JS</div>
+      <div class="user-info"><div class="u-name">Dr. Julian Smith</div><div class="u-role">Faculty of Science</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="page-wrap">
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-section-label">Main</div>
+  <a href="dashboard.html" class="sidebar-item active">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    Dashboard
+  </a>
+  <a href="pomodoro.html" class="sidebar-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    Pomodoro Timer
+  </a>
+  <a href="courses.html" class="sidebar-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    Grade Tracker
+  </a>
+  <a href="resources.html" class="sidebar-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+    Resources
+  </a>
+  <a href="#" class="sidebar-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+    Settings
+  </a>
+  <div class="sidebar-bottom">
+    <div class="sidebar-promo">
+      <div class="promo-title">Premium Member</div>
+      <div class="promo-body">Access to advanced citation tools and AI features.</div>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main" style="padding:28px 32px;">
+
+  <!-- Page Header -->
+  <div class="flex items-center justify-between mb-4">
+    <div>
+      <h1 class="page-heading">Performance Analytics</h1>
+      <p class="page-sub">Real-time tracking of your academic trajectory.</p>
+    </div>
+    <div class="flex gap-2">
+      <button class="btn btn-outline" onclick="showToast('Report exported!')">⬇ Export Report</button>
+      <button class="btn btn-primary" onclick="showToast('Data updated!')">↻ Update Data</button>
+    </div>
+  </div>
+
+  <!-- Goal Setter Card -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h2 class="font-bold mb-3" style="font-size:1.1rem;">Your Goal Setter</h2>
+      <div class="flex items-center gap-5" style="flex-wrap:wrap;">
+        <div>
+          <div class="dash-label">Select Course</div>
+          <select class="dash-select" id="courseSelect">
+            <option>Intro to Computer Science</option>
+            <option>SCJ1013 – Advanced Algorithms</option>
+            <option>SECR1033 – Computer Organization</option>
+            <option>Calculus II</option>
+          </select>
+        </div>
+        <div>
+          <div class="dash-label">Target Grade</div>
+          <div class="target-grade" id="gradeDisplay">85% / A</div>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <div class="dash-label">Progress to Target</div>
+          <input type="range" class="grade-slider" min="50" max="100" value="85" oninput="updateGrade(this.value)" style="width:100%;margin:6px 0;"/>
+          <div class="text-xs text-muted">You are 13.5% away from your goal grade.</div>
+        </div>
+        <button class="btn btn-primary" style="align-self:flex-end;" onclick="window.location='studyguide-ai.html'">✦ Generate Study Plan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Middle row: Where You Are Now + System Insights -->
+  <div class="grid-2 mb-4" style="grid-template-columns:1.4fr 1fr;">
+
+    <!-- Where You Are Now -->
+    <div class="card">
+      <div class="card-body">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="font-bold" style="font-size:1rem;">Where You Are Now</h2>
+          <span class="tag tag-primary" style="font-size:.68rem;">● LIVE DATA</span>
+        </div>
+        <div class="flex gap-5">
+          <!-- Donut -->
+          <div style="position:relative;flex-shrink:0;">
+            <svg width="120" height="120" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="48" fill="none" stroke="#e5e2de" stroke-width="11"/>
+              <circle cx="60" cy="60" r="48" fill="none" stroke="#7B1C2E" stroke-width="11"
+                stroke-dasharray="301.6" stroke-dashoffset="87"
+                stroke-linecap="round" transform="rotate(-90 60 60)"/>
+            </svg>
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+              <div style="font-size:1.3rem;font-weight:700;color:var(--primary);">71.5%</div>
+              <div style="font-size:.62rem;color:var(--muted);line-height:1.3;">CURRENT<br>AVG</div>
+            </div>
+          </div>
+          <div style="flex:1;">
+            <div class="font-semi mb-1">Current Weighted Average</div>
+            <p class="text-xs text-muted mb-3" style="line-height:1.5;">Your current standing based on 40% of total course weight completed. You are performing 5% above the class median.</p>
+            <div class="flex gap-4">
+              <div><div class="dash-label">Class Rank</div><div class="font-bold">12th / 140</div></div>
+              <div><div class="dash-label">Attendance</div><div class="font-bold">94%</div></div>
+            </div>
+          </div>
+        </div>
+        <hr class="divider mt-3 mb-3"/>
+        <div class="dash-label mb-2">Completed Assessments</div>
+        <div class="assess-list">
+          <div class="assess-row">
+            <div class="assess-icon">📋</div>
+            <div class="assess-info"><div class="font-semi text-sm">Quiz 1: Fundamentals</div><div class="text-xs text-muted">Completed Sept 15</div></div>
+            <div class="text-right"><div class="font-bold text-primary">8/10</div><div class="text-xs text-muted">80%</div></div>
+          </div>
+          <div class="assess-row">
+            <div class="assess-icon">📝</div>
+            <div class="assess-info"><div class="font-semi text-sm">Assignment 1: Logic Systems</div><div class="text-xs text-muted">Completed Oct 02</div></div>
+            <div class="text-right"><div class="font-bold text-primary">18/20</div><div class="text-xs text-muted">90%</div></div>
+          </div>
+          <div class="assess-row">
+            <div class="assess-icon">📖</div>
+            <div class="assess-info"><div class="font-semi text-sm">Midterm Examination</div><div class="text-xs text-muted">Completed Oct 28</div></div>
+            <div class="text-right"><div class="font-bold text-primary">65/100</div><div class="text-xs text-muted">65%</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- System Insights + Priority Action Plan -->
+    <div class="flex flex-col gap-4">
+      <div class="card" style="flex:1;">
+        <div class="card-body">
+          <div class="flex items-center gap-2 mb-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M2 20h.01M7 20v-4"/><path d="M12 20V10"/><path d="M17 20V4"/><path d="M22 20h.01"/></svg>
+            <h2 class="font-bold" style="font-size:1rem;">System Insights &amp; Pathways</h2>
+          </div>
+          <div class="alert mb-3">
+            <em>"To reach your goal of <strong>85%</strong>, you need to average <strong>87%</strong> on both the upcoming Final Project and the Final Exam. Your Midterm score suggests you need to review Module 4: Data Structures."</em>
+          </div>
+          <div class="text-sm" style="display:flex;flex-direction:column;gap:6px;">
+            <div class="flex gap-2"><span>✓</span><span>Improve your participation grade to secure the final 5% weighting.</span></div>
+            <div class="flex gap-2"><span>✓</span><span>Complete 3 past papers to improve midterm retrieval speed.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="font-bold mb-3" style="font-size:1rem;">Priority Action Plan</h2>
+          <table class="data-table">
+            <thead><tr><th>Upcoming</th><th>Weight</th><th>Target</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><div class="font-semi">Final Project</div><div class="text-xs text-muted">Due Nov 15</div></td>
+                <td>25%</td>
+                <td><span class="tag tag-primary">87%</span></td>
+                <td><a href="pomodoro.html" class="btn btn-ghost btn-sm">Start Pomodoro</a></td>
+              </tr>
+              <tr>
+                <td><div class="font-semi">Final Exam</div><div class="text-xs text-muted">Due Dec 10</div></td>
+                <td>35%</td>
+                <td><span class="tag tag-primary">87%</span></td>
+                <td><button class="btn btn-outline btn-sm" onclick="showToast('Reminder set!')">Set Reminder</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Student Study Guide -->
+  <div class="card">
+    <div class="card-body">
+      <h2 class="font-bold mb-4" style="font-size:1.1rem;">Student Study Guide</h2>
+      <div class="flex gap-5 mb-4">
+        <div class="guide-tab active" onclick="setGuideTab(this,'study')">📚 Study Methods</div>
+        <div class="guide-tab" onclick="setGuideTab(this,'health')">🍎 Health Optimization</div>
+        <div class="guide-tab" onclick="setGuideTab(this,'exam')">📝 Exam Prep &amp; Advice</div>
+      </div>
+      <div id="guide-study" class="guide-grid">
+        <a href="resources.html" class="guide-card">
+          <div class="guide-thumb" style="background:linear-gradient(135deg,#c0392b,#8e1a28);">⏱</div>
+          <div class="guide-info"><div class="font-semi mb-1">The Pomodoro Technique</div><div class="text-xs text-muted">Master focus with 25-minute sprints and scheduled breaks.</div></div>
+          <button class="btn btn-outline btn-sm btn-pill">Read More</button>
+        </a>
+        <a href="resources.html" class="guide-card">
+          <div class="guide-thumb" style="background:linear-gradient(135deg,#2c3e50,#1a252f);">🧠</div>
+          <div class="guide-info"><div class="font-semi mb-1">Active Recall Strategy</div><div class="text-xs text-muted">Why testing yourself is more effective than re-reading notes.</div></div>
+          <button class="btn btn-outline btn-sm btn-pill">Read More</button>
+        </a>
+        <a href="resources.html" class="guide-card">
+          <div class="guide-thumb" style="background:linear-gradient(135deg,#27ae60,#1a7a42);">📖</div>
+          <div class="guide-info"><div class="font-semi mb-1">Feynman Technique</div><div class="text-xs text-muted">Learn by teaching concepts in simple terms to identify gaps.</div></div>
+          <button class="btn btn-outline btn-sm btn-pill">Read More</button>
+        </a>
+      </div>
+      <div id="guide-health" class="guide-grid" style="display:none;">
+        <a href="resources.html" class="guide-card">
+          <div class="guide-thumb" style="background:linear-gradient(135deg,#27ae60,#1a7a42);">🥗</div>
+          <div class="guide-info"><div class="font-semi mb-1">Sleep &amp; Cognition</div><div class="text-xs text-muted">How deep sleep cycles consolidate academic memory.</div></div>
+          <button class="btn btn-outline btn-sm btn-pill">Read More</button>
+        </a>
+        <a href="resources.html" class="guide-card">
+          <div class="guide-thumb" style="background:linear-gradient(135deg,#2980b9,#1a5f8a);">💊</div>
+          <div class="guide-info"><div class="font-semi mb-1">Nutritional Focus</div><div class="text-xs text-muted">Brain foods that sustain mental energy during long study blocks.</div></div>
+          <button class="btn btn-outline btn-sm btn-pill">Read More</button>
+        </a>
+        <a href="resources.html" class="guide-card">
+          <div class="guide-thumb" style="background:linear-gradient(135deg,#8e44ad,#6c3483);">🏃</div>
+          <div class="guide-info"><div class="font-semi mb-1">Exercise &amp; Focus</div><div class="text-xs text-muted">Short cardio bursts proven to increase concentration by 20%.</div></div>
+          <button class="btn btn-outline btn-sm btn-pill">Read More</button>
+        </a>
+      </div>
+      <div id="guide-exam" class="guide-grid" style="display:none;">
+        <a href="resources.html" class="guide-card">
+          <div class="guide-thumb" style="background:linear-gradient(135deg,#d35400,#a93226);">📋</div>
+          <div class="guide-info"><div class="font-semi mb-1">Past Paper Repository</div><div class="text-xs text-muted">Access the last 5 years of exam questions and model answers.</div></div>
+          <button class="btn btn-outline btn-sm btn-pill">Read More</button>
+        </a>
+        <a href="resources.html" class="guide-card">
+          <div class="guide-thumb" style="background:linear-gradient(135deg,#c0392b,#8e1a28);">⏰</div>
+          <div class="guide-info"><div class="font-semi mb-1">Timed Exam Strategies</div><div class="text-xs text-muted">Manage your time effectively during high-pressure assessments.</div></div>
+          <button class="btn btn-outline btn-sm btn-pill">Read More</button>
+        </a>
+        <a href="resources.html" class="guide-card">
+          <div class="guide-thumb" style="background:linear-gradient(135deg,#1a5276,#2980b9);">🎯</div>
+          <div class="guide-info"><div class="font-semi mb-1">Final Week Checklist</div><div class="text-xs text-muted">Ensure nothing is forgotten with our comprehensive step-by-step guide.</div></div>
+          <button class="btn btn-outline btn-sm btn-pill">Read More</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
+</div><!-- /page-wrap -->
+</div><!-- /app -->
+
+<script src="js/shared.js"></script>
+<script>
+function updateGrade(val) {
+  const letter = val >= 90 ? 'A+' : val >= 85 ? 'A' : val >= 80 ? 'A-' :
+                 val >= 75 ? 'B+' : val >= 70 ? 'B' : val >= 65 ? 'C+' :
+                 val >= 60 ? 'C' : val >= 55 ? 'D+' : val >= 50 ? 'D' : 'F';
+  document.getElementById('gradeDisplay').textContent = val + '% / ' + letter;
+}
+function setGuideTab(el, tab) {
+  document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  ['study','health','exam'].forEach(t => {
+    document.getElementById('guide-'+t).style.display = t===tab ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

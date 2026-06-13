@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academia – Profile</title>
+  <link rel="stylesheet" href="css/shared.css"/>
+  <style>
+    .profile-layout { display: grid; grid-template-columns: 300px 1fr; gap: 24px; padding: 32px 40px; }
+    .profile-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; text-align: center; }
+    .profile-avatar-lg { width: 88px; height: 88px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; margin: 0 auto 14px; }
+    .profile-stat { text-align: center; }
+    .profile-stat .val { font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+    .profile-stat .lbl { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    .setting-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .setting-row:last-child { border-bottom: none; }
+    .toggle { width: 40px; height: 22px; border-radius: 999px; cursor: pointer; border: none; position: relative; transition: background .2s; }
+    .toggle.on { background: var(--primary); }
+    .toggle.off { background: var(--border); }
+    .toggle::after { content:''; position: absolute; top: 3px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: left .2s; }
+    .toggle.on::after { left: 21px; }
+    .toggle.off::after { left: 3px; }
+    .field-group { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+    .field-group label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+    .field-group input { padding: 9px 12px; border: 1.5px solid var(--border); border-radius: var(--radius); font-family: var(--font-body); font-size: .84rem; outline: none; }
+    .field-group input:focus { border-color: var(--primary); }
+  </style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <a href="dashboard.html" class="topbar-brand"><div class="brand-icon">🎓</div>Academia</a>
+  <nav class="topbar-nav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="courses.html">Courses</a>
+    <a href="research.html">Research</a>
+    <a href="forums.html">Forum</a>
+  </nav>
+  <div class="topbar-actions" style="margin-left:auto;">
+    <button class="icon-btn" onclick="showToast('No notifications')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></button>
+    <div class="user-pill">
+      <div class="user-avatar">JS</div>
+      <div class="user-info"><div class="u-name">Dr. Julian Smith</div><div class="u-role">Faculty of Science</div></div>
+    </div>
+  </div>
+</header>
+<div class="page-wrap" style="flex:1;">
+<main class="main" style="padding:0;">
+<div class="profile-layout">
+
+  <!-- Left column -->
+  <div style="display:flex;flex-direction:column;gap:16px;">
+    <div class="profile-card">
+      <div class="profile-avatar-lg">JS</div>
+      <h2 class="font-bold" style="font-size:1.1rem;">Dr. Julian Smith</h2>
+      <p class="text-sm text-muted mt-1">Computer Science · Year 3</p>
+      <p class="text-xs text-muted mt-1">julian.smith@academia.edu</p>
+      <p class="text-xs text-muted">Faculty of Science</p>
+      <button class="btn btn-outline btn-full mt-3" onclick="showToast('Edit profile opened!')">Edit Profile</button>
+      <hr class="divider" style="margin:16px 0;"/>
+      <div class="flex justify-between" style="gap:8px;">
+        <div class="profile-stat"><div class="val">3.52</div><div class="lbl">GPA</div></div>
+        <div class="profile-stat"><div class="val">94%</div><div class="lbl">Attendance</div></div>
+        <div class="profile-stat"><div class="val">4</div><div class="lbl">Courses</div></div>
+      </div>
+    </div>
+
+    <div class="card p-4">
+      <div class="font-bold text-sm mb-3">My Courses</div>
+      <a href="course-detail.html" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);" class="text-sm font-semi">SCJ1013 – Advanced Algorithms<span style="color:var(--primary);">›</span></a>
+      <a href="course-detail.html" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);" class="text-sm font-semi">SECR1033 – Computer Org.<span style="color:var(--primary);">›</span></a>
+      <a href="course-detail.html" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);" class="text-sm font-semi">CSC101 – Intro to CS<span style="color:var(--primary);">›</span></a>
+      <a href="course-detail.html" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;text-decoration:none;color:var(--text);" class="text-sm font-semi">MTH201 – Calculus II<span style="color:var(--primary);">›</span></a>
+    </div>
+
+    <div class="card p-4">
+      <div class="font-bold text-sm mb-3">Quick Links</div>
+      <a href="pomodoro.html" class="btn btn-outline btn-full mb-2" style="justify-content:flex-start;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Pomodoro Timer</a>
+      <a href="studyguide-ai.html" class="btn btn-outline btn-full mb-2" style="justify-content:flex-start;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/></svg>AI Study Tools</a>
+      <a href="collaboration.html" class="btn btn-outline btn-full" style="justify-content:flex-start;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Student Collaboration</a>
+    </div>
+  </div>
+
+  <!-- Right column -->
+  <div style="display:flex;flex-direction:column;gap:16px;">
+    <!-- Account Info -->
+    <div class="card p-5">
+      <h2 class="font-bold mb-4" style="font-size:1rem;">Account Information</h2>
+      <div class="grid-2">
+        <div class="field-group"><label>First Name</label><input type="text" value="Julian"/></div>
+        <div class="field-group"><label>Last Name</label><input type="text" value="Smith"/></div>
+        <div class="field-group"><label>Email</label><input type="email" value="julian.smith@academia.edu"/></div>
+        <div class="field-group"><label>Student ID</label><input type="text" value="2021-CS-0042"/></div>
+        <div class="field-group"><label>Faculty</label><input type="text" value="Faculty of Science"/></div>
+        <div class="field-group"><label>Year of Study</label><input type="text" value="Year 3"/></div>
+      </div>
+      <button class="btn btn-primary mt-2" onclick="showToast('Profile saved!')">Save Changes</button>
+    </div>
+
+    <!-- Notifications -->
+    <div class="card p-5">
+      <h2 class="font-bold mb-3" style="font-size:1rem;">Notification Preferences</h2>
+      <div class="setting-row"><div><div class="font-semi text-sm">Assignment Reminders</div><div class="text-xs text-muted">Get notified before deadlines</div></div><button class="toggle on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div>
+      <div class="setting-row"><div><div class="font-semi text-sm">Forum Replies</div><div class="text-xs text-muted">When someone replies to your posts</div></div><button class="toggle on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div>
+      <div class="setting-row"><div><div class="font-semi text-sm">Grade Updates</div><div class="text-xs text-muted">When new grades are posted</div></div><button class="toggle on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div>
+      <div class="setting-row"><div><div class="font-semi text-sm">Pomodoro Alerts</div><div class="text-xs text-muted">Timer completion sounds</div></div><button class="toggle off" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div>
+      <div class="setting-row"><div><div class="font-semi text-sm">Weekly Summary Email</div><div class="text-xs text-muted">Performance digest every Monday</div></div><button class="toggle on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="card p-5">
+      <h2 class="font-bold mb-3" style="font-size:1rem;">Recent Activity</h2>
+      <div class="data-table" style="font-size:.82rem;">
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);"><div style="width:32px;height:32px;border-radius:50%;background:var(--primary-lt);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;">📋</div><div style="flex:1;"><div class="font-semi">Submitted Assignment 2</div><div class="text-xs text-muted">SCJ1013 · 2 hours ago</div></div><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;font-size:.68rem;">Submitted</span></div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);"><div style="width:32px;height:32px;border-radius:50%;background:var(--primary-lt);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;">💬</div><div style="flex:1;"><div class="font-semi">Posted in Forums</div><div class="text-xs text-muted">Impact of LLMs · 5 hours ago</div></div><span class="tag tag-primary" style="font-size:.68rem;">Forum</span></div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);"><div style="width:32px;height:32px;border-radius:50%;background:var(--primary-lt);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;">⏱</div><div style="flex:1;"><div class="font-semi">Completed 3 Pomodoro Sessions</div><div class="text-xs text-muted">Today · 75 min total</div></div><span class="tag" style="background:#e8f0ff;color:#3b4dc8;border-color:#b0bef0;font-size:.68rem;">Study</span></div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 0;"><div style="width:32px;height:32px;border-radius:50%;background:var(--primary-lt);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;">📊</div><div style="flex:1;"><div class="font-semi">Viewed Performance Analytics</div><div class="text-xs text-muted">Yesterday</div></div><span class="tag tag-primary" style="font-size:.68rem;">Analytics</span></div>
+      </div>
+    </div>
+
+    <button class="btn btn-outline" style="color:#c0392b;border-color:#c0392b;align-self:flex-start;" onclick="showToast('Signed out!')">↩ Sign Out</button>
+  </div>
+
+</div>
+</main>
+</div>
+<footer class="site-footer">
+  <div class="footer-brand">🎓 Academia</div>
+  <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Support</a></div>
+</footer>
+</div>
+<script src="js/shared.js"></script>
+</body>
+</html>
