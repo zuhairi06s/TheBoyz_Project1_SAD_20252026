@@ -676,71 +676,201 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
   <div class="sb-bot"><div class="sb-promo"><div class="pt">Premium Member</div><div class="pb">Access to advanced citation tools.</div></div></div>
 </aside>
 <main class="main">
-  <div class="fl">
-    <div>
-      <div class="flex ic jb mb3"><div class="fb_" style="font-size:1rem;text-transform:uppercase;letter-spacing:.04em;">Discussions</div><div class="flex ic gap2"><span class="tsm tm">Sort by:</span><select class="ssel"><option>Most Recent</option><option>Most Upvotes</option><option>Most Viewed</option></select></div></div>
-      
-  <div id="threadList" style="display:flex;flex-direction:column;gap:14px;">
+ <div class="fl">
 
-  <div class="tcard">
-    <div class="tmtop"><div class="tav">SC</div><div style="flex:1;"><div class="ttitle">Impact of LLMs on Peer-Reviewed Literature Cycles</div><div class="tmline">Posted by <strong>Sarah Connor</strong> • 2 hours ago</div></div><span class="tag tgp">Research</span></div>
-    <p class="texc">How are we addressing the influx of AI-assisted manuscripts in high-impact journals? Recent studies suggest a 15% increase in citation velocity but a...</p>
-    <div class="tstat">
-      <span>💬 124 Comments</span>
-      <span>👍 56 Upvotes</span>
-      <span>👁 1.2k Views</span>
-      <span onclick="reportThread(event,'Impact of LLMs on Peer-Reviewed Literature Cycles')" style="cursor:pointer;color:#b45309;margin-left:auto;">🚩 Report</span>
-    </div>
-  </div>
+<div style="display:flex;gap:20px;align-items:flex-start;">
 
-  <div class="tcard">
-    <div class="tmtop"><div class="tav" style="background:#1a5276;">MA</div><div style="flex:1;"><div class="ttitle">Cross-Disciplinary Study: Ethics of CRISPR in Agriculture</div><div class="tmline">Posted by <strong>Prof. Marcus Aurelius</strong> • 5 hours ago</div></div><span class="tag" style="background:#fff3cd;color:#7d5a00;border-color:#f0d070;">Announcement</span></div>
-    <p class="texc">Looking for co-authors from the Sociology department to collaborate on a new paper regarding the ethical implications of modified crop distribution...</p>
-    <div class="tstat">
-      <span>💬 42 Comments</span>
-      <span>👍 128 Upvotes</span>
-      <span>👁 3.4k Views</span>
-      <span onclick="reportThread(event,'Cross-Disciplinary Study: Ethics of CRISPR in Agriculture')" style="cursor:pointer;color:#b45309;margin-left:auto;">🚩 Report</span>
-    </div>
-  </div>
+    <!-- LEFT SIDE -->
+    <div style="flex:1;min-width:0;">
 
-  <div class="tcard">
-    <div class="tmtop"><div class="tav" style="background:#1a7a42;">EF</div><div style="flex:1;"><div class="ttitle">Best practices for Digital Archiving of Rare Manuscripts?</div><div class="tmline">Posted by <strong>Dr. Elena Fisher</strong> • 1 day ago</div></div><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;">Question</span></div>
-    <p class="texc">We are initiating a project to digitize 14th-century parchment. What multispectral imaging setups are currently considered industry standard...</p>
-    <div class="tstat">
-      <span>💬 89 Comments</span>
-      <span>👍 31 Upvotes</span>
-      <span>👁 940 Views</span>
-      <span onclick="reportThread(event,'Best practices for Digital Archiving of Rare Manuscripts?')" style="cursor:pointer;color:#b45309;margin-left:auto;">🚩 Report</span>
-    </div>
-   </div>
-  </div>
+        <div class="flex ic jb mb3">
+            <div class="fb_" style="font-size:1rem;text-transform:uppercase;letter-spacing:.04em;">
+                Discussions
+            </div>
 
-      
- <div style="
-display:flex;
-gap:20px;
-align-items:flex-start;
-">
-      <button class="btn bp bfull bpill mb4" style="padding:12px;font-size:.9rem;" onclick="document.getElementById('threadModal').classList.add('show')">+ New Thread</button>
-      <div class="rc mb3"><div class="flex ic jb mb2"><div class="fs_ tsm">Categories</div></div><div class="cg"><button class="cb_ active">Research</button><button class="cb_">Question</button><button class="cb_">Announcement</button><button class="cb_">Data Science</button><button class="cb_">Humanities</button><button class="cb_">Ethics</button><button class="cb_">Funding</button></div></div>
-      <div class="rc mb3"><div class="fs_ tsm mb2">Community Stats</div><div class="str"><span class="tm">Active Scholars</span><span class="fb_ tpr">12.4k</span></div><div class="str"><span class="tm">Papers Discussed</span><span class="fb_ tpr">4.2k</span></div><div class="str"><span class="tm">Open Queries</span><span class="fb_ tpr">342</span></div></div>
-      <div class="sbanner"><div style="width:100%;"><div class="fb_" style="font-size:.9rem;">Join the upcoming Global Research Summit 2024</div><button class="btn bp bsm bpill mt2" onclick="toast('Registration opened!')">Register Now</button></div></div>
+            <div class="flex ic gap2">
+                <span class="tsm tm">Sort by:</span>
+                <select class="ssel">
+                    <option>Most Recent</option>
+                    <option>Most Upvotes</option>
+                    <option>Most Viewed</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="threadList" style="display:flex;flex-direction:column;gap:14px;">
+
+            <div class="tcard">
+                <div class="tmtop">
+                    <div class="tav">SC</div>
+
+                    <div style="flex:1;">
+                        <div class="ttitle">
+                            Impact of LLMs on Peer-Reviewed Literature Cycles
+                        </div>
+
+                        <div class="tmline">
+                            Posted by <strong>Sarah Connor</strong> • 2 hours ago
+                        </div>
+                    </div>
+
+                    <span class="tag tgp">Research</span>
+                </div>
+
+                <p class="texc">
+                    How are we addressing the influx of AI-assisted manuscripts in high-impact journals? Recent studies suggest a 15% increase in citation velocity but a...
+                </p>
+
+                <div class="tstat">
+                    <span>💬 124 Comments</span>
+                    <span>👍 56 Upvotes</span>
+                    <span>👁 1.2k Views</span>
+                    <span onclick="reportThread(event,'Impact of LLMs on Peer-Reviewed Literature Cycles')" style="cursor:pointer;color:#b45309;margin-left:auto;">
+                        🚩 Report
+                    </span>
+                </div>
+            </div>
+
+            <div class="tcard">
+                <div class="tmtop">
+                    <div class="tav" style="background:#1a5276;">MA</div>
+
+                    <div style="flex:1;">
+                        <div class="ttitle">
+                            Cross-Disciplinary Study: Ethics of CRISPR in Agriculture
+                        </div>
+
+                        <div class="tmline">
+                            Posted by <strong>Prof. Marcus Aurelius</strong> • 5 hours ago
+                        </div>
+                    </div>
+
+                    <span class="tag" style="background:#fff3cd;color:#7d5a00;border-color:#f0d070;">
+                        Announcement
+                    </span>
+                </div>
+
+                <p class="texc">
+                    Looking for co-authors from the Sociology department to collaborate on a new paper regarding the ethical implications of modified crop distribution...
+                </p>
+
+                <div class="tstat">
+                    <span>💬 42 Comments</span>
+                    <span>👍 128 Upvotes</span>
+                    <span>👁 3.4k Views</span>
+                    <span onclick="reportThread(event,'Cross-Disciplinary Study: Ethics of CRISPR in Agriculture')" style="cursor:pointer;color:#b45309;margin-left:auto;">
+                        🚩 Report
+                    </span>
+                </div>
+            </div>
+
+            <div class="tcard">
+                <div class="tmtop">
+                    <div class="tav" style="background:#1a7a42;">EF</div>
+
+                    <div style="flex:1;">
+                        <div class="ttitle">
+                            Best practices for Digital Archiving of Rare Manuscripts?
+                        </div>
+
+                        <div class="tmline">
+                            Posted by <strong>Dr. Elena Fisher</strong> • 1 day ago
+                        </div>
+                    </div>
+
+                    <span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;">
+                        Question
+                    </span>
+                </div>
+
+                <p class="texc">
+                    We are initiating a project to digitize 14th-century parchment. What multispectral imaging setups are currently considered industry standard...
+                </p>
+
+                <div class="tstat">
+                    <span>💬 89 Comments</span>
+                    <span>👍 31 Upvotes</span>
+                    <span>👁 940 Views</span>
+                    <span onclick="reportThread(event,'Best practices for Digital Archiving of Rare Manuscripts?')" style="cursor:pointer;color:#b45309;margin-left:auto;">
+                        🚩 Report
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <button
+            class="btn bp bfull bpill mt3"
+            style="padding:12px;font-size:.9rem;"
+            onclick="document.getElementById('threadModal').classList.add('show')">
+            + New Thread
+        </button>
+
     </div>
-  </div>
-</main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside style="
+        width:260px;
+        flex-shrink:0;
+        display:flex;
+        flex-direction:column;
+        gap:14px;
+    ">
+
+        <div class="rc" style="padding:14px;">
+            <div class="flex ic jb mb2">
+                <div class="fs_ tsm">Categories</div>
+            </div>
+
+            <div class="cg">
+                <button class="cb_ active">Research</button>
+                <button class="cb_">Question</button>
+                <button class="cb_">Announcement</button>
+                <button class="cb_">Data Science</button>
+                <button class="cb_">Humanities</button>
+                <button class="cb_">Ethics</button>
+                <button class="cb_">Funding</button>
+            </div>
+        </div>
+
+        <div class="rc" style="padding:14px;">
+            <div class="fs_ tsm mb2">Community Stats</div>
+
+            <div class="str">
+                <span class="tm">Active Scholars</span>
+                <span class="fb_ tpr">12.4k</span>
+            </div>
+
+            <div class="str">
+                <span class="tm">Papers Discussed</span>
+                <span class="fb_ tpr">4.2k</span>
+            </div>
+
+            <div class="str">
+                <span class="tm">Open Queries</span>
+                <span class="fb_ tpr">342</span>
+            </div>
+        </div>
+
+        <div class="sbanner" style="min-height:140px;">
+            <div style="width:100%;">
+                <div class="fb_" style="font-size:.95rem;">
+                    Join the upcoming Global Research Summit 2024
+                </div>
+
+                <button
+                    class="btn bp bsm bpill mt2"
+                    onclick="toast('Registration opened!')">
+                    Register Now
+                </button>
+            </div>
+        </div>
+
+    </aside>
+
 </div>
-<div class="modalbg" id="threadModal" onclick="if(event.target===this)this.classList.remove('show')">
-  <div class="mbox">
-    <div class="fb_ mb3" style="font-size:1rem;">New Thread</div>
-    <div class="flex gap3 mb3"><div style="flex:1;"><div class="dl" style="margin-bottom:4px;">Category</div><select class="ssel wf"><option>Research</option><option>Question</option><option>Announcement</option></select></div></div>
-    <input class="ti_" type="text" placeholder="Thread title..." style="margin-bottom:10px;"/>
-    <textarea class="ti_" rows="4" placeholder="Describe your discussion..."></textarea>
-    <div class="flex gap2 mt3"><button class="btn bo bfull" onclick="document.getElementById('threadModal').classList.remove('show')">Cancel</button><button class="btn bp bfull" onclick="postThread()">Post Thread</button></div>
-  </div>
-</div>
-</div>
 
+</div>
 <!-- ═══════════════════════ PAGE: COURSES ═══════════════════════ -->
 <div id="page-courses" class="page">
 <div class="pw" style="flex:1;">
