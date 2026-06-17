@@ -850,24 +850,6 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
                     </span>
                 </div>
             </div>
-
-            <div class="modalbg" id="threadModal" onclick="if(event.target===this)this.classList.remove('show')">
-              <div class="mbox">
-                <div class="fb_ mb3" style="font-size:1rem;">New Thread</div>
-                <div class="flex gap3 mb3">
-                  <div style="flex:1;">
-                    <div class="dl" style="margin-bottom:4px;">Category</div>
-                    <select class="ssel wf"><option>Research</option><option>Question</option><option>Announcement</option></select>
-                  </div>
-                </div>
-                <input class="ti_" type="text" placeholder="Thread title..." style="margin-bottom:10px;"/>
-                <textarea class="ti_" rows="4" placeholder="Describe your discussion..."></textarea>
-                <div class="flex gap2 mt3">
-                  <button class="btn bo bfull" onclick="document.getElementById('threadModal').classList.remove('show')">Cancel</button>
-                  <button class="btn bp bfull" onclick="postThread()">Post Thread</button>
-                </div>
-              </div>
-            </div>
           
         </div>
     </div>
@@ -943,6 +925,24 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
         </div>
 
     </aside>
+  
+            <div class="modalbg" id="threadModal" onclick="if(event.target===this)this.classList.remove('show')">
+              <div class="mbox">
+                <div class="fb_ mb3" style="font-size:1rem;">New Thread</div>
+                <div class="flex gap3 mb3">
+                  <div style="flex:1;">
+                    <div class="dl" style="margin-bottom:4px;">Category</div>
+                    <select class="ssel wf"><option>Research</option><option>Question</option><option>Announcement</option></select>
+                  </div>
+                </div>
+                <input class="ti_" type="text" placeholder="Thread title..." style="margin-bottom:10px;"/>
+                <textarea class="ti_" rows="4" placeholder="Describe your discussion..."></textarea>
+                <div class="flex gap2 mt3">
+                  <button class="btn bo bfull" onclick="document.getElementById('threadModal').classList.remove('show')">Cancel</button>
+                  <button class="btn bp bfull" onclick="postThread()">Post Thread</button>
+                </div>
+              </div>
+            </div>
 
 </div>
 </div>
