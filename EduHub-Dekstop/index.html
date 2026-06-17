@@ -844,6 +844,13 @@ function go(page) {
   if (navId) document.getElementById(navId)?.classList.add('active');
   window.scrollTo(0,0);
 }
+// --Report Feature--
+  function reportThread(e, title) {
+  e.stopPropagation(); // prevents clicking the card itself
+  const reason = prompt('Why are you reporting "' + title + '"?\n(e.g. spam, harassment, off-topic)');
+  if (reason && reason.trim() !== '') {
+    toast('Thread reported. Our moderators will review it.');
+  }
 
 // ── Toast ──
 function toast(msg, ok=true) {
