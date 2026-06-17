@@ -458,12 +458,43 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
   <div class="fl">
     <div>
       <div class="flex ic jb mb3"><div class="fb_" style="font-size:1rem;text-transform:uppercase;letter-spacing:.04em;">Discussions</div><div class="flex ic gap2"><span class="tsm tm">Sort by:</span><select class="ssel"><option>Most Recent</option><option>Most Upvotes</option><option>Most Viewed</option></select></div></div>
-      <div style="display:flex;flex-direction:column;gap:14px;" id="threadList">
-        <div class="tcard"><div class="tmtop"><div class="tav">SC</div><div style="flex:1;"><div class="ttitle">Impact of LLMs on Peer-Reviewed Literature Cycles</div><div class="tmline">Posted by <strong>Sarah Connor</strong> • 2 hours ago</div></div><span class="tag tgp">Research</span></div><p class="texc">How are we addressing the influx of AI-assisted manuscripts in high-impact journals? Recent studies suggest a 15% increase in citation velocity but a...</p><div class="tstat"><span>💬 124 Comments</span><span>👍 56 Upvotes</span><span>👁 1.2k Views</span></div></div>
-        <div class="tcard"><div class="tmtop"><div class="tav" style="background:#1a5276;">MA</div><div style="flex:1;"><div class="ttitle">Cross-Disciplinary Study: Ethics of CRISPR in Agriculture</div><div class="tmline">Posted by <strong>Prof. Marcus Aurelius</strong> • 5 hours ago</div></div><span class="tag" style="background:#fff3cd;color:#7d5a00;border-color:#f0d070;">Announcement</span></div><p class="texc">Looking for co-authors from the Sociology department to collaborate on a new paper regarding the ethical implications of modified crop distribution...</p><div class="tstat"><span>💬 42 Comments</span><span>👍 128 Upvotes</span><span>👁 3.4k Views</span></div></div>
-        <div class="tcard"><div class="tmtop"><div class="tav" style="background:#1a7a42;">EF</div><div style="flex:1;"><div class="ttitle">Best practices for Digital Archiving of Rare Manuscripts?</div><div class="tmline">Posted by <strong>Dr. Elena Fisher</strong> • 1 day ago</div></div><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;">Question</span></div><p class="texc">We are initiating a project to digitize 14th-century parchment. What multispectral imaging setups are currently considered industry standard...</p><div class="tstat"><span>💬 89 Comments</span><span>👍 31 Upvotes</span><span>👁 940 Views</span></div></div>
-      </div>
+      
+  <div id="threadList" style="display:flex;flex-direction:column;gap:14px;">
+
+  <div class="tcard">
+    <div class="tmtop"><div class="tav">SC</div><div style="flex:1;"><div class="ttitle">Impact of LLMs on Peer-Reviewed Literature Cycles</div><div class="tmline">Posted by <strong>Sarah Connor</strong> • 2 hours ago</div></div><span class="tag tgp">Research</span></div>
+    <p class="texc">How are we addressing the influx of AI-assisted manuscripts in high-impact journals? Recent studies suggest a 15% increase in citation velocity but a...</p>
+    <div class="tstat">
+      <span>💬 124 Comments</span>
+      <span>👍 56 Upvotes</span>
+      <span>👁 1.2k Views</span>
+      <span onclick="reportThread(event,'Impact of LLMs on Peer-Reviewed Literature Cycles')" style="cursor:pointer;color:#b45309;margin-left:auto;">🚩 Report</span>
     </div>
+  </div>
+
+  <div class="tcard">
+    <div class="tmtop"><div class="tav" style="background:#1a5276;">MA</div><div style="flex:1;"><div class="ttitle">Cross-Disciplinary Study: Ethics of CRISPR in Agriculture</div><div class="tmline">Posted by <strong>Prof. Marcus Aurelius</strong> • 5 hours ago</div></div><span class="tag" style="background:#fff3cd;color:#7d5a00;border-color:#f0d070;">Announcement</span></div>
+    <p class="texc">Looking for co-authors from the Sociology department to collaborate on a new paper regarding the ethical implications of modified crop distribution...</p>
+    <div class="tstat">
+      <span>💬 42 Comments</span>
+      <span>👍 128 Upvotes</span>
+      <span>👁 3.4k Views</span>
+      <span onclick="reportThread(event,'Cross-Disciplinary Study: Ethics of CRISPR in Agriculture')" style="cursor:pointer;color:#b45309;margin-left:auto;">🚩 Report</span>
+    </div>
+  </div>
+
+  <div class="tcard">
+    <div class="tmtop"><div class="tav" style="background:#1a7a42;">EF</div><div style="flex:1;"><div class="ttitle">Best practices for Digital Archiving of Rare Manuscripts?</div><div class="tmline">Posted by <strong>Dr. Elena Fisher</strong> • 1 day ago</div></div><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;">Question</span></div>
+    <p class="texc">We are initiating a project to digitize 14th-century parchment. What multispectral imaging setups are currently considered industry standard...</p>
+    <div class="tstat">
+      <span>💬 89 Comments</span>
+      <span>👍 31 Upvotes</span>
+      <span>👁 940 Views</span>
+      <span onclick="reportThread(event,'Best practices for Digital Archiving of Rare Manuscripts?')" style="cursor:pointer;color:#b45309;margin-left:auto;">🚩 Report</span>
+    </div>
+  </div>
+  </div>
+      
     <div>
       <button class="btn bp bfull bpill mb4" style="padding:12px;font-size:.9rem;" onclick="document.getElementById('threadModal').classList.add('show')">+ New Thread</button>
       <div class="rc mb3"><div class="flex ic jb mb2"><div class="fs_ tsm">Categories</div></div><div class="cg"><button class="cb_ active">Research</button><button class="cb_">Question</button><button class="cb_">Announcement</button><button class="cb_">Data Science</button><button class="cb_">Humanities</button><button class="cb_">Ethics</button><button class="cb_">Funding</button></div></div>
@@ -483,6 +514,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
   </div>
 </div>
 </div>
+
 
 <!-- ═══════════════════════ PAGE: COURSES ═══════════════════════ -->
 <div id="page-courses" class="page">
