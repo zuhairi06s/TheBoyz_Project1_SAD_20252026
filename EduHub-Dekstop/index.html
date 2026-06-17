@@ -837,6 +837,42 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
     <!-- RIGHT SIDEBAR -->
     <aside style="  width:260px; flex-shrink:0;display:flex; flex-direction:column;gap:14px;  ">      
         <div class="rc" style="padding:14px;">
+          <div class="rewards-card mb3">
+            <div class="rewards-top">
+              <div>
+                <div class="rewards-pts" id="ptsDisplay">240 pts</div>
+                <div class="rewards-lvl" id="lvlDisplay">🥈 Contributor</div>
+              </div>
+              <div style="font-size:2rem;">🏆</div>
+            </div>
+            <div class="rewards-bar"><div class="rewards-fill" id="rewardsFill" style="width:60%;"></div></div>
+            <div class="rewards-next" id="nextLvlText">60 pts to reach 🥇 Scholar</div>
+            <div class="badge-row">
+              <span class="badge-pill">🔥 5-day streak</span>
+              <span class="badge-pill">✍️ 3 threads</span>
+            </div>
+          </div>
+          
+          <div class="rc mb3">
+            <div class="fs_ tsm mb2">Weekly Missions</div>
+            <div id="missionList">
+              <div class="mission-item">
+                <div class="mission-check" id="m1check">+</div>
+                <div class="mission-text" id="m1text">Post a new thread</div>
+                <div class="mission-pts">+20</div>
+              </div>
+              <div class="mission-item">
+                <div class="mission-check" id="m2check">+</div>
+                <div class="mission-text" id="m2text">Upvote 3 discussions</div>
+                <div class="mission-pts">+10</div>
+              </div>
+              <div class="mission-item">
+                <div class="mission-check" id="m3check">+</div>
+                <div class="mission-text" id="m3text">Report a problematic post</div>
+                <div class="mission-pts">+5</div>
+              </div>
+            </div>
+          </div>
             <div class="flex ic jb mb2">
                 <div class="fs_ tsm">Categories</div>
             </div>
@@ -882,46 +918,10 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
                     onclick="toast('Registration opened!')">
                     Register Now
                 </button>
-                 <div class="rewards-card mb3">
-                <div class="rewards-top">
-                  <div>
-                    <div class="rewards-pts" id="ptsDisplay">240 pts</div>
-                    <div class="rewards-lvl" id="lvlDisplay">🥈 Contributor</div>
-                  </div>
-                  <div style="font-size:2rem;">🏆</div>
-                </div>
-                <div class="rewards-bar"><div class="rewards-fill" id="rewardsFill" style="width:60%;"></div></div>
-                <div class="rewards-next" id="nextLvlText">60 pts to reach 🥇 Scholar</div>
-                <div class="badge-row">
-                  <span class="badge-pill">🔥 5-day streak</span>
-                  <span class="badge-pill">✍️ 3 threads</span>
-                </div>
-              </div>
-              
-              <div class="rc mb3">
-                <div class="fs_ tsm mb2">Weekly Missions</div>
-                <div id="missionList">
-                  <div class="mission-item">
-                    <div class="mission-check" id="m1check">+</div>
-                    <div class="mission-text" id="m1text">Post a new thread</div>
-                    <div class="mission-pts">+20</div>
-                  </div>
-                  <div class="mission-item">
-                    <div class="mission-check" id="m2check">+</div>
-                    <div class="mission-text" id="m2text">Upvote 3 discussions</div>
-                    <div class="mission-pts">+10</div>
-                  </div>
-                  <div class="mission-item">
-                    <div class="mission-check" id="m3check">+</div>
-                    <div class="mission-text" id="m3text">Report a problematic post</div>
-                    <div class="mission-pts">+5</div>
-                  </div>
-                </div>
-              </div>
                 
             </div>
         </div>
-
+      
     </aside>
 
 </div>
