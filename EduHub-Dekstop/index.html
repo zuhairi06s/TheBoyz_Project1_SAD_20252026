@@ -236,6 +236,41 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 .srow_{display:flex;align-items:center;gap:10px;background:var(--bg);border:1.5px solid var(--bdr);border-radius:999px;padding:7px 16px;flex:1;max-width:300px}
 .srow_ input{border:none;background:none;outline:none;font-size:.84rem;width:100%}
 
+/* ── Senior Chat (WhatsApp-style) ── */
+.chat-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:600;align-items:center;justify-content:center}
+.chat-modal-bg.show{display:flex}
+.chat-window{width:780px;height:560px;max-width:95vw;max-height:90vh;background:var(--sur);border-radius:var(--rl);overflow:hidden;display:grid;grid-template-columns:240px 1fr;box-shadow:0 12px 48px rgba(0,0,0,.25);animation:cwIn .2s ease}
+@keyframes cwIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+.chat-contacts{background:var(--bg);border-right:1px solid var(--bdr);overflow-y:auto;display:flex;flex-direction:column}
+.chat-contacts-hdr{padding:14px 16px;border-bottom:1px solid var(--bdr);font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:space-between}
+.chat-contacts-hdr button{background:none;border:none;cursor:pointer;color:var(--mut);font-size:16px}
+.contact-row{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--bdr);transition:background .12s;position:relative}
+.contact-row:hover{background:var(--plt)}
+.contact-row.active{background:var(--plt);border-left:3px solid var(--p)}
+.contact-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:#fff;flex-shrink:0;position:relative}
+.contact-online{position:absolute;bottom:-1px;right:-1px;width:10px;height:10px;border-radius:50%;background:#2e7d52;border:2px solid var(--bg)}
+.contact-info{flex:1;min-width:0}
+.contact-name{font-weight:600;font-size:.83rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.contact-last{font-size:.72rem;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.contact-unread{background:var(--p);color:#fff;border-radius:999px;font-size:.65rem;font-weight:700;padding:1px 6px;flex-shrink:0}
+.chat-main-win{display:flex;flex-direction:column;height:100%}
+.chat-win-hdr{padding:12px 18px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:10px;background:var(--sur)}
+.chat-win-hdr .contact-status{font-size:.7rem;color:var(--ok)}
+.chat-win-msgs{flex:1;overflow-y:auto;padding:18px 20px;display:flex;flex-direction:column;gap:12px;background:#f6f3ee}
+.cw-msg{display:flex;gap:10px;max-width:75%}
+.cw-msg.me{align-self:flex-end;flex-direction:row-reverse}
+.cw-bub{padding:9px 14px;border-radius:14px;font-size:.83rem;line-height:1.5}
+.cw-msg.them .cw-bub{background:#fff;border:1px solid var(--bdr);border-radius:4px 14px 14px 14px}
+.cw-msg.me .cw-bub{background:var(--p);color:#fff;border-radius:14px 4px 14px 14px}
+.cw-time{font-size:.62rem;color:var(--mut);margin-top:3px}
+.cw-msg.me .cw-time{text-align:right}
+.chat-win-input{padding:12px 16px;border-top:1px solid var(--bdr);display:flex;gap:8px;background:var(--sur)}
+.chat-win-input input{flex:1;border:1.5px solid var(--bdr);border-radius:999px;padding:9px 16px;font-family:var(--fb);font-size:.83rem;outline:none}
+.chat-win-input input:focus{border-color:var(--p)}
+.chat-win-send{width:38px;height:38px;border-radius:50%;background:var(--p);border:none;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+.chat-win-send:hover{background:var(--pd)}
+.chat-close-btn{margin-left:auto;background:none;border:none;color:var(--mut);font-size:18px;cursor:pointer}
+
 /* ── AI Chat ── */
 .ailayout{display:grid;grid-template-columns:220px 1fr 260px;flex:1;overflow:hidden;height:calc(100vh - 54px)}
 .aisb{background:var(--sur);border-right:1px solid var(--bdr);padding:16px 0;display:flex;flex-direction:column;overflow-y:auto}
@@ -1034,15 +1069,57 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
       <button class="btn bp bpill" style="margin-left:auto;" onclick="toast('Mentor application opened!')">⭐ Become a Mentor</button>
     </div>
     <div class="flex ic jb mb3"><h2 class="fb_">Available Seniors</h2><span class="txs tm">24 mentors active now</span></div>
-    <div class="snrcard"><div class="snrav" style="background:#1a3a5c;color:#fff;">AT</div><div style="flex:1;"><div class="flex ic jb mb1"><div><div class="fb_">Alex Thompson</div><div class="txs tm" style="text-transform:uppercase;letter-spacing:.04em;">Year 3 · Computer Science</div></div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Viewing Alex\'s profile...')">View Profile</button><button class="btn bp bsm" onclick="toast('Advice requested!')">Request Advice</button></div></div><div class="flex gap2 mb2"><span class="tag tgp">Comp-Math</span><span class="tag tgp">SAD</span><span class="tag tgp">Data Structures</span></div><p class="tsm tm" style="font-style:italic;">"Happy to help with assignments and exam prep. Specializing in discrete mathematics and database..."</p></div></div>
-    <div class="snrcard"><div class="snrav" style="background:#1a5c3a;color:#fff;">ER</div><div style="flex:1;"><div class="flex ic jb mb1"><div><div class="fb_">Elena Rodriguez</div><div class="txs tm" style="text-transform:uppercase;letter-spacing:.04em;">Year 4 · Software Engineering</div></div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Viewing profile...')">View Profile</button><button class="btn bp bsm" onclick="toast('Advice requested!')">Request Advice</button></div></div><div class="flex gap2 mb2"><span class="tag tgp">AI &amp; Ethics</span><span class="tag tgp">Python</span><span class="tag tgp">System Design</span></div><p class="tsm tm" style="font-style:italic;">"Available for code reviews and project planning. I can help bridge theory and practical coding."</p></div></div>
-    <div class="snrcard"><div class="snrav" style="background:#5c1a3a;color:#fff;">JL</div><div style="flex:1;"><div class="flex ic jb mb1"><div><div class="fb_">Jordan Lee</div><div class="txs tm" style="text-transform:uppercase;letter-spacing:.04em;">Year 3 · Data Science</div></div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Viewing profile...')">View Profile</button><button class="btn bp bsm" onclick="toast('Advice requested!')">Request Advice</button></div></div><div class="flex gap2 mb2"><span class="tag tgp">Statistics</span><span class="tag tgp">R-Programming</span><span class="tag tgp">SQL</span></div><p class="tsm tm" style="font-style:italic;">"Passionate about data storytelling. If you're struggling with statistical models, let's chat!"</p></div></div>
+    <div class="snrcard"><div class="snrav" style="background:#1a3a5c;color:#fff;">AT</div><div style="flex:1;"><div class="flex ic jb mb1"><div><div class="fb_">Alex Thompson</div><div class="txs tm" style="text-transform:uppercase;letter-spacing:.04em;">Year 3 · Computer Science</div></div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Viewing Alex\'s profile...')">View Profile</button><button class="btn bp bsm" onclick="openChat('AT','Alex Thompson','#1a3a5c')">Request Advice</button></div></div><div class="flex gap2 mb2"><span class="tag tgp">Comp-Math</span><span class="tag tgp">SAD</span><span class="tag tgp">Data Structures</span></div><p class="tsm tm" style="font-style:italic;">"Happy to help with assignments and exam prep. Specializing in discrete mathematics and database..."</p></div></div>
+    <div class="snrcard"><div class="snrav" style="background:#1a5c3a;color:#fff;">ER</div><div style="flex:1;"><div class="flex ic jb mb1"><div><div class="fb_">Elena Rodriguez</div><div class="txs tm" style="text-transform:uppercase;letter-spacing:.04em;">Year 4 · Software Engineering</div></div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Viewing profile...')">View Profile</button><button class="btn bp bsm" onclick="openChat('ER','Elena Rodriguez','#1a5c3a')">Request Advice</button></div></div><div class="flex gap2 mb2"><span class="tag tgp">AI &amp; Ethics</span><span class="tag tgp">Python</span><span class="tag tgp">System Design</span></div><p class="tsm tm" style="font-style:italic;">"Available for code reviews and project planning. I can help bridge theory and practical coding."</p></div></div>
+    <div class="snrcard"><div class="snrav" style="background:#5c1a3a;color:#fff;">JL</div><div style="flex:1;"><div class="flex ic jb mb1"><div><div class="fb_">Jordan Lee</div><div class="txs tm" style="text-transform:uppercase;letter-spacing:.04em;">Year 3 · Data Science</div></div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Viewing profile...')">View Profile</button><button class="btn bp bsm" onclick="openChat('JL','Jordan Lee','#5c1a3a')">Request Advice</button></div></div><div class="flex gap2 mb2"><span class="tag tgp">Statistics</span><span class="tag tgp">R-Programming</span><span class="tag tgp">SQL</span></div><p class="tsm tm" style="font-style:italic;">"Passionate about data storytelling. If you're struggling with statistical models, let's chat!"</p></div></div>
     <h2 class="fb_ mt4 mb3">Archived Advice from Seniors</h2>
     <div class="agrid">
       <div class="acard"><div class="tag tgp mb2" style="font-size:.68rem;">COMP-MATH</div><div class="fb_ mb2">How to approach Final Exam in Comp-Math</div><p class="txs tm" style="line-height:1.5;">The final covers discrete logic. Focus on truth tables and predicate calculus...</p><button class="btn bo bfull bsm mt3" onclick="toast('Opening advice...')">Read Full Advice</button></div>
       <div class="acard"><div class="tag tgp mb2" style="font-size:.68rem;">GENERAL ADVICE</div><div class="fb_ mb2">Balancing Side Projects with Exams</div><p class="txs tm" style="line-height:1.5;">Don't sacrifice your GPA for GitHub stars in your first two years...</p><button class="btn bo bfull bsm mt3" onclick="toast('Opening advice...')">Read Full Advice</button></div>
       <div class="acard"><div class="tag tgp mb2" style="font-size:.68rem;">SAD</div><div class="fb_ mb2">Common Pitfalls in System Analysis</div><p class="txs tm" style="line-height:1.5;">Many students struggle with DFD Level 1. Remember to maintain balancing...</p><button class="btn bo bfull bsm mt3" onclick="toast('Opening advice...')">Read Full Advice</button></div>
     </div>
+    
+    <div class="chat-modal-bg" id="chatModalBg" onclick="if(event.target===this)closeChatWin()">
+  <div class="chat-window">
+    <div class="chat-contacts">
+      <div class="chat-contacts-hdr">Messages <button onclick="closeChatWin()">✕</button></div>
+      <div class="contact-row active" data-id="AT" onclick="switchContact('AT','Alex Thompson','#1a3a5c')">
+        <div class="contact-av" style="background:#1a3a5c;">AT<div class="contact-online"></div></div>
+        <div class="contact-info"><div class="contact-name">Alex Thompson</div><div class="contact-last">Happy to help with assignments...</div></div>
+      </div>
+      <div class="contact-row" data-id="ER" onclick="switchContact('ER','Elena Rodriguez','#1a5c3a')">
+        <div class="contact-av" style="background:#1a5c3a;">ER<div class="contact-online"></div></div>
+        <div class="contact-info"><div class="contact-name">Elena Rodriguez</div><div class="contact-last">Available for code reviews...</div></div>
+      </div>
+      <div class="contact-row" data-id="JL" onclick="switchContact('JL','Jordan Lee','#5c1a3a')">
+        <div class="contact-av" style="background:#5c1a3a;">JL</div>
+        <div class="contact-info"><div class="contact-name">Jordan Lee</div><div class="contact-last">Passionate about data storytelling...</div></div>
+      </div>
+      <div class="contact-row" data-id="SJ" onclick="switchContact('SJ','Sarah Jenkins','#1a1a5c')">
+        <div class="contact-av" style="background:#1a1a5c;">SJ<div class="contact-online"></div></div>
+        <div class="contact-info"><div class="contact-name">Sarah Jenkins</div><div class="contact-last">Year 4 · Physics mentor</div></div>
+      </div>
+      <div class="contact-row" data-id="DC" onclick="switchContact('DC','David Chen','#5c3a1a')">
+        <div class="contact-av" style="background:#5c3a1a;">DC</div>
+        <div class="contact-info"><div class="contact-name">David Chen</div><div class="contact-last">Year 3 · Economics mentor</div></div>
+      </div>
+    </div>
+    <div class="chat-main-win">
+      <div class="chat-win-hdr">
+        <div class="contact-av" id="chatHdrAv" style="background:#1a3a5c;width:34px;height:34px;">AT</div>
+        <div><div class="fs_" id="chatHdrName" style="font-size:.88rem;">Alex Thompson</div><div class="contact-status">● Online</div></div>
+      </div>
+      <div class="chat-win-msgs" id="chatWinMsgs"></div>
+      <div class="chat-win-input">
+        <input type="text" id="chatWinInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChatWin()"/>
+        <button class="chat-win-send" onclick="sendChatWin()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+    
   </main>
   <aside class="colright">
     <div class="flex ic jb mb3"><div class="fb_ tsm">My Mentors</div><a class="txs tpr" style="cursor:pointer;">View All</a></div>
@@ -1361,7 +1438,67 @@ function upvoteThread(e, el) {
 document.querySelectorAll('.fbtn').forEach(b => b.addEventListener('click', () => {
   document.querySelectorAll('.fbtn').forEach(x => x.classList.remove('active')); b.classList.add('active');
 }));
+// ── Senior Chat (WhatsApp-style) ──
+const seniorChats = {
+  AT: { name:'Alex Thompson', color:'#1a3a5c', msgs:[
+    {who:'them', text:"Hey! Happy to help with your Comp-Math or SAD questions. What's on your mind?", time:'2:14 PM'}
+  ]},
+  ER: { name:'Elena Rodriguez', color:'#1a5c3a', msgs:[
+    {who:'them', text:"Hi there! Need help with a code review or system design question?", time:'10:02 AM'}
+  ]},
+  JL: { name:'Jordan Lee', color:'#5c1a3a', msgs:[
+    {who:'them', text:"Hey! Struggling with stats or data cleaning? Let's figure it out together.", time:'Yesterday'}
+  ]},
+  SJ: { name:'Sarah Jenkins', color:'#1a1a5c', msgs:[
+    {who:'them', text:"Hi! I mentor Physics students — happy to help with anything mechanics or thermo related.", time:'9:40 AM'}
+  ]},
+  DC: { name:'David Chen', color:'#5c3a1a', msgs:[
+    {who:'them', text:"Hey, Economics questions? Macro, micro, or stats — fire away.", time:'Mon'}
+  ]},
+};
+let activeContact = 'AT';
 
+function openChat(id, name, color) {
+  switchContact(id, name, color);
+  document.getElementById('chatModalBg').classList.add('show');
+}
+function closeChatWin() {
+  document.getElementById('chatModalBg').classList.remove('show');
+}
+function switchContact(id, name, color) {
+  activeContact = id;
+  document.querySelectorAll('.contact-row').forEach(r => r.classList.toggle('active', r.dataset.id === id));
+  document.getElementById('chatHdrAv').textContent = id;
+  document.getElementById('chatHdrAv').style.background = color;
+  document.getElementById('chatHdrName').textContent = name;
+  renderChatMsgs();
+}
+function renderChatMsgs() {
+  const wrap = document.getElementById('chatWinMsgs');
+  const data = seniorChats[activeContact];
+  wrap.innerHTML = data.msgs.map(m => `
+    <div class="cw-msg ${m.who === 'me' ? 'me' : 'them'}">
+      <div>
+        <div class="cw-bub">${m.text}</div>
+        <div class="cw-time">${m.time}</div>
+      </div>
+    </div>`).join('');
+  wrap.scrollTop = wrap.scrollHeight;
+}
+function sendChatWin() {
+  const inp = document.getElementById('chatWinInput');
+  const txt = inp.value.trim();
+  if (!txt) return;
+  const data = seniorChats[activeContact];
+  const now = new Date().toLocaleTimeString([], {hour:'numeric', minute:'2-digit'});
+  data.msgs.push({who:'me', text:txt, time:now});
+  inp.value = '';
+  renderChatMsgs();
+  setTimeout(() => {
+    data.msgs.push({who:'them', text:"Got it — let me think about that and get back to you shortly!", time:now});
+    renderChatMsgs();
+  }, 900);
+}
 // ── Course tabs ──
 function switchCTab(btn, id) {
   document.querySelectorAll('.ctab').forEach(t => t.classList.remove('active'));
