@@ -834,49 +834,51 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
               </div>
             </div>
 
-    <!-- RIGHT SIDEBAR -->
-    <aside style="  width:260px; flex-shrink:0;display:flex; flex-direction:column;gap:14px;  ">      
-        <div class="rc" style="padding:14px;">
-          <div class="rewards-card mb3">
-            <div class="rewards-top">
-              <div>
-                <div class="rewards-pts" id="ptsDisplay">240 pts</div>
-                <div class="rewards-lvl" id="lvlDisplay">🥈 Contributor</div>
-              </div>
-              <div style="font-size:2rem;">🏆</div>
+   
+      <!-- RIGHT SIDEBAR -->
+    <aside style="width:260px; flex-shrink:0; display:flex; flex-direction:column; gap:14px;">
+
+        <div class="rewards-card">
+          <div class="rewards-top">
+            <div>
+              <div class="rewards-pts" id="ptsDisplay">240 pts</div>
+              <div class="rewards-lvl" id="lvlDisplay">🥈 Contributor</div>
             </div>
-            <div class="rewards-bar"><div class="rewards-fill" id="rewardsFill" style="width:60%;"></div></div>
-            <div class="rewards-next" id="nextLvlText">60 pts to reach 🥇 Scholar</div>
-            <div class="badge-row">
-              <span class="badge-pill">🔥 5-day streak</span>
-              <span class="badge-pill">✍️ 3 threads</span>
+            <div style="font-size:2rem;">🏆</div>
+          </div>
+          <div class="rewards-bar"><div class="rewards-fill" id="rewardsFill" style="width:60%;"></div></div>
+          <div class="rewards-next" id="nextLvlText">60 pts to reach 🥇 Scholar</div>
+          <div class="badge-row">
+            <span class="badge-pill">🔥 5-day streak</span>
+            <span class="badge-pill">✍️ 3 threads</span>
+          </div>
+        </div>
+
+        <div class="rc">
+          <div class="fs_ tsm mb2">Weekly Missions</div>
+          <div id="missionList">
+            <div class="mission-item">
+              <div class="mission-check" id="m1check">+</div>
+              <div class="mission-text" id="m1text">Post a new thread</div>
+              <div class="mission-pts">+20</div>
+            </div>
+            <div class="mission-item">
+              <div class="mission-check" id="m2check">+</div>
+              <div class="mission-text" id="m2text">Upvote 3 discussions</div>
+              <div class="mission-pts">+10</div>
+            </div>
+            <div class="mission-item">
+              <div class="mission-check" id="m3check">+</div>
+              <div class="mission-text" id="m3text">Report a problematic post</div>
+              <div class="mission-pts">+5</div>
             </div>
           </div>
-          
-          <div class="rc mb3">
-            <div class="fs_ tsm mb2">Weekly Missions</div>
-            <div id="missionList">
-              <div class="mission-item">
-                <div class="mission-check" id="m1check">+</div>
-                <div class="mission-text" id="m1text">Post a new thread</div>
-                <div class="mission-pts">+20</div>
-              </div>
-              <div class="mission-item">
-                <div class="mission-check" id="m2check">+</div>
-                <div class="mission-text" id="m2text">Upvote 3 discussions</div>
-                <div class="mission-pts">+10</div>
-              </div>
-              <div class="mission-item">
-                <div class="mission-check" id="m3check">+</div>
-                <div class="mission-text" id="m3text">Report a problematic post</div>
-                <div class="mission-pts">+5</div>
-              </div>
-            </div>
-          </div>
+        </div>
+
+        <div class="rc">
             <div class="flex ic jb mb2">
                 <div class="fs_ tsm">Categories</div>
             </div>
-
             <div class="cg">
                 <button class="cb_ active">Research</button>
                 <button class="cb_">Question</button>
@@ -888,45 +890,28 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
             </div>
         </div>
 
-        <div class="rc" style="padding:14px;">
+        <div class="rc">
             <div class="fs_ tsm mb2">Community Stats</div>
-
-            <div class="str">
-                <span class="tm">Active Scholars</span>
-                <span class="fb_ tpr">12.4k</span>
-            </div>
-
-            <div class="str">
-                <span class="tm">Papers Discussed</span>
-                <span class="fb_ tpr">4.2k</span>
-            </div>
-
-            <div class="str">
-                <span class="tm">Open Queries</span>
-                <span class="fb_ tpr">342</span>
-            </div>
+            <div class="str"><span class="tm">Active Scholars</span><span class="fb_ tpr">12.4k</span></div>
+            <div class="str"><span class="tm">Papers Discussed</span><span class="fb_ tpr">4.2k</span></div>
+            <div class="str"><span class="tm">Open Queries</span><span class="fb_ tpr">342</span></div>
         </div>
 
         <div class="sbanner" style="min-height:140px;">
             <div style="width:100%;">
-                <div class="fb_" style="font-size:.95rem;">
-                    Join the upcoming Global Research Summit 2024
-                </div>
-  
-                <button
-                    class="btn bp bsm bpill mt2"
-                    onclick="toast('Registration opened!')">
-                    Register Now
-                </button>
-                
+                <div class="fb_" style="font-size:.95rem;">Join the upcoming Global Research Summit 2024</div>
+                <button class="btn bp bsm bpill mt2" onclick="toast('Registration opened!')">Register Now</button>
             </div>
         </div>
-      
+
     </aside>
 
 </div>
-
 </div>
+</main>
+</div>
+</div>
+
 <!-- ═══════════════════════ PAGE: COURSES ═══════════════════════ -->
 <div id="page-courses" class="page">
 <div class="pw" style="flex:1;">
