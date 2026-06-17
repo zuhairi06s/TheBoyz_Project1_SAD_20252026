@@ -151,6 +151,26 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 .mbox{background:var(--sur);border-radius:var(--rl);padding:24px;width:540px;max-width:95vw;box-shadow:0 4px 24px rgba(0,0,0,.12);animation:min .2s ease}
 @keyframes min{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:none}}
 
+  /* ── Rewards / Points System ── */
+.rewards-card{background:linear-gradient(135deg,#7B1C2E,#3d0e17);border-radius:var(--rl);padding:16px;color:#fff}
+.rewards-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.rewards-pts{font-family:var(--fn);font-size:1.6rem;font-weight:700}
+.rewards-lvl{font-size:.68rem;opacity:.8;text-transform:uppercase;letter-spacing:.06em}
+.rewards-bar{background:rgba(255,255,255,.25);border-radius:999px;height:6px;overflow:hidden;margin:8px 0}
+.rewards-fill{height:100%;background:#fff;border-radius:999px;transition:width .4s ease}
+.rewards-next{font-size:.7rem;opacity:.85}
+.badge-row{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.badge-pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:3px 9px;font-size:.68rem;font-weight:600}
+.mission-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bdr)}
+.mission-item:last-child{border-bottom:none}
+.mission-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--bdr);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.65rem;transition:all .2s}
+.mission-check.done{background:var(--ok);border-color:var(--ok);color:#fff}
+.mission-text{flex:1;font-size:.78rem}
+.mission-text.done{color:var(--mut);text-decoration:line-through}
+.mission-pts{font-size:.7rem;font-weight:700;color:var(--p);flex-shrink:0}
+.pts-popup{position:fixed;top:90px;right:24px;background:#fff;border:2px solid var(--p);border-radius:999px;padding:8px 18px;font-weight:700;color:var(--p);box-shadow:0 4px 16px rgba(0,0,0,.15);z-index:9999;animation:ptsPop .6s ease forwards}
+@keyframes ptsPop{0%{opacity:0;transform:translateY(-10px) scale(.9)}15%{opacity:1;transform:translateY(0) scale(1.05)}30%{transform:scale(1)}85%{opacity:1}100%{opacity:0;transform:translateY(-6px)}}
+  
 /* ── Courses / SmartClass ── */
 .scl{display:grid;grid-template-columns:220px 1fr 260px;flex:1}
 .scmain{padding:28px}
@@ -722,7 +742,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 
                 <div class="tstat">
                     <span>💬 124 Comments</span>
-                    <span>👍 56 Upvotes</span>
+                    <span onclick="upvoteThread(event,this)" style="cursor:pointer;">👍 67 Upvotes</span>
                     <span>👁 1.2k Views</span>
                     <span onclick="reportThread(event,'Impact of LLMs on Peer-Reviewed Literature Cycles')" style="cursor:pointer;color:#b45309;margin-left:auto;">
                         🚩 Report
@@ -755,7 +775,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 
                 <div class="tstat">
                     <span>💬 42 Comments</span>
-                    <span>👍 128 Upvotes</span>
+                   <span onclick="upvoteThread(event,this)" style="cursor:pointer;">👍 123 Upvotes</span>
                     <span>👁 3.4k Views</span>
                     <span onclick="reportThread(event,'Cross-Disciplinary Study: Ethics of CRISPR in Agriculture')" style="cursor:pointer;color:#b45309;margin-left:auto;">
                         🚩 Report
@@ -788,7 +808,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 
                 <div class="tstat">
                     <span>💬 89 Comments</span>
-                    <span>👍 31 Upvotes</span>
+                   <span onclick="upvoteThread(event,this)" style="cursor:pointer;">👍 56 Upvotes</span>
                     <span>👁 940 Views</span>
                     <span onclick="reportThread(event,'Best practices for Digital Archiving of Rare Manuscripts?')" style="cursor:pointer;color:#b45309;margin-left:auto;">
                         🚩 Report
@@ -824,7 +844,43 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
         flex-direction:column;
         gap:14px;
     ">
-
+        <div class="rewards-card mb3">
+                <div class="rewards-top">
+                  <div>
+                    <div class="rewards-pts" id="ptsDisplay">240 pts</div>
+                    <div class="rewards-lvl" id="lvlDisplay">🥈 Contributor</div>
+                  </div>
+                  <div style="font-size:2rem;">🏆</div>
+                </div>
+                <div class="rewards-bar"><div class="rewards-fill" id="rewardsFill" style="width:60%;"></div></div>
+                <div class="rewards-next" id="nextLvlText">60 pts to reach 🥇 Scholar</div>
+                <div class="badge-row">
+                  <span class="badge-pill">🔥 5-day streak</span>
+                  <span class="badge-pill">✍️ 3 threads</span>
+                </div>
+              </div>
+              
+              <div class="rc mb3">
+                <div class="fs_ tsm mb2">Weekly Missions</div>
+                <div id="missionList">
+                  <div class="mission-item">
+                    <div class="mission-check" id="m1check">+</div>
+                    <div class="mission-text" id="m1text">Post a new thread</div>
+                    <div class="mission-pts">+20</div>
+                  </div>
+                  <div class="mission-item">
+                    <div class="mission-check" id="m2check">+</div>
+                    <div class="mission-text" id="m2text">Upvote 3 discussions</div>
+                    <div class="mission-pts">+10</div>
+                  </div>
+                  <div class="mission-item">
+                    <div class="mission-check" id="m3check">+</div>
+                    <div class="mission-text" id="m3text">Report a problematic post</div>
+                    <div class="mission-pts">+5</div>
+                  </div>
+                </div>
+              </div>
+              
         <div class="rc" style="padding:14px;">
             <div class="flex ic jb mb2">
                 <div class="fs_ tsm">Categories</div>
@@ -871,6 +927,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
                     onclick="toast('Registration opened!')">
                     Register Now
                 </button>
+                
             </div>
         </div>
 
@@ -1228,19 +1285,11 @@ function closeReportModal(){
 }
 
 function submitReport(){
-    const reason =
-        document.getElementById('reportReason').value.trim();
-
-    if(!reason){
-        alert('Please enter a reason.');
-        return;
-    }
-
-    closeReportModal();
-
-    toast(
-        `Report submitted for "${reportTitle}". Moderators will review it.`
-    );
+  const reason = document.getElementById('reportReason').value.trim();
+  if(!reason){ alert('Please enter a reason.'); return; }
+  closeReportModal();
+  toast(`Report submitted for "${reportTitle}". Moderators will review it.`);
+  completeMission('m3', 5);   // ← add this line
 }
 
 // ── Toast ──
@@ -1273,9 +1322,63 @@ function postThread() {
   const list = document.getElementById('threadList');
   const c = document.createElement('div');
   c.className = 'tcard';
-  c.innerHTML = `<div class="tmtop"><div class="tav">JS</div><div style="flex:1;"><div class="ttitle">New Discussion Thread</div><div class="tmline">Posted by <strong>Dr. Julian Smith</strong> • Just now</div></div><span class="tag tgp">Research</span></div><p class="texc">Your new thread has been posted successfully.</p><div class="tstat"><span>💬 0</span><span>👍 0</span><span>👁 1</span></div>`;
+  c.innerHTML = `<div class="tmtop"><div class="tav">JS</div><div style="flex:1;"><div class="ttitle">New Discussion Thread</div><div class="tmline">Posted by <strong>Dr. Julian Smith</strong> • Just now</div></div><span class="tag tgp">Research</span></div><p class="texc">Your new thread has been posted successfully.</p><div class="tstat"><span>💬 0</span><span onclick="upvoteThread(event,this)" style="cursor:pointer;">👍 0</span><span>👁 1</span></div>`;
   list.insertBefore(c, list.firstChild);
   toast('Thread posted!');
+  completeMission('m1', 20);   // ← add this line
+}
+
+  // ── Rewards / Points System ──
+let userPoints = 240;
+let upvoteCount = 0;
+const missionsDone = { m1: false, m2: false, m3: false };
+
+function awardPoints(amount, label) {
+  userPoints += amount;
+  document.getElementById('ptsDisplay').textContent = userPoints + ' pts';
+  updateLevel();
+  showPointsPopup('+' + amount + ' pts — ' + label);
+}
+
+function updateLevel() {
+  let lvl, nextGoal, fillPct;
+  if (userPoints < 100) { lvl='🥉 Newcomer'; nextGoal=100; }
+  else if (userPoints < 300) { lvl='🥈 Contributor'; nextGoal=300; }
+  else if (userPoints < 600) { lvl='🥇 Scholar'; nextGoal=600; }
+  else { lvl='💎 Luminary'; nextGoal=userPoints; }
+  fillPct = Math.min(100, (userPoints / nextGoal) * 100);
+  document.getElementById('lvlDisplay').textContent = lvl;
+  document.getElementById('rewardsFill').style.width = fillPct + '%';
+  const remaining = nextGoal - userPoints;
+  document.getElementById('nextLvlText').textContent = remaining > 0
+    ? remaining + ' pts to next level'
+    : 'Max level reached!';
+}
+
+function showPointsPopup(text) {
+  const p = document.createElement('div');
+  p.className = 'pts-popup';
+  p.textContent = '🎉 ' + text;
+  document.body.appendChild(p);
+  setTimeout(() => p.remove(), 1600);
+}
+
+function completeMission(id, amount) {
+  if (missionsDone[id]) return;
+  missionsDone[id] = true;
+  document.getElementById(id + 'check').classList.add('done');
+  document.getElementById(id + 'check').textContent = '✓';
+  document.getElementById(id + 'text').classList.add('done');
+  awardPoints(amount, 'Mission complete!');
+}
+
+function upvoteThread(e, el) {
+  e.stopPropagation();
+  upvoteCount++;
+  awardPoints(2, 'Upvoted a thread');
+  el.style.color = 'var(--p)';
+  el.style.fontWeight = '700';
+  if (upvoteCount >= 3) completeMission('m2', 10);
 }
 
 // ── Collaboration filters ──
