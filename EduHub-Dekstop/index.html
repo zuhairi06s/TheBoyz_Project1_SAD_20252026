@@ -418,10 +418,91 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
     }
 }
 
+
 @keyframes fadeIn{
     from{opacity:0;}
     to{opacity:1;}
 }
+
+  /* Forum Categories Layout */
+  .forum-layout{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+}
+
+.forum-content{
+    flex:1;
+}
+
+.forum-sidebar{
+    width:240px;
+    flex-shrink:0;
+}
+.sidebar-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:14px;
+    margin-bottom:14px;
+}
+  
+.sidebar-card h4{
+    margin:0 0 10px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.category-tag{
+    display:inline-block;
+    padding:4px 10px;
+    margin:3px;
+    font-size:11px;
+    border-radius:20px;
+    border:1px solid #ddd;
+}
+
+.stat-row{
+    display:flex;
+    justify-content:space-between;
+    padding:6px 0;
+    font-size:12px;
+}
+
+.stat-value{
+    color:#8b1538;
+    font-weight:700;
+}
+
+  .event-card{
+    background:linear-gradient(
+        135deg,
+        #8b1538,
+        #5c0a1f
+    );
+    color:white;
+    border-radius:12px;
+    padding:14px;
+}
+
+.event-card h4{
+    font-size:13px;
+    line-height:1.4;
+    margin-bottom:12px;
+}
+
+.event-card button{
+    background:#fff;
+    color:#8b1538;
+    border:none;
+    border-radius:20px;
+    padding:6px 14px;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+  
 
 /* ── Research ── */
 /* ── Profile ── */
@@ -634,8 +715,13 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
     </div>
    </div>
   </div>
+
       
-    <div>
+ <div style="
+display:flex;
+gap:20px;
+align-items:flex-start;
+">
       <button class="btn bp bfull bpill mb4" style="padding:12px;font-size:.9rem;" onclick="document.getElementById('threadModal').classList.add('show')">+ New Thread</button>
       <div class="rc mb3"><div class="flex ic jb mb2"><div class="fs_ tsm">Categories</div></div><div class="cg"><button class="cb_ active">Research</button><button class="cb_">Question</button><button class="cb_">Announcement</button><button class="cb_">Data Science</button><button class="cb_">Humanities</button><button class="cb_">Ethics</button><button class="cb_">Funding</button></div></div>
       <div class="rc mb3"><div class="fs_ tsm mb2">Community Stats</div><div class="str"><span class="tm">Active Scholars</span><span class="fb_ tpr">12.4k</span></div><div class="str"><span class="tm">Papers Discussed</span><span class="fb_ tpr">4.2k</span></div><div class="str"><span class="tm">Open Queries</span><span class="fb_ tpr">342</span></div></div>
