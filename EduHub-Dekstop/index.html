@@ -851,6 +851,7 @@ function reportThread(e, title) {
   const reason = prompt('Why are you reporting "' + title + '"?\n(e.g. spam, harassment, off-topic)');
   if (reason && reason.trim() !== '') {
     toast('Thread reported. Our moderators will review it.');
+  }
 }
 
 // ── Toast ──
