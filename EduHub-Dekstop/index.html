@@ -1504,10 +1504,18 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <main class="main" style="padding:0;">
 <div class="pflayout">
   <div style="display:flex;flex-direction:column;gap:16px;">
-    <div class="pfcard"><div class="pfav">JS</div><h2 class="fb_" style="font-size:1.1rem;"> Julian Smith</h2><p class="tsm tm mt1">Computer Science · Year 3</p><p class="txs tm mt1">julian.smith@academia.edu</p><p class="txs tm">Faculty of Science</p><button class="btn bo bfull mt3" onclick="toast('Edit profile opened!')">Edit Profile</button><hr class="dv" style="margin:16px 0;"/><div class="flex jb" style="gap:8px;"><div class="pfstat"><div class="val">3.52</div><div class="lbl">GPA</div></div><div class="pfstat"><div class="val">94%</div><div class="lbl">Attendance</div></div><div class="pfstat"><div class="val">4</div><div class="lbl">Courses</div></div></div></div>
-    <div class="card p4"><div class="fb_ tsm mb3">My Courses</div><div onclick="go('course-detail')" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bdr);cursor:pointer;" class="tsm fs_">SCJ1013 – Advanced Algorithms<span class="tpr">›</span></div><div onclick="go('course-detail')" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bdr);cursor:pointer;" class="tsm fs_">SECR1033 – Computer Org.<span class="tpr">›</span></div><div onclick="go('course-detail')" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bdr);cursor:pointer;" class="tsm fs_">CSC101 – Intro to CS<span class="tpr">›</span></div><div onclick="go('course-detail')" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;cursor:pointer;" class="tsm fs_">MTH201 – Calculus II<span class="tpr">›</span></div></div>
-    <div class="card p4"><div class="fb_ tsm mb3">Quick Links</div><button class="btn bo bfull mb2" style="justify-content:flex-start;gap:10px;" onclick="go('pomodoro')">⏱ Pomodoro Timer</button><button class="btn bo bfull mb2" style="justify-content:flex-start;gap:10px;" onclick="go('studyguide')">🤖 AI Study Tools</button><button class="btn bo bfull" style="justify-content:flex-start;gap:10px;" onclick="go('collaboration')">👥 Student Collaboration</button></div>
+   <div class="card p5">
+  <div class="fb_ mb4" style="font-size:1rem;">Account Information</div>
+  <div class="g2">
+    <div class="fgrp"><label>First Name</label><input type="text" id="pfFirstName" value="Julian"/></div>
+    <div class="fgrp"><label>Last Name</label><input type="text" id="pfLastName" value="Smith"/></div>
+    <div class="fgrp"><label>Email</label><input type="email" id="pfEmailInput" value="julian.smith@academia.edu"/></div>
+    <div class="fgrp"><label id="pfIdLabel">Student ID</label><input type="text" id="pfIdInput" value="2021-CS-0042"/></div>
+    <div class="fgrp"><label>Faculty</label><input type="text" id="pfFacultyInput" value="Faculty of Science"/></div>
+    <div class="fgrp"><label id="pfYearLabel">Year of Study</label><input type="text" id="pfYearInput" value="Year 3"/></div>
   </div>
+  <button class="btn bp mt2" onclick="toast('Profile saved!')">Save Changes</button>
+</div>
   <div style="display:flex;flex-direction:column;gap:16px;">
     <div class="card p5"><div class="fb_ mb4" style="font-size:1rem;">Account Information</div><div class="g2"><div class="fgrp"><label>First Name</label><input type="text" value="Julian"/></div><div class="fgrp"><label>Last Name</label><input type="text" value="Smith"/></div><div class="fgrp"><label>Email</label><input type="email" value="julian.smith@academia.edu"/></div><div class="fgrp"><label>Student ID</label><input type="text" value="2021-CS-0042"/></div><div class="fgrp"><label>Faculty</label><input type="text" value="Faculty of Science"/></div><div class="fgrp"><label>Year of Study</label><input type="text" value="Year 3"/></div></div><button class="btn bp mt2" onclick="toast('Profile saved!')">Save Changes</button></div>
     <div class="card p5"><div class="fb_ mb3" style="font-size:1rem;">Notification Preferences</div><div class="setrow"><div><div class="fs_ tsm">Assignment Reminders</div><div class="txs tm">Get notified before deadlines</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Forum Replies</div><div class="txs tm">When someone replies to your posts</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Grade Updates</div><div class="txs tm">When new grades are posted</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Sound Notifications</div><div class="txs tm">Timer completion sounds</div></div><button class="tgl off" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div></div>
@@ -1660,12 +1668,51 @@ navMap['lecturer-courses'] = 'nav-mycourses';
 navMap['admin'] = 'nav-admin';
 
 const accounts = {
-  student:  { name:'Dr. Julian Smith', initials:'JS', badge:'rb-student', label:'Student' },
-  lecturer: { name:'Prof. Amara Whitfield', initials:'AW', badge:'rb-lecturer', label:'Lecturer' },
-  admin:    { name:'System Administrator', initials:'SA', badge:'rb-admin', label:'Admin' },
+  student: {
+    name:'Dr. Julian Smith', initials:'JS', badge:'rb-student', label:'Student',
+    email:'julian.smith@academia.edu', sub:'Computer Science · Year 3', faculty:'Faculty of Science',
+    studentId:'2021-CS-0042', year:'Year 3',
+    stats:[{val:'3.52',lbl:'GPA'},{val:'94%',lbl:'Attendance'},{val:'4',lbl:'Courses'}]
+  },
+  lecturer: {
+    name:'Prof. Amara Whitfield', initials:'AW', badge:'rb-lecturer', label:'Lecturer',
+    email:'amara.whitfield@academia.edu', sub:'Computer Science Dept.', faculty:'Faculty of Science',
+    staffId:'STF-1142', year:'Senior Lecturer · 8 yrs',
+    stats:[{val:'2',lbl:'Courses'},{val:'240',lbl:'Students'},{val:'4.7',lbl:'Rating'}]
+  },
+  admin: {
+    name:'System Administrator', initials:'SA', badge:'rb-admin', label:'Admin',
+    email:'admin@academia.edu', sub:'IT &amp; Systems Office', faculty:'University Administration',
+    staffId:'ADM-0001', year:'Full Access',
+    stats:[{val:'1,326',lbl:'Total Users'},{val:'38',lbl:'Courses'},{val:'3',lbl:'Reports'}]
+  },
 };
-let currentRole = 'student';
 
+  function renderProfile() {
+  const acc = accounts[currentRole];
+  const [first, ...rest] = acc.name.replace(/^(Dr\.|Prof\.)\s*/,'').split(' ');
+  const last = rest.join(' ');
+
+  document.getElementById('pfAvatar').textContent = acc.initials;
+  document.getElementById('pfName').textContent = acc.name;
+  document.getElementById('pfSub').textContent = acc.sub;
+  document.getElementById('pfEmail').textContent = acc.email;
+  document.getElementById('pfFaculty').textContent = acc.faculty;
+
+  document.getElementById('pfStatsRow').innerHTML = acc.stats
+    .map(s => `<div class="pfstat"><div class="val">${s.val}</div><div class="lbl">${s.lbl}</div></div>`)
+    .join('');
+
+  document.getElementById('pfFirstName').value = first || '';
+  document.getElementById('pfLastName').value = last || '';
+  document.getElementById('pfEmailInput').value = acc.email;
+  document.getElementById('pfFacultyInput').value = acc.faculty;
+  document.getElementById('pfIdInput').value = acc.studentId || acc.staffId || '';
+  document.getElementById('pfYearInput').value = acc.year || '';
+  document.getElementById('pfIdLabel').textContent = currentRole === 'student' ? 'Student ID' : 'Staff ID';
+  document.getElementById('pfYearLabel').textContent = currentRole === 'student' ? 'Year of Study' : 'Position';
+}
+  
 function selectRole(el, role) {
   document.querySelectorAll('.role-card').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
@@ -1682,6 +1729,8 @@ function doLogin() {
 
   document.getElementById('nav-mycourses').classList.toggle('nav-hidden', currentRole !== 'lecturer');
   document.getElementById('nav-admin').classList.toggle('nav-hidden', currentRole !== 'admin');
+
+  renderProfile();   // ← add this line
 
   document.getElementById('loginScreen').classList.add('hide');
   go(currentRole === 'lecturer' ? 'lecturer-courses' : currentRole === 'admin' ? 'admin' : 'dashboard');
