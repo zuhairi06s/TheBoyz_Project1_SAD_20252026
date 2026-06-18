@@ -106,6 +106,70 @@ input,select,textarea{font-family:var(--fb)}
 .p3{padding:12px} .p4{padding:16px} .p5{padding:20px}
 .wf{width:100%}
 hr.dv{border:none;border-top:1px solid var(--bdr)}
+  
+/* ── Login Screen ── */
+.login-screen{position:fixed;inset:0;background:linear-gradient(135deg,#7B1C2E,#2c0a10);z-index:2000;display:flex;align-items:center;justify-content:center}
+.login-screen.hide{display:none}
+.login-card{background:#fff;border-radius:16px;padding:40px;width:420px;max-width:92vw;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.login-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:6px}
+.login-logo .bi{width:38px;height:38px;background:var(--p);border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:19px}
+.login-title{font-family:var(--fn);font-size:1.3rem;font-weight:700;color:var(--p);text-align:center}
+.login-sub{text-align:center;color:var(--mut);font-size:.82rem;margin-bottom:24px;margin-top:2px}
+.role-pick{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.role-card{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1.5px solid var(--bdr);border-radius:var(--r);cursor:pointer;transition:all .15s;background:var(--sur)}
+.role-card:hover{border-color:var(--p);background:var(--plt)}
+.role-card.selected{border-color:var(--p);background:var(--plt);box-shadow:0 0 0 2px rgba(123,28,46,.15)}
+.role-ic{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.role-info .rn{font-weight:700;font-size:.88rem}
+.role-info .re{font-size:.74rem;color:var(--mut)}
+.login-foot{font-size:.72rem;color:var(--mut);text-align:center;margin-top:6px;line-height:1.5}
+
+/* ── Role badge / lock ── */
+.role-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:999px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.rb-student{background:#e8f0ff;color:#3b4dc8}
+.rb-lecturer{background:#fff3cd;color:#7d5a00}
+.rb-admin{background:var(--plt);color:var(--p)}
+.nav-hidden{display:none !important}
+
+/* ── Upload Video Modal ── */
+.upload-tabs{display:flex;gap:0;border-bottom:1.5px solid var(--bdr);margin-bottom:16px}
+.upload-tab{padding:9px 14px;font-size:.82rem;font-weight:600;color:var(--mut);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1.5px;background:none;border-top:none;border-left:none;border-right:none;font-family:var(--fb)}
+.upload-tab.active{color:var(--p);border-bottom-color:var(--p)}
+.upload-panel{display:none}
+.upload-panel.active{display:block}
+.drop-zone{border:2px dashed var(--bdr);border-radius:var(--r);padding:32px 20px;text-align:center;cursor:pointer;transition:all .15s;background:var(--bg)}
+.drop-zone:hover{border-color:var(--p);background:var(--plt)}
+.drop-zone .dz-ic{font-size:2rem;margin-bottom:8px}
+.drop-zone .dz-txt{font-size:.84rem;font-weight:600}
+.drop-zone .dz-sub{font-size:.72rem;color:var(--mut);margin-top:4px}
+.file-chip{display:flex;align-items:center;gap:10px;background:var(--plt);border:1px solid #e0b4bc;border-radius:var(--r);padding:10px 12px;margin-top:12px;font-size:.82rem}
+.file-chip span{flex:1;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.video-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:8px;background:var(--sur)}
+.video-row .vthumb{width:54px;height:38px;border-radius:6px;background:var(--bdr);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.video-row .vinfo{flex:1;min-width:0}
+.video-row .vinfo .vt{font-weight:600;font-size:.83rem}
+.video-row .vinfo .vm{font-size:.72rem;color:var(--mut)}
+
+/* ── Admin Panel ── */
+.admlayout{display:grid;grid-template-columns:200px 1fr;flex:1}
+.admsb{background:var(--sur);border-right:1px solid var(--bdr);padding:16px 0;display:flex;flex-direction:column}
+.admmain{padding:28px 32px;overflow-y:auto}
+.adm-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.adm-stat{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--rl);padding:18px}
+.adm-stat .av{font-family:var(--fn);font-size:1.6rem;font-weight:700;color:var(--p)}
+.adm-stat .al{font-size:.72rem;color:var(--mut);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+.adm-tabs{display:flex;gap:0;border-bottom:2px solid var(--bdr);margin-bottom:20px}
+.adm-tab{padding:10px 16px;font-size:.84rem;font-weight:500;color:var(--mut);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;background:none;border-top:none;border-left:none;border-right:none;font-family:var(--fb)}
+.adm-tab.active{color:var(--p);border-bottom-color:var(--p);font-weight:700}
+.adm-panel{display:none}
+.adm-panel.active{display:block}
+.user-row{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:8px;background:var(--sur)}
+.user-row .uinfo{flex:1}
+.user-row .un2{font-weight:600;font-size:.85rem}
+.user-row .ue{font-size:.74rem;color:var(--mut)}
+.mod-row{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:8px;background:var(--sur)}
+.mod-row .mtitle{font-weight:600;font-size:.84rem;margin-bottom:3px}
+.mod-row .mreason{font-size:.78rem;color:var(--mut)}
 
 /* ── Page sections ── */
 .page{display:none} .page.active{display:flex;flex-direction:column;flex:1}
@@ -151,6 +215,26 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 .mbox{background:var(--sur);border-radius:var(--rl);padding:24px;width:540px;max-width:95vw;box-shadow:0 4px 24px rgba(0,0,0,.12);animation:min .2s ease}
 @keyframes min{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:none}}
 
+  /* ── Rewards / Points System ── */
+.rewards-card{background:linear-gradient(135deg,#7B1C2E,#3d0e17);border-radius:var(--rl);padding:16px;color:#fff}
+.rewards-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.rewards-pts{font-family:var(--fn);font-size:1.6rem;font-weight:700}
+.rewards-lvl{font-size:.68rem;opacity:.8;text-transform:uppercase;letter-spacing:.06em}
+.rewards-bar{background:rgba(255,255,255,.25);border-radius:999px;height:6px;overflow:hidden;margin:8px 0}
+.rewards-fill{height:100%;background:#fff;border-radius:999px;transition:width .4s ease}
+.rewards-next{font-size:.7rem;opacity:.85}
+.badge-row{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.badge-pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:3px 9px;font-size:.68rem;font-weight:600}
+.mission-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bdr)}
+.mission-item:last-child{border-bottom:none}
+.mission-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--bdr);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.65rem;transition:all .2s}
+.mission-check.done{background:var(--ok);border-color:var(--ok);color:#fff}
+.mission-text{flex:1;font-size:.78rem}
+.mission-text.done{color:var(--mut);text-decoration:line-through}
+.mission-pts{font-size:.7rem;font-weight:700;color:var(--p);flex-shrink:0}
+.pts-popup{position:fixed;top:90px;right:24px;background:#fff;border:2px solid var(--p);border-radius:999px;padding:8px 18px;font-weight:700;color:var(--p);box-shadow:0 4px 16px rgba(0,0,0,.15);z-index:9999;animation:ptsPop .6s ease forwards}
+@keyframes ptsPop{0%{opacity:0;transform:translateY(-10px) scale(.9)}15%{opacity:1;transform:translateY(0) scale(1.05)}30%{transform:scale(1)}85%{opacity:1}100%{opacity:0;transform:translateY(-6px)}}
+  
 /* ── Courses / SmartClass ── */
 .scl{display:grid;grid-template-columns:220px 1fr 260px;flex:1}
 .scmain{padding:28px}
@@ -215,6 +299,41 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 .fbtn:hover:not(.active){border-color:var(--p);color:var(--p)}
 .srow_{display:flex;align-items:center;gap:10px;background:var(--bg);border:1.5px solid var(--bdr);border-radius:999px;padding:7px 16px;flex:1;max-width:300px}
 .srow_ input{border:none;background:none;outline:none;font-size:.84rem;width:100%}
+
+/* ── Senior Chat (WhatsApp-style) ── */
+.chat-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:600;align-items:center;justify-content:center}
+.chat-modal-bg.show{display:flex}
+.chat-window{width:780px;height:560px;max-width:95vw;max-height:90vh;background:var(--sur);border-radius:var(--rl);overflow:hidden;display:grid;grid-template-columns:240px 1fr;box-shadow:0 12px 48px rgba(0,0,0,.25);animation:cwIn .2s ease}
+@keyframes cwIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+.chat-contacts{background:var(--bg);border-right:1px solid var(--bdr);overflow-y:auto;display:flex;flex-direction:column}
+.chat-contacts-hdr{padding:14px 16px;border-bottom:1px solid var(--bdr);font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:space-between}
+.chat-contacts-hdr button{background:none;border:none;cursor:pointer;color:var(--mut);font-size:16px}
+.contact-row{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--bdr);transition:background .12s;position:relative}
+.contact-row:hover{background:var(--plt)}
+.contact-row.active{background:var(--plt);border-left:3px solid var(--p)}
+.contact-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:#fff;flex-shrink:0;position:relative}
+.contact-online{position:absolute;bottom:-1px;right:-1px;width:10px;height:10px;border-radius:50%;background:#2e7d52;border:2px solid var(--bg)}
+.contact-info{flex:1;min-width:0}
+.contact-name{font-weight:600;font-size:.83rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.contact-last{font-size:.72rem;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.contact-unread{background:var(--p);color:#fff;border-radius:999px;font-size:.65rem;font-weight:700;padding:1px 6px;flex-shrink:0}
+.chat-main-win{display:flex;flex-direction:column;height:100%}
+.chat-win-hdr{padding:12px 18px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:10px;background:var(--sur)}
+.chat-win-hdr .contact-status{font-size:.7rem;color:var(--ok)}
+.chat-win-msgs{flex:1;overflow-y:auto;padding:18px 20px;display:flex;flex-direction:column;gap:12px;background:#f6f3ee}
+.cw-msg{display:flex;gap:10px;max-width:75%}
+.cw-msg.me{align-self:flex-end;flex-direction:row-reverse}
+.cw-bub{padding:9px 14px;border-radius:14px;font-size:.83rem;line-height:1.5}
+.cw-msg.them .cw-bub{background:#fff;border:1px solid var(--bdr);border-radius:4px 14px 14px 14px}
+.cw-msg.me .cw-bub{background:var(--p);color:#fff;border-radius:14px 4px 14px 14px}
+.cw-time{font-size:.62rem;color:var(--mut);margin-top:3px}
+.cw-msg.me .cw-time{text-align:right}
+.chat-win-input{padding:12px 16px;border-top:1px solid var(--bdr);display:flex;gap:8px;background:var(--sur)}
+.chat-win-input input{flex:1;border:1.5px solid var(--bdr);border-radius:999px;padding:9px 16px;font-family:var(--fb);font-size:.83rem;outline:none}
+.chat-win-input input:focus{border-color:var(--p)}
+.chat-win-send{width:38px;height:38px;border-radius:50%;background:var(--p);border:none;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+.chat-win-send:hover{background:var(--pd)}
+.chat-close-btn{margin-left:auto;background:none;border:none;color:var(--mut);font-size:18px;cursor:pointer}
 
 /* ── AI Chat ── */
 .ailayout{display:grid;grid-template-columns:220px 1fr 260px;flex:1;overflow:hidden;height:calc(100vh - 54px)}
@@ -312,6 +431,198 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 .hubsrch input{flex:1;border:none;background:none;outline:none;font-size:.84rem}
 .hubsrch button{background:var(--p);color:#fff;border:none;border-radius:var(--r);padding:6px 14px;font-size:.82rem;font-weight:600;cursor:pointer}
 
+  /* Modal Background */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(4px);
+    z-index:9999;
+    align-items:center;
+    justify-content:center;
+    animation:fadeIn .25s ease;
+}
+
+/* Show Modal */
+.modal.show{
+    display:flex;
+}
+
+/* Card */
+.modal-card{
+    width:380px;
+    max-width:90%;
+    background:#fff;
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+    animation:slideUp .3s ease;
+}
+
+/* Header */
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.modal-header h3{
+    margin:0;
+    color:#dc2626;
+}
+
+.close-btn{
+    border:none;
+    background:none;
+    font-size:18px;
+    cursor:pointer;
+}
+
+/* Text */
+.modal-text{
+    color:#666;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+/* Text Area */
+#reportReason{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    resize:none;
+    font-family:inherit;
+}
+
+/* Buttons */
+.modal-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-top:15px;
+}
+
+.btn-cancel{
+    padding:10px 18px;
+    border:none;
+    border-radius:10px;
+    background:#e5e7eb;
+    cursor:pointer;
+}
+
+.btn-report{
+    padding:10px 18px;
+    border:none;
+    border-radius:10px;
+    background:#dc2626;
+    color:white;
+    cursor:pointer;
+}
+
+.btn-report:hover{
+    background:#b91c1c;
+}
+
+@keyframes slideUp{
+    from{
+        transform:translateY(20px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+  /* Forum Categories Layout */
+  .forum-layout{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+}
+
+.forum-content{
+    flex:1;
+}
+
+.forum-sidebar{
+    width:240px;
+    flex-shrink:0;
+}
+.sidebar-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:14px;
+    margin-bottom:14px;
+}
+  
+.sidebar-card h4{
+    margin:0 0 10px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.category-tag{
+    display:inline-block;
+    padding:4px 10px;
+    margin:3px;
+    font-size:11px;
+    border-radius:20px;
+    border:1px solid #ddd;
+}
+
+.stat-row{
+    display:flex;
+    justify-content:space-between;
+    padding:6px 0;
+    font-size:12px;
+}
+
+.stat-value{
+    color:#8b1538;
+    font-weight:700;
+}
+
+  .event-card{
+    background:linear-gradient(
+        135deg,
+        #8b1538,
+        #5c0a1f
+    );
+    color:white;
+    border-radius:12px;
+    padding:14px;
+}
+
+.event-card h4{
+    font-size:13px;
+    line-height:1.4;
+    margin-bottom:12px;
+}
+
+.event-card button{
+    background:#fff;
+    color:#8b1538;
+    border:none;
+    border-radius:20px;
+    padding:6px 14px;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+  
+
 /* ── Research ── */
 /* ── Profile ── */
 .pflayout{display:grid;grid-template-columns:300px 1fr;gap:24px;padding:32px 40px}
@@ -333,31 +644,117 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 </head>
 <body>
 
+  <!-- ═══════════════════════ LOGIN SCREEN ═══════════════════════ -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="login-logo"><div class="bi">🎓</div></div>
+    <div class="login-title">Academia</div>
+    <div class="login-sub">Select a demo account to sign in</div>
+    <div class="role-pick">
+      <div class="role-card selected" data-role="student" onclick="selectRole(this,'student')">
+        <div class="role-ic" style="background:#e8f0ff;">🎒</div>
+        <div class="role-info"><div class="rn">Student — Julian Smith</div><div class="re">View courses, forums, study tools</div></div>
+      </div>
+      <div class="role-card" data-role="lecturer" onclick="selectRole(this,'lecturer')">
+        <div class="role-ic" style="background:#fff3cd;">🎓</div>
+        <div class="role-info"><div class="rn">Lecturer — Prof. Amara Whitfield</div><div class="re">Manage courses, upload lectures</div></div>
+      </div>
+      <div class="role-card" data-role="admin" onclick="selectRole(this,'admin')">
+        <div class="role-ic" style="background:var(--plt);">🛠</div>
+        <div class="role-info"><div class="rn">Admin — System Administrator</div><div class="re">Manage users, courses &amp; moderation</div></div>
+      </div>
+    </div>
+    <button class="btn bp bfull" onclick="doLogin()">Sign In</button>
+    <div class="login-foot">Demo login — no password required.<br/>Switch accounts anytime from your profile.</div>
+  </div>
+</div>
+
 <!-- ═══════════════════════════════════════════ TOP BAR ═══ -->
 <header class="tb">
   <div class="tb-brand" onclick="go('dashboard')"><div class="bi">🎓</div>Academia</div>
   <nav class="tb-nav">
-    <a id="nav-dashboard" onclick="go('dashboard')">Dashboard</a>
-    <a id="nav-courses"   onclick="go('courses')">Courses</a>
-    <a id="nav-research"  onclick="go('research')">Research</a>
-    <a id="nav-forums"    onclick="go('forums')">Forum</a>
+      <a id="nav-dashboard" onclick="go('dashboard')">Dashboard</a>
+      <a id="nav-courses"   onclick="go('courses')">Courses</a>
+      <a id="nav-research"  onclick="go('research')">Research</a>
+      <a id="nav-forums"    onclick="go('forums')">Forum</a>
+      <a id="nav-mycourses" onclick="go('lecturer-courses')" class="nav-hidden">My Courses</a>
+      <a id="nav-admin"     onclick="go('admin')" class="nav-hidden">Admin Panel</a>
   </nav>
   <div class="tb-search">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     <input type="search" placeholder="Search..."/>
   </div>
-  <div class="tb-acts">
-    <button class="ibt" style="position:relative" onclick="toast('No new notifications')">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-      <span class="bdg">2</span>
-    </button>
-    <div class="upill" onclick="go('profile')">
-      <div class="uav">JS</div>
-      <div class="ui"><div class="un">Dr. Julian Smith</div><div class="ur">Faculty of Science</div></div>
+ <div class="tb-acts">
+  <button class="ibt" style="position:relative" onclick="toast('No new notifications')">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+    <span class="bdg">2</span>
+  </button>
+  <div class="upill" onclick="go('profile')">
+    <div class="uav" id="topUav">JS</div>
+    <div class="ui">
+      <div class="un" id="topUserName">Dr. Julian Smith</div>
+      <div class="ur"><span class="role-badge rb-student" id="topRoleBadge">Student</span></div>
     </div>
   </div>
+</div>
 </header>
 
+  <!-- Report Modal -->
+<div id="reportModal" class="modal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3>🚩 Report Thread</h3>
+            <button class="close-btn" onclick="closeReportModal()">✕</button>
+        </div>
+
+        <p class="modal-text">
+            Help us keep the community safe. Why are you reporting this post?
+        </p>
+
+        <textarea
+            id="reportReason"
+            placeholder="Describe the issue..."
+            rows="4"></textarea>
+
+        <div class="modal-actions">
+            <button class="btn-cancel" onclick="closeReportModal()">
+                Cancel
+            </button>
+            <button class="btn-report" onclick="submitReport()">
+                Submit Report
+            </button>
+        </div>
+    </div>
+</div>
+
+  <!-- Upload Video Modal -->
+<div id="uploadModal" class="modal">
+  <div class="modal-card" style="width:460px;">
+    <div class="modal-header"><h3 style="color:var(--p);">⬆ Upload Lecture Video</h3><button class="close-btn" onclick="closeUploadModal()">✕</button></div>
+    <div class="upload-tabs">
+      <button class="upload-tab active" onclick="setUploadTab(this,'panel-file')">From Device</button>
+      <button class="upload-tab" onclick="setUploadTab(this,'panel-url')">Paste URL</button>
+    </div>
+    <div id="panel-file" class="upload-panel active">
+      <div class="drop-zone" onclick="document.getElementById('vidFileInput').click()">
+        <div class="dz-ic">🎥</div>
+        <div class="dz-txt">Click to select a video file</div>
+        <div class="dz-sub">MP4, MOV, or WebM — up to 2GB</div>
+      </div>
+      <input type="file" id="vidFileInput" accept="video/*" style="display:none" onchange="handleFileSelect(this)"/>
+      <div id="fileChipWrap"></div>
+    </div>
+    <div id="panel-url" class="upload-panel">
+      <div class="fgrp" style="margin-bottom:10px;"><label>Video URL</label><input type="text" id="vidUrlInput" placeholder="https://..."/></div>
+    </div>
+    <div class="fgrp" style="margin-top:6px;"><label>Title</label><input type="text" id="vidTitleInput" placeholder="e.g. Lecture 7 – Graph Traversal"/></div>
+    <div class="flex gap2 mt3">
+      <button class="btn bo bfull" onclick="closeUploadModal()">Cancel</button>
+      <button class="btn bp bfull" onclick="submitUpload()">Upload</button>
+    </div>
+  </div>
+</div>
+  
 <!-- ═══════════════════════ PAGE: DASHBOARD ═══════════════════════ -->
 <div id="page-dashboard" class="page active">
 <div class="pw">
@@ -440,7 +837,6 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 </div>
 </div>
   
-  
 <!-- ═══════════════════════ PAGE: FORUMS ═══════════════════════ -->
 <div id="page-forums" class="page">
 <div class="pw">
@@ -456,63 +852,225 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
   <div class="sb-bot"><div class="sb-promo"><div class="pt">Premium Member</div><div class="pb">Access to advanced citation tools.</div></div></div>
 </aside>
 <main class="main">
-  <div class="fl">
-    <div>
-      <div class="flex ic jb mb3"><div class="fb_" style="font-size:1rem;text-transform:uppercase;letter-spacing:.04em;">Discussions</div><div class="flex ic gap2"><span class="tsm tm">Sort by:</span><select class="ssel"><option>Most Recent</option><option>Most Upvotes</option><option>Most Viewed</option></select></div></div>
+ <div class="fl">
+
+<div style="display:flex;gap:20px;align-items:flex-start;">
+
+    <!-- LEFT SIDE -->
+    <div style="flex:1;min-width:0;">
       
-  <div id="threadList" style="display:flex;flex-direction:column;gap:14px;">
 
-  <div class="tcard">
-    <div class="tmtop"><div class="tav">SC</div><div style="flex:1;"><div class="ttitle">Impact of LLMs on Peer-Reviewed Literature Cycles</div><div class="tmline">Posted by <strong>Sarah Connor</strong> • 2 hours ago</div></div><span class="tag tgp">Research</span></div>
-    <p class="texc">How are we addressing the influx of AI-assisted manuscripts in high-impact journals? Recent studies suggest a 15% increase in citation velocity but a...</p>
-    <div class="tstat">
-      <span>💬 124 Comments</span>
-      <span>👍 56 Upvotes</span>
-      <span>👁 1.2k Views</span>
-      <span onclick="reportThread(event,'Impact of LLMs on Peer-Reviewed Literature Cycles')" style="cursor:pointer;color:#b45309;margin-left:auto;">🚩 Report</span>
-    </div>
-  </div>
+        <div class="flex ic jb mb3">
+            <div class="fb_" style="font-size:1rem;text-transform:uppercase;letter-spacing:.04em;">
+                Discussions
+            </div>
 
-  <div class="tcard">
-    <div class="tmtop"><div class="tav" style="background:#1a5276;">MA</div><div style="flex:1;"><div class="ttitle">Cross-Disciplinary Study: Ethics of CRISPR in Agriculture</div><div class="tmline">Posted by <strong>Prof. Marcus Aurelius</strong> • 5 hours ago</div></div><span class="tag" style="background:#fff3cd;color:#7d5a00;border-color:#f0d070;">Announcement</span></div>
-    <p class="texc">Looking for co-authors from the Sociology department to collaborate on a new paper regarding the ethical implications of modified crop distribution...</p>
-    <div class="tstat">
-      <span>💬 42 Comments</span>
-      <span>👍 128 Upvotes</span>
-      <span>👁 3.4k Views</span>
-      <span onclick="reportThread(event,'Cross-Disciplinary Study: Ethics of CRISPR in Agriculture')" style="cursor:pointer;color:#b45309;margin-left:auto;">🚩 Report</span>
-    </div>
-  </div>
+            <div class="flex ic gap2">
+                <span class="tsm tm">Sort by:</span>
+                <select class="ssel">
+                    <option>Most Recent</option>
+                    <option>Most Upvotes</option>
+                    <option>Most Viewed</option>
+                </select>
+                <button class="btn bp bsm bpill" onclick="document.getElementById('threadModal').classList.add('show')">+ New Thread</button>
+            </div>
+        </div>
 
-  <div class="tcard">
-    <div class="tmtop"><div class="tav" style="background:#1a7a42;">EF</div><div style="flex:1;"><div class="ttitle">Best practices for Digital Archiving of Rare Manuscripts?</div><div class="tmline">Posted by <strong>Dr. Elena Fisher</strong> • 1 day ago</div></div><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;">Question</span></div>
-    <p class="texc">We are initiating a project to digitize 14th-century parchment. What multispectral imaging setups are currently considered industry standard...</p>
-    <div class="tstat">
-      <span>💬 89 Comments</span>
-      <span>👍 31 Upvotes</span>
-      <span>👁 940 Views</span>
-      <span onclick="reportThread(event,'Best practices for Digital Archiving of Rare Manuscripts?')" style="cursor:pointer;color:#b45309;margin-left:auto;">🚩 Report</span>
+        <div id="threadList" style="display:flex;flex-direction:column;gap:14px;">
+
+            <div class="tcard">
+                <div class="tmtop">
+                    <div class="tav">SC</div>
+
+                    <div style="flex:1;">
+                        <div class="ttitle">
+                            Impact of LLMs on Peer-Reviewed Literature Cycles
+                        </div>
+
+                        <div class="tmline">
+                            Posted by <strong>Sarah Connor</strong> • 2 hours ago
+                        </div>
+                    </div>
+
+                    <span class="tag tgp">Research</span>
+                </div>
+
+                <p class="texc">
+                    How are we addressing the influx of AI-assisted manuscripts in high-impact journals? Recent studies suggest a 15% increase in citation velocity but a...
+                </p>
+
+                <div class="tstat">
+                    <span>💬 124 Comments</span>
+                    <span onclick="upvoteThread(event,this)" style="cursor:pointer;">👍 67 Upvotes</span>
+                    <span>👁 1.2k Views</span>
+                    <span onclick="reportThread(event,'Impact of LLMs on Peer-Reviewed Literature Cycles')" style="cursor:pointer;color:#b45309;margin-left:auto;">
+                        🚩 Report
+                    </span>
+                </div>
+            </div>
+
+            <div class="tcard">
+                <div class="tmtop">
+                    <div class="tav" style="background:#1a5276;">MA</div>
+
+                    <div style="flex:1;">
+                        <div class="ttitle">
+                            Cross-Disciplinary Study: Ethics of CRISPR in Agriculture
+                        </div>
+
+                        <div class="tmline">
+                            Posted by <strong>Prof. Marcus Aurelius</strong> • 5 hours ago
+                        </div>
+                    </div>
+
+                    <span class="tag" style="background:#fff3cd;color:#7d5a00;border-color:#f0d070;">
+                        Announcement
+                    </span>
+                </div>
+
+                <p class="texc">
+                    Looking for co-authors from the Sociology department to collaborate on a new paper regarding the ethical implications of modified crop distribution...
+                </p>
+
+                <div class="tstat">
+                    <span>💬 42 Comments</span>
+                   <span onclick="upvoteThread(event,this)" style="cursor:pointer;">👍 123 Upvotes</span>
+                    <span>👁 3.4k Views</span>
+                    <span onclick="reportThread(event,'Cross-Disciplinary Study: Ethics of CRISPR in Agriculture')" style="cursor:pointer;color:#b45309;margin-left:auto;">
+                        🚩 Report
+                    </span>
+                </div>
+            </div>
+
+            <div class="tcard">
+                <div class="tmtop">
+                    <div class="tav" style="background:#1a7a42;">EF</div>
+
+                    <div style="flex:1;">
+                        <div class="ttitle">
+                            Best practices for Digital Archiving of Rare Manuscripts?
+                        </div>
+
+                        <div class="tmline">
+                            Posted by <strong>Dr. Elena Fisher</strong> • 1 day ago
+                        </div>
+                    </div>
+
+                    <span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;">
+                        Question
+                    </span>
+                </div>
+
+                <p class="texc">
+                    We are initiating a project to digitize 14th-century parchment. What multispectral imaging setups are currently considered industry standard...
+                </p>
+
+                <div class="tstat">
+                    <span>💬 89 Comments</span>
+                   <span onclick="upvoteThread(event,this)" style="cursor:pointer;">👍 56 Upvotes</span>
+                    <span>👁 940 Views</span>
+                    <span onclick="reportThread(event,'Best practices for Digital Archiving of Rare Manuscripts?')" style="cursor:pointer;color:#b45309;margin-left:auto;">
+                        🚩 Report
+                    </span>
+                </div>
+            </div>
+          
+        </div>
     </div>
-  </div>
-  </div>
-      
-    <div>
-      <button class="btn bp bfull bpill mb4" style="padding:12px;font-size:.9rem;" onclick="document.getElementById('threadModal').classList.add('show')">+ New Thread</button>
-      <div class="rc mb3"><div class="flex ic jb mb2"><div class="fs_ tsm">Categories</div></div><div class="cg"><button class="cb_ active">Research</button><button class="cb_">Question</button><button class="cb_">Announcement</button><button class="cb_">Data Science</button><button class="cb_">Humanities</button><button class="cb_">Ethics</button><button class="cb_">Funding</button></div></div>
-      <div class="rc mb3"><div class="fs_ tsm mb2">Community Stats</div><div class="str"><span class="tm">Active Scholars</span><span class="fb_ tpr">12.4k</span></div><div class="str"><span class="tm">Papers Discussed</span><span class="fb_ tpr">4.2k</span></div><div class="str"><span class="tm">Open Queries</span><span class="fb_ tpr">342</span></div></div>
-      <div class="sbanner"><div style="width:100%;"><div class="fb_" style="font-size:.9rem;">Join the upcoming Global Research Summit 2024</div><button class="btn bp bsm bpill mt2" onclick="toast('Registration opened!')">Register Now</button></div></div>
-    </div>
-  </div>
-</main>
+
+   
+      <!-- RIGHT SIDEBAR -->
+    <aside style="width:260px; flex-shrink:0; display:flex; flex-direction:column; gap:14px;">
+
+        <div class="rewards-card">
+          <div class="rewards-top">
+            <div>
+              <div class="rewards-pts" id="ptsDisplay">240 pts</div>
+              <div class="rewards-lvl" id="lvlDisplay">🥈 Contributor</div>
+            </div>
+            <div style="font-size:2rem;">🏆</div>
+          </div>
+          <div class="rewards-bar"><div class="rewards-fill" id="rewardsFill" style="width:60%;"></div></div>
+          <div class="rewards-next" id="nextLvlText">60 pts to reach 🥇 Scholar</div>
+          <div class="badge-row">
+            <span class="badge-pill">🔥 5-day streak</span>
+            <span class="badge-pill">✍️ 3 threads</span>
+          </div>
+        </div>
+
+        <div class="rc">
+          <div class="fs_ tsm mb2">Weekly Missions</div>
+          <div id="missionList">
+            <div class="mission-item">
+              <div class="mission-check" id="m1check">+</div>
+              <div class="mission-text" id="m1text">Post a new thread</div>
+              <div class="mission-pts">+20</div>
+            </div>
+            <div class="mission-item">
+              <div class="mission-check" id="m2check">+</div>
+              <div class="mission-text" id="m2text">Upvote 3 discussions</div>
+              <div class="mission-pts">+10</div>
+            </div>
+            <div class="mission-item">
+              <div class="mission-check" id="m3check">+</div>
+              <div class="mission-text" id="m3text">Report a problematic post</div>
+              <div class="mission-pts">+5</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rc">
+            <div class="flex ic jb mb2">
+                <div class="fs_ tsm">Categories</div>
+            </div>
+            <div class="cg">
+                <button class="cb_ active">Research</button>
+                <button class="cb_">Question</button>
+                <button class="cb_">Announcement</button>
+                <button class="cb_">Data Science</button>
+                <button class="cb_">Humanities</button>
+                <button class="cb_">Ethics</button>
+                <button class="cb_">Funding</button>
+            </div>
+        </div>
+
+        <div class="rc">
+            <div class="fs_ tsm mb2">Community Stats</div>
+            <div class="str"><span class="tm">Active Scholars</span><span class="fb_ tpr">12.4k</span></div>
+            <div class="str"><span class="tm">Papers Discussed</span><span class="fb_ tpr">4.2k</span></div>
+            <div class="str"><span class="tm">Open Queries</span><span class="fb_ tpr">342</span></div>
+        </div>
+
+        <div class="sbanner" style="min-height:140px;">
+            <div style="width:100%;">
+                <div class="fb_" style="font-size:.95rem;">Join the upcoming Global Research Summit 2024</div>
+                <button class="btn bp bsm bpill mt2" onclick="toast('Registration opened!')">Register Now</button>
+            </div>
+        </div>
+
+    </aside>
+  
+            <div class="modalbg" id="threadModal" onclick="if(event.target===this)this.classList.remove('show')">
+              <div class="mbox">
+                <div class="fb_ mb3" style="font-size:1rem;">New Thread</div>
+                <div class="flex gap3 mb3">
+                  <div style="flex:1;">
+                    <div class="dl" style="margin-bottom:4px;">Category</div>
+                    <select class="ssel wf"><option>Research</option><option>Question</option><option>Announcement</option></select>
+                  </div>
+                </div>
+                <input class="ti_" type="text" placeholder="Thread title..." style="margin-bottom:10px;"/>
+                <textarea class="ti_" rows="4" placeholder="Describe your discussion..."></textarea>
+                <div class="flex gap2 mt3">
+                  <button class="btn bo bfull" onclick="document.getElementById('threadModal').classList.remove('show')">Cancel</button>
+                  <button class="btn bp bfull" onclick="postThread()">Post Thread</button>
+                </div>
+              </div>
+            </div>
+
 </div>
-<div class="modalbg" id="threadModal" onclick="if(event.target===this)this.classList.remove('show')">
-  <div class="mbox">
-    <div class="fb_ mb3" style="font-size:1rem;">New Thread</div>
-    <div class="flex gap3 mb3"><div style="flex:1;"><div class="dl" style="margin-bottom:4px;">Category</div><select class="ssel wf"><option>Research</option><option>Question</option><option>Announcement</option></select></div></div>
-    <input class="ti_" type="text" placeholder="Thread title..." style="margin-bottom:10px;"/>
-    <textarea class="ti_" rows="4" placeholder="Describe your discussion..."></textarea>
-    <div class="flex gap2 mt3"><button class="btn bo bfull" onclick="document.getElementById('threadModal').classList.remove('show')">Cancel</button><button class="btn bp bfull" onclick="postThread()">Post Thread</button></div>
-  </div>
+</div>
+</main>
 </div>
 </div>
 
@@ -616,6 +1174,42 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <div id="ct-more" class="tpanel" style="padding:28px 32px;"><h2 class="fb_ mb4">More Options</h2><p class="tsm tm">Additional course tools and resources.</p></div>
 </div>
 
+  <!-- ═══════════════════════ PAGE: LECTURER COURSES ═══════════════════════ -->
+<div id="page-lecturer-courses" class="page">
+<div class="pw">
+<aside class="sb">
+  <div class="sbl">Teaching</div>
+  <button class="si active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>My Courses</button>
+  <button class="si" onclick="toast('Opening grading...')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/></svg>Grading</button>
+  <button class="si" onclick="go('forums')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Forums</button>
+  <div class="sb-bot"><div class="sb-promo"><div class="pt">Lecturer Account</div><div class="pb">Upload lectures and manage your course content.</div></div></div>
+</aside>
+<main class="main" style="padding:28px 32px;">
+  <div class="flex ic jb mb4">
+    <div><h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">My Courses</h1><p class="tsm tm">Manage lectures, materials, and recordings.</p></div>
+    <button class="btn bp" onclick="openUploadModal()">⬆ Upload Lecture Video</button>
+  </div>
+  <div class="card mb4">
+    <div class="cb">
+      <div class="flex ic jb mb3"><div class="fb_" style="font-size:1rem;">SCJ1013 – Advanced Algorithms &amp; Data Structures</div><span class="tag tgp">142 students</span></div>
+      <div id="lecVideoList">
+        <div class="video-row"><div class="vthumb">🎬</div><div class="vinfo"><div class="vt">Lecture 6 – Dynamic Programming</div><div class="vm">Uploaded 3 days ago · 45:12</div></div><button class="btn bo bsm" onclick="toast('Opening video...')">View</button></div>
+        <div class="video-row"><div class="vthumb">🎬</div><div class="vinfo"><div class="vt">Tutorial – Bellman-Ford Algorithm</div><div class="vm">Uploaded 6 days ago · 22:08</div></div><button class="btn bo bsm" onclick="toast('Opening video...')">View</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="cb">
+      <div class="fb_ mb3" style="font-size:1rem;">SECR1033 – Computer Organization</div>
+      <div id="lecVideoList2">
+        <div class="video-row"><div class="vthumb">🎬</div><div class="vinfo"><div class="vt">CPU Pipelining Explained</div><div class="vm">Uploaded 1 week ago · 38:40</div></div><button class="btn bo bsm" onclick="toast('Opening video...')">View</button></div>
+      </div>
+    </div>
+  </div>
+</main>
+</div>
+</div>
+  
 <!-- ═══════════════════════ PAGE: COLLABORATION ═══════════════════════ -->
 <div id="page-collaboration" class="page">
 <div class="pw" style="flex:1;">
@@ -638,15 +1232,57 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
       <button class="btn bp bpill" style="margin-left:auto;" onclick="toast('Mentor application opened!')">⭐ Become a Mentor</button>
     </div>
     <div class="flex ic jb mb3"><h2 class="fb_">Available Seniors</h2><span class="txs tm">24 mentors active now</span></div>
-    <div class="snrcard"><div class="snrav" style="background:#1a3a5c;color:#fff;">AT</div><div style="flex:1;"><div class="flex ic jb mb1"><div><div class="fb_">Alex Thompson</div><div class="txs tm" style="text-transform:uppercase;letter-spacing:.04em;">Year 3 · Computer Science</div></div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Viewing Alex\'s profile...')">View Profile</button><button class="btn bp bsm" onclick="toast('Advice requested!')">Request Advice</button></div></div><div class="flex gap2 mb2"><span class="tag tgp">Comp-Math</span><span class="tag tgp">SAD</span><span class="tag tgp">Data Structures</span></div><p class="tsm tm" style="font-style:italic;">"Happy to help with assignments and exam prep. Specializing in discrete mathematics and database..."</p></div></div>
-    <div class="snrcard"><div class="snrav" style="background:#1a5c3a;color:#fff;">ER</div><div style="flex:1;"><div class="flex ic jb mb1"><div><div class="fb_">Elena Rodriguez</div><div class="txs tm" style="text-transform:uppercase;letter-spacing:.04em;">Year 4 · Software Engineering</div></div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Viewing profile...')">View Profile</button><button class="btn bp bsm" onclick="toast('Advice requested!')">Request Advice</button></div></div><div class="flex gap2 mb2"><span class="tag tgp">AI &amp; Ethics</span><span class="tag tgp">Python</span><span class="tag tgp">System Design</span></div><p class="tsm tm" style="font-style:italic;">"Available for code reviews and project planning. I can help bridge theory and practical coding."</p></div></div>
-    <div class="snrcard"><div class="snrav" style="background:#5c1a3a;color:#fff;">JL</div><div style="flex:1;"><div class="flex ic jb mb1"><div><div class="fb_">Jordan Lee</div><div class="txs tm" style="text-transform:uppercase;letter-spacing:.04em;">Year 3 · Data Science</div></div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Viewing profile...')">View Profile</button><button class="btn bp bsm" onclick="toast('Advice requested!')">Request Advice</button></div></div><div class="flex gap2 mb2"><span class="tag tgp">Statistics</span><span class="tag tgp">R-Programming</span><span class="tag tgp">SQL</span></div><p class="tsm tm" style="font-style:italic;">"Passionate about data storytelling. If you're struggling with statistical models, let's chat!"</p></div></div>
+    <div class="snrcard"><div class="snrav" style="background:#1a3a5c;color:#fff;">AT</div><div style="flex:1;"><div class="flex ic jb mb1"><div><div class="fb_">Alex Thompson</div><div class="txs tm" style="text-transform:uppercase;letter-spacing:.04em;">Year 3 · Computer Science</div></div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Viewing Alex\'s profile...')">View Profile</button><button class="btn bp bsm" onclick="openChat('AT','Alex Thompson','#1a3a5c')">Request Advice</button></div></div><div class="flex gap2 mb2"><span class="tag tgp">Comp-Math</span><span class="tag tgp">SAD</span><span class="tag tgp">Data Structures</span></div><p class="tsm tm" style="font-style:italic;">"Happy to help with assignments and exam prep. Specializing in discrete mathematics and database..."</p></div></div>
+    <div class="snrcard"><div class="snrav" style="background:#1a5c3a;color:#fff;">ER</div><div style="flex:1;"><div class="flex ic jb mb1"><div><div class="fb_">Elena Rodriguez</div><div class="txs tm" style="text-transform:uppercase;letter-spacing:.04em;">Year 4 · Software Engineering</div></div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Viewing profile...')">View Profile</button><button class="btn bp bsm" onclick="openChat('ER','Elena Rodriguez','#1a5c3a')">Request Advice</button></div></div><div class="flex gap2 mb2"><span class="tag tgp">AI &amp; Ethics</span><span class="tag tgp">Python</span><span class="tag tgp">System Design</span></div><p class="tsm tm" style="font-style:italic;">"Available for code reviews and project planning. I can help bridge theory and practical coding."</p></div></div>
+    <div class="snrcard"><div class="snrav" style="background:#5c1a3a;color:#fff;">JL</div><div style="flex:1;"><div class="flex ic jb mb1"><div><div class="fb_">Jordan Lee</div><div class="txs tm" style="text-transform:uppercase;letter-spacing:.04em;">Year 3 · Data Science</div></div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Viewing profile...')">View Profile</button><button class="btn bp bsm" onclick="openChat('JL','Jordan Lee','#5c1a3a')">Request Advice</button></div></div><div class="flex gap2 mb2"><span class="tag tgp">Statistics</span><span class="tag tgp">R-Programming</span><span class="tag tgp">SQL</span></div><p class="tsm tm" style="font-style:italic;">"Passionate about data storytelling. If you're struggling with statistical models, let's chat!"</p></div></div>
     <h2 class="fb_ mt4 mb3">Archived Advice from Seniors</h2>
     <div class="agrid">
       <div class="acard"><div class="tag tgp mb2" style="font-size:.68rem;">COMP-MATH</div><div class="fb_ mb2">How to approach Final Exam in Comp-Math</div><p class="txs tm" style="line-height:1.5;">The final covers discrete logic. Focus on truth tables and predicate calculus...</p><button class="btn bo bfull bsm mt3" onclick="toast('Opening advice...')">Read Full Advice</button></div>
       <div class="acard"><div class="tag tgp mb2" style="font-size:.68rem;">GENERAL ADVICE</div><div class="fb_ mb2">Balancing Side Projects with Exams</div><p class="txs tm" style="line-height:1.5;">Don't sacrifice your GPA for GitHub stars in your first two years...</p><button class="btn bo bfull bsm mt3" onclick="toast('Opening advice...')">Read Full Advice</button></div>
       <div class="acard"><div class="tag tgp mb2" style="font-size:.68rem;">SAD</div><div class="fb_ mb2">Common Pitfalls in System Analysis</div><p class="txs tm" style="line-height:1.5;">Many students struggle with DFD Level 1. Remember to maintain balancing...</p><button class="btn bo bfull bsm mt3" onclick="toast('Opening advice...')">Read Full Advice</button></div>
     </div>
+    
+    <div class="chat-modal-bg" id="chatModalBg" onclick="if(event.target===this)closeChatWin()">
+  <div class="chat-window">
+    <div class="chat-contacts">
+      <div class="chat-contacts-hdr">Messages <button onclick="closeChatWin()">✕</button></div>
+      <div class="contact-row active" data-id="AT" onclick="switchContact('AT','Alex Thompson','#1a3a5c')">
+        <div class="contact-av" style="background:#1a3a5c;">AT<div class="contact-online"></div></div>
+        <div class="contact-info"><div class="contact-name">Alex Thompson</div><div class="contact-last">Happy to help with assignments...</div></div>
+      </div>
+      <div class="contact-row" data-id="ER" onclick="switchContact('ER','Elena Rodriguez','#1a5c3a')">
+        <div class="contact-av" style="background:#1a5c3a;">ER<div class="contact-online"></div></div>
+        <div class="contact-info"><div class="contact-name">Elena Rodriguez</div><div class="contact-last">Available for code reviews...</div></div>
+      </div>
+      <div class="contact-row" data-id="JL" onclick="switchContact('JL','Jordan Lee','#5c1a3a')">
+        <div class="contact-av" style="background:#5c1a3a;">JL</div>
+        <div class="contact-info"><div class="contact-name">Jordan Lee</div><div class="contact-last">Passionate about data storytelling...</div></div>
+      </div>
+      <div class="contact-row" data-id="SJ" onclick="switchContact('SJ','Sarah Jenkins','#1a1a5c')">
+        <div class="contact-av" style="background:#1a1a5c;">SJ<div class="contact-online"></div></div>
+        <div class="contact-info"><div class="contact-name">Sarah Jenkins</div><div class="contact-last">Year 4 · Physics mentor</div></div>
+      </div>
+      <div class="contact-row" data-id="DC" onclick="switchContact('DC','David Chen','#5c3a1a')">
+        <div class="contact-av" style="background:#5c3a1a;">DC</div>
+        <div class="contact-info"><div class="contact-name">David Chen</div><div class="contact-last">Year 3 · Economics mentor</div></div>
+      </div>
+    </div>
+    <div class="chat-main-win">
+      <div class="chat-win-hdr">
+        <div class="contact-av" id="chatHdrAv" style="background:#1a3a5c;width:34px;height:34px;">AT</div>
+        <div><div class="fs_" id="chatHdrName" style="font-size:.88rem;">Alex Thompson</div><div class="contact-status">● Online</div></div>
+      </div>
+      <div class="chat-win-msgs" id="chatWinMsgs"></div>
+      <div class="chat-win-input">
+        <input type="text" id="chatWinInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChatWin()"/>
+        <button class="chat-win-send" onclick="sendChatWin()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+    
   </main>
   <aside class="colright">
     <div class="flex ic jb mb3"><div class="fb_ tsm">My Mentors</div><a class="txs tpr" style="cursor:pointer;">View All</a></div>
@@ -662,6 +1298,62 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 </div>
 </div>
 
+  <!-- ═══════════════════════ PAGE: ADMIN ═══════════════════════ -->
+<div id="page-admin" class="page">
+<div class="pw">
+<div class="admlayout" style="flex:1;">
+  <aside class="admsb">
+    <div style="padding:0 16px 16px;border-bottom:1px solid var(--bdr);margin-bottom:8px;"><div class="fb_">Admin Panel</div><div class="txs tm">System Management</div></div>
+    <button class="si active" onclick="setAdmTab('adm-overview')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/></svg>Overview</button>
+    <button class="si" onclick="setAdmTab('adm-users')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Manage Users</button>
+    <button class="si" onclick="setAdmTab('adm-courses')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/></svg>Manage Courses</button>
+    <button class="si" onclick="setAdmTab('adm-mod')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Forum Moderation</button>
+  </aside>
+  <main class="admmain">
+    <div id="adm-overview" class="adm-panel active">
+      <h1 style="font-family:var(--fn);font-size:1.5rem;font-weight:700;margin-bottom:16px;">System Overview</h1>
+      <div class="adm-stat-row">
+        <div class="adm-stat"><div class="av">1,284</div><div class="al">Total Students</div></div>
+        <div class="adm-stat"><div class="av">42</div><div class="al">Lecturers</div></div>
+        <div class="adm-stat"><div class="av">38</div><div class="al">Active Courses</div></div>
+        <div class="adm-stat"><div class="av" id="admReportCount">3</div><div class="al">Pending Reports</div></div>
+      </div>
+      <div class="card p4"><div class="fb_ mb2">Recent Activity</div><p class="tsm tm" style="line-height:1.6;">12 new student registrations this week. 4 lecture videos uploaded. 1 new course pending approval.</p></div>
+    </div>
+
+    <div id="adm-users" class="adm-panel">
+      <div class="flex ic jb mb3"><h1 style="font-family:var(--fn);font-size:1.4rem;font-weight:700;">Manage Users</h1><button class="btn bp bsm" onclick="toast('Add user dialog opened!')">+ Add User</button></div>
+      <div class="adm-tabs"><button class="adm-tab active" onclick="filterUsers(this,'all')">All</button><button class="adm-tab" onclick="filterUsers(this,'student')">Students</button><button class="adm-tab" onclick="filterUsers(this,'lecturer')">Lecturers</button></div>
+      <div id="userList">
+        <div class="user-row" data-type="student"><div class="uav" style="width:34px;height:34px;">JS</div><div class="uinfo"><div class="un2">Dr. Julian Smith</div><div class="ue">julian.smith@academia.edu · Student</div></div><button class="btn bo bsm" onclick="toast('Editing user...')">Edit</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('User removed')">Remove</button></div>
+        <div class="user-row" data-type="lecturer"><div class="uav" style="width:34px;height:34px;background:#1a5276;">AW</div><div class="uinfo"><div class="un2">Prof. Amara Whitfield</div><div class="ue">amara.whitfield@academia.edu · Lecturer</div></div><button class="btn bo bsm" onclick="toast('Editing user...')">Edit</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('User removed')">Remove</button></div>
+        <div class="user-row" data-type="student"><div class="uav" style="width:34px;height:34px;background:#1a5276;">AM</div><div class="uinfo"><div class="un2">Alice Malik</div><div class="ue">alice.malik@academia.edu · Student</div></div><button class="btn bo bsm" onclick="toast('Editing user...')">Edit</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('User removed')">Remove</button></div>
+        <div class="user-row" data-type="lecturer"><div class="uav" style="width:34px;height:34px;background:#1a7a42;">MR</div><div class="uinfo"><div class="un2">Dr. Marcus Reyes</div><div class="ue">marcus.reyes@academia.edu · Lecturer</div></div><button class="btn bo bsm" onclick="toast('Editing user...')">Edit</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('User removed')">Remove</button></div>
+      </div>
+    </div>
+
+    <div id="adm-courses" class="adm-panel">
+      <div class="flex ic jb mb3"><h1 style="font-family:var(--fn);font-size:1.4rem;font-weight:700;">Manage Courses</h1><button class="btn bp bsm" onclick="toast('New course dialog opened!')">+ New Course</button></div>
+      <div class="card"><table class="dt"><thead><tr><th>Course</th><th>Lecturer</th><th>Students</th><th>Status</th><th>Action</th></tr></thead><tbody>
+        <tr><td class="fs_">SCJ1013 – Advanced Algorithms</td><td>Prof. Amara Whitfield</td><td>142</td><td><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;">Active</span></td><td><button class="btn bo bsm" onclick="toast('Editing course...')">Edit</button></td></tr>
+        <tr><td class="fs_">SECR1033 – Computer Org.</td><td>Dr. Marcus Reyes</td><td>98</td><td><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;">Active</span></td><td><button class="btn bo bsm" onclick="toast('Editing course...')">Edit</button></td></tr>
+        <tr><td class="fs_">CSC101 – Intro to CS</td><td>Prof. Amara Whitfield</td><td>210</td><td><span class="tag" style="background:#fff3cd;color:#7d5a00;border-color:#f0d070;">Pending Approval</span></td><td><button class="btn bp bsm" onclick="toast('Course approved!')">Approve</button></td></tr>
+      </tbody></table></div>
+    </div>
+
+    <div id="adm-mod" class="adm-panel">
+      <h1 style="font-family:var(--fn);font-size:1.4rem;font-weight:700;margin-bottom:16px;">Forum Moderation</h1>
+      <div id="modList">
+        <div class="mod-row"><div style="flex:1;"><div class="mtitle">Impact of LLMs on Peer-Reviewed Literature Cycles</div><div class="mreason">Reported for: off-topic self-promotion</div></div><button class="btn bo bsm" onclick="toast('Report dismissed')">Dismiss</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('Thread removed')">Remove Thread</button></div>
+        <div class="mod-row"><div style="flex:1;"><div class="mtitle">Cross-Disciplinary Study: Ethics of CRISPR in Agriculture</div><div class="mreason">Reported for: suspected spam links</div></div><button class="btn bo bsm" onclick="toast('Report dismissed')">Dismiss</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('Thread removed')">Remove Thread</button></div>
+        <div class="mod-row"><div style="flex:1;"><div class="mtitle">Best practices for Digital Archiving of Rare Manuscripts?</div><div class="mreason">Reported for: harassment in comments</div></div><button class="btn bo bsm" onclick="toast('Report dismissed')">Dismiss</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('Thread removed')">Remove Thread</button></div>
+      </div>
+    </div>
+  </main>
+</div>
+</div>
+</div>
+  
 <!-- ═══════════════════════ PAGE: STUDY GUIDE AI ═══════════════════════ -->
 <div id="page-studyguide" class="page">
 <div class="pw" style="flex:1;overflow:hidden;">
@@ -812,15 +1504,39 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <main class="main" style="padding:0;">
 <div class="pflayout">
   <div style="display:flex;flex-direction:column;gap:16px;">
-    <div class="pfcard"><div class="pfav">JS</div><h2 class="fb_" style="font-size:1.1rem;">Dr. Julian Smith</h2><p class="tsm tm mt1">Computer Science · Year 3</p><p class="txs tm mt1">julian.smith@academia.edu</p><p class="txs tm">Faculty of Science</p><button class="btn bo bfull mt3" onclick="toast('Edit profile opened!')">Edit Profile</button><hr class="dv" style="margin:16px 0;"/><div class="flex jb" style="gap:8px;"><div class="pfstat"><div class="val">3.52</div><div class="lbl">GPA</div></div><div class="pfstat"><div class="val">94%</div><div class="lbl">Attendance</div></div><div class="pfstat"><div class="val">4</div><div class="lbl">Courses</div></div></div></div>
+    <div class="pfcard">
+      <div class="pfav" id="pfAvatar">JS</div>
+      <h2 class="fb_" style="font-size:1.1rem;" id="pfName">Dr. Julian Smith</h2>
+      <p class="tsm tm mt1" id="pfSub">Computer Science · Year 3</p>
+      <p class="txs tm mt1" id="pfEmail">julian.smith@academia.edu</p>
+      <p class="txs tm" id="pfFaculty">Faculty of Science</p>
+      <button class="btn bo bfull mt3" onclick="toast('Edit profile opened!')">Edit Profile</button>
+      <hr class="dv" style="margin:16px 0;"/>
+      <div class="flex jb" id="pfStatsRow" style="gap:8px;">
+        <div class="pfstat"><div class="val">3.52</div><div class="lbl">GPA</div></div>
+        <div class="pfstat"><div class="val">94%</div><div class="lbl">Attendance</div></div>
+        <div class="pfstat"><div class="val">4</div><div class="lbl">Courses</div></div>
+      </div>
+    </div>
     <div class="card p4"><div class="fb_ tsm mb3">My Courses</div><div onclick="go('course-detail')" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bdr);cursor:pointer;" class="tsm fs_">SCJ1013 – Advanced Algorithms<span class="tpr">›</span></div><div onclick="go('course-detail')" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bdr);cursor:pointer;" class="tsm fs_">SECR1033 – Computer Org.<span class="tpr">›</span></div><div onclick="go('course-detail')" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bdr);cursor:pointer;" class="tsm fs_">CSC101 – Intro to CS<span class="tpr">›</span></div><div onclick="go('course-detail')" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;cursor:pointer;" class="tsm fs_">MTH201 – Calculus II<span class="tpr">›</span></div></div>
     <div class="card p4"><div class="fb_ tsm mb3">Quick Links</div><button class="btn bo bfull mb2" style="justify-content:flex-start;gap:10px;" onclick="go('pomodoro')">⏱ Pomodoro Timer</button><button class="btn bo bfull mb2" style="justify-content:flex-start;gap:10px;" onclick="go('studyguide')">🤖 AI Study Tools</button><button class="btn bo bfull" style="justify-content:flex-start;gap:10px;" onclick="go('collaboration')">👥 Student Collaboration</button></div>
   </div>
   <div style="display:flex;flex-direction:column;gap:16px;">
-    <div class="card p5"><div class="fb_ mb4" style="font-size:1rem;">Account Information</div><div class="g2"><div class="fgrp"><label>First Name</label><input type="text" value="Julian"/></div><div class="fgrp"><label>Last Name</label><input type="text" value="Smith"/></div><div class="fgrp"><label>Email</label><input type="email" value="julian.smith@academia.edu"/></div><div class="fgrp"><label>Student ID</label><input type="text" value="2021-CS-0042"/></div><div class="fgrp"><label>Faculty</label><input type="text" value="Faculty of Science"/></div><div class="fgrp"><label>Year of Study</label><input type="text" value="Year 3"/></div></div><button class="btn bp mt2" onclick="toast('Profile saved!')">Save Changes</button></div>
+    <div class="card p5">
+      <div class="fb_ mb4" style="font-size:1rem;">Account Information</div>
+      <div class="g2">
+        <div class="fgrp"><label>First Name</label><input type="text" id="pfFirstName" value="Julian"/></div>
+        <div class="fgrp"><label>Last Name</label><input type="text" id="pfLastName" value="Smith"/></div>
+        <div class="fgrp"><label>Email</label><input type="email" id="pfEmailInput" value="julian.smith@academia.edu"/></div>
+        <div class="fgrp"><label id="pfIdLabel">Student ID</label><input type="text" id="pfIdInput" value="2021-CS-0042"/></div>
+        <div class="fgrp"><label>Faculty</label><input type="text" id="pfFacultyInput" value="Faculty of Science"/></div>
+        <div class="fgrp"><label id="pfYearLabel">Year of Study</label><input type="text" id="pfYearInput" value="Year 3"/></div>
+      </div>
+      <button class="btn bp mt2" onclick="toast('Profile saved!')">Save Changes</button>
+    </div>
     <div class="card p5"><div class="fb_ mb3" style="font-size:1rem;">Notification Preferences</div><div class="setrow"><div><div class="fs_ tsm">Assignment Reminders</div><div class="txs tm">Get notified before deadlines</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Forum Replies</div><div class="txs tm">When someone replies to your posts</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Grade Updates</div><div class="txs tm">When new grades are posted</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Sound Notifications</div><div class="txs tm">Timer completion sounds</div></div><button class="tgl off" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div></div>
     <div class="card p5"><div class="fb_ mb3" style="font-size:1rem;">Recent Activity</div><div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--bdr);"><div style="width:32px;height:32px;border-radius:50%;background:var(--plt);color:var(--p);display:flex;align-items:center;justify-content:center;font-size:.9rem;">📋</div><div style="flex:1;"><div class="fs_ tsm">Submitted Assignment 2</div><div class="txs tm">SCJ1013 · 2 hours ago</div></div><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;font-size:.68rem;">Submitted</span></div><div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--bdr);"><div style="width:32px;height:32px;border-radius:50%;background:var(--plt);color:var(--p);display:flex;align-items:center;justify-content:center;font-size:.9rem;">💬</div><div style="flex:1;"><div class="fs_ tsm">Posted in Forums</div><div class="txs tm">Impact of LLMs · 5 hours ago</div></div><span class="tag tgp" style="font-size:.68rem;">Forum</span></div><div style="display:flex;align-items:center;gap:12px;padding:10px 0;"><div style="width:32px;height:32px;border-radius:50%;background:var(--plt);color:var(--p);display:flex;align-items:center;justify-content:center;font-size:.9rem;">⏱</div><div style="flex:1;"><div class="fs_ tsm">Completed 3 Pomodoro Sessions</div><div class="txs tm">Today · 75 min total</div></div><span class="tag" style="background:#e8f0ff;color:#3b4dc8;border-color:#b0bef0;font-size:.68rem;">Study</span></div></div>
-    <button class="btn bo" style="color:#c0392b;border-color:#c0392b;align-self:flex-start;" onclick="toast('Signed out!')">↩ Sign Out</button>
+    <button class="btn bo" style="color:#c0392b;border-color:#c0392b;align-self:flex-start;" onclick="signOut()">↩ Sign Out</button>
   </div>
 </div>
 </main>
@@ -845,13 +1561,32 @@ function go(page) {
   window.scrollTo(0,0);
 }
 
-// --Report Feature--
-  function reportThread(e, title) {
-  e.stopPropagation(); // prevents clicking the card itself
-  const reason = prompt('Why are you reporting "' + title + '"?\n(e.g. spam, harassment, off-topic)');
-  if (reason && reason.trim() !== '') {
-    toast('Thread reported. Our moderators will review it.');
-  }
+let reportTitle = '';
+
+function reportThread(e, title){
+    e.stopPropagation();
+
+    reportTitle = title;
+    document.getElementById('reportReason').value = '';
+
+    document
+        .getElementById('reportModal')
+        .classList.add('show');
+}
+
+function closeReportModal(){
+    document
+        .getElementById('reportModal')
+        .classList.remove('show');
+}
+
+function submitReport(){
+  const reason = document.getElementById('reportReason').value.trim();
+  if(!reason){ alert('Please enter a reason.'); return; }
+  closeReportModal();
+  toast(`Report submitted for "${reportTitle}". Moderators will review it.`);
+  completeMission('m3', 5);   // ← add this line
+}
 
 // ── Toast ──
 function toast(msg, ok=true) {
@@ -883,16 +1618,281 @@ function postThread() {
   const list = document.getElementById('threadList');
   const c = document.createElement('div');
   c.className = 'tcard';
-  c.innerHTML = `<div class="tmtop"><div class="tav">JS</div><div style="flex:1;"><div class="ttitle">New Discussion Thread</div><div class="tmline">Posted by <strong>Dr. Julian Smith</strong> • Just now</div></div><span class="tag tgp">Research</span></div><p class="texc">Your new thread has been posted successfully.</p><div class="tstat"><span>💬 0</span><span>👍 0</span><span>👁 1</span></div>`;
+  c.innerHTML = `<div class="tmtop"><div class="tav">JS</div><div style="flex:1;"><div class="ttitle">New Discussion Thread</div><div class="tmline">Posted by <strong>Dr. Julian Smith</strong> • Just now</div></div><span class="tag tgp">Research</span></div><p class="texc">Your new thread has been posted successfully.</p><div class="tstat"><span>💬 0</span><span onclick="upvoteThread(event,this)" style="cursor:pointer;">👍 0</span><span>👁 1</span></div>`;
   list.insertBefore(c, list.firstChild);
   toast('Thread posted!');
+  completeMission('m1', 20);   // ← add this line
+}
+
+  // ── Rewards / Points System ──
+let userPoints = 240;
+let upvoteCount = 0;
+const missionsDone = { m1: false, m2: false, m3: false };
+
+function awardPoints(amount, label) {
+  userPoints += amount;
+  document.getElementById('ptsDisplay').textContent = userPoints + ' pts';
+  updateLevel();
+  showPointsPopup('+' + amount + ' pts — ' + label);
+}
+
+function updateLevel() {
+  let lvl, nextGoal, fillPct;
+  if (userPoints < 100) { lvl='🥉 Newcomer'; nextGoal=100; }
+  else if (userPoints < 300) { lvl='🥈 Contributor'; nextGoal=300; }
+  else if (userPoints < 600) { lvl='🥇 Scholar'; nextGoal=600; }
+  else { lvl='💎 Luminary'; nextGoal=userPoints; }
+  fillPct = Math.min(100, (userPoints / nextGoal) * 100);
+  document.getElementById('lvlDisplay').textContent = lvl;
+  document.getElementById('rewardsFill').style.width = fillPct + '%';
+  const remaining = nextGoal - userPoints;
+  document.getElementById('nextLvlText').textContent = remaining > 0
+    ? remaining + ' pts to next level'
+    : 'Max level reached!';
+}
+
+function showPointsPopup(text) {
+  const p = document.createElement('div');
+  p.className = 'pts-popup';
+  p.textContent = '🎉 ' + text;
+  document.body.appendChild(p);
+  setTimeout(() => p.remove(), 1600);
+}
+
+function completeMission(id, amount) {
+  if (missionsDone[id]) return;
+  missionsDone[id] = true;
+  document.getElementById(id + 'check').classList.add('done');
+  document.getElementById(id + 'check').textContent = '✓';
+  document.getElementById(id + 'text').classList.add('done');
+  awardPoints(amount, 'Mission complete!');
+}
+
+function upvoteThread(e, el) {
+  e.stopPropagation();
+  upvoteCount++;
+  awardPoints(2, 'Upvoted a thread');
+  el.style.color = 'var(--p)';
+  el.style.fontWeight = '700';
+  if (upvoteCount >= 3) completeMission('m2', 10);
+}
+
+  // ── Login / Roles ──
+const pages2 = ['lecturer-courses','admin'];
+pages.push(...pages2);
+navMap['lecturer-courses'] = 'nav-mycourses';
+navMap['admin'] = 'nav-admin';
+
+let currentRole = 'student';
+
+const accounts = {
+    student: {
+      name:'Dr. Julian Smith', initials:'JS', badge:'rb-student', label:'Student',
+      email:'julian.smith@academia.edu', sub:'Computer Science · Year 3', faculty:'Faculty of Science',
+      studentId:'2021-CS-0042', year:'Year 3',
+      stats:[{val:'3.52',lbl:'GPA'},{val:'94%',lbl:'Attendance'},{val:'4',lbl:'Courses'}]
+    },
+    lecturer: {
+      name:'Prof. Amara Whitfield', initials:'AW', badge:'rb-lecturer', label:'Lecturer',
+      email:'amara.whitfield@academia.edu', sub:'Computer Science Dept.', faculty:'Faculty of Science',
+      staffId:'STF-1142', year:'Senior Lecturer · 8 yrs',
+      stats:[{val:'2',lbl:'Courses'},{val:'240',lbl:'Students'},{val:'4.7',lbl:'Rating'}]
+    },
+    admin: {
+      name:'System Administrator', initials:'SA', badge:'rb-admin', label:'Admin',
+      email:'admin@academia.edu', sub:'IT &amp; Systems Office', faculty:'University Administration',
+      staffId:'ADM-0001', year:'Full Access',
+      stats:[{val:'1,326',lbl:'Total Users'},{val:'38',lbl:'Courses'},{val:'3',lbl:'Reports'}]
+    },
+};
+
+  function renderProfile() {
+  const acc = accounts[currentRole];
+  const [first, ...rest] = acc.name.replace(/^(Dr\.|Prof\.)\s*/,'').split(' ');
+  const last = rest.join(' ');
+
+  document.getElementById('pfAvatar').textContent = acc.initials;
+  document.getElementById('pfName').textContent = acc.name;
+  document.getElementById('pfSub').textContent = acc.sub;
+  document.getElementById('pfEmail').textContent = acc.email;
+  document.getElementById('pfFaculty').textContent = acc.faculty;
+
+  document.getElementById('pfStatsRow').innerHTML = acc.stats
+    .map(s => `<div class="pfstat"><div class="val">${s.val}</div><div class="lbl">${s.lbl}</div></div>`)
+    .join('');
+
+  document.getElementById('pfFirstName').value = first || '';
+  document.getElementById('pfLastName').value = last || '';
+  document.getElementById('pfEmailInput').value = acc.email;
+  document.getElementById('pfFacultyInput').value = acc.faculty;
+  document.getElementById('pfIdInput').value = acc.studentId || acc.staffId || '';
+  document.getElementById('pfYearInput').value = acc.year || '';
+  document.getElementById('pfIdLabel').textContent = currentRole === 'student' ? 'Student ID' : 'Staff ID';
+  document.getElementById('pfYearLabel').textContent = currentRole === 'student' ? 'Year of Study' : 'Position';
+}
+
+
+function selectRole(el, role) {
+  document.querySelectorAll('.role-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  currentRole = role;
+}
+
+function doLogin() {
+  const acc = accounts[currentRole];
+  document.getElementById('topUav').textContent = acc.initials;
+  document.getElementById('topUserName').textContent = acc.name;
+  const badge = document.getElementById('topRoleBadge');
+  badge.className = 'role-badge ' + acc.badge;
+  badge.textContent = acc.label;
+
+  document.getElementById('nav-mycourses').classList.toggle('nav-hidden', currentRole !== 'lecturer');
+  document.getElementById('nav-admin').classList.toggle('nav-hidden', currentRole !== 'admin');
+
+  renderProfile();   // ← add this line
+
+  document.getElementById('loginScreen').classList.add('hide');
+  go(currentRole === 'lecturer' ? 'lecturer-courses' : currentRole === 'admin' ? 'admin' : 'dashboard');
+  toast('Signed in as ' + acc.label);
+}
+
+  function signOut() {
+  document.getElementById('loginScreen').classList.remove('hide');
+  document.getElementById('nav-mycourses').classList.add('nav-hidden');
+  document.getElementById('nav-admin').classList.add('nav-hidden');
+  go('dashboard');
+  toast('You have been signed out');
+}
+
+function switchAccount() {
+  document.getElementById('loginScreen').classList.remove('hide');
+}
+
+// ── Upload Video Modal ──
+let selectedFileName = '';
+function openUploadModal() {
+  document.getElementById('uploadModal').classList.add('show');
+  document.getElementById('vidTitleInput').value = '';
+  document.getElementById('vidUrlInput').value = '';
+  document.getElementById('fileChipWrap').innerHTML = '';
+  selectedFileName = '';
+}
+function closeUploadModal() {
+  document.getElementById('uploadModal').classList.remove('show');
+}
+function setUploadTab(btn, panelId) {
+  document.querySelectorAll('.upload-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.upload-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+function handleFileSelect(input) {
+  if (!input.files.length) return;
+  selectedFileName = input.files[0].name;
+  document.getElementById('fileChipWrap').innerHTML =
+    `<div class="file-chip">🎬 <span>${selectedFileName}</span></div>`;
+  if (!document.getElementById('vidTitleInput').value) {
+    document.getElementById('vidTitleInput').value = selectedFileName.replace(/\.[^/.]+$/, '');
+  }
+}
+function submitUpload() {
+  const title = document.getElementById('vidTitleInput').value.trim();
+  const isUrlTab = document.getElementById('panel-url').classList.contains('active');
+  const url = document.getElementById('vidUrlInput').value.trim();
+  if (!title) { alert('Please enter a title.'); return; }
+  if (isUrlTab && !url) { alert('Please paste a video URL.'); return; }
+  if (!isUrlTab && !selectedFileName) { alert('Please select a video file.'); return; }
+
+  const list = document.getElementById('lecVideoList');
+  const row = document.createElement('div');
+  row.className = 'video-row';
+  row.innerHTML = `<div class="vthumb">🎬</div><div class="vinfo"><div class="vt">${title}</div><div class="vm">Uploaded just now · ${isUrlTab ? 'External link' : selectedFileName}</div></div><button class="btn bo bsm" onclick="toast('Opening video...')">View</button>`;
+  list.insertBefore(row, list.firstChild);
+
+  closeUploadModal();
+  toast('Lecture video uploaded!');
+}
+
+// ── Admin Panel ──
+function setAdmTab(panelId) {
+  document.querySelectorAll('.admsb .si').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  document.querySelectorAll('.adm-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(panelId).classList.add('active');
+}
+function filterUsers(btn, type) {
+  document.querySelectorAll('.adm-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#userList .user-row').forEach(row => {
+    row.style.display = (type === 'all' || row.dataset.type === type) ? 'flex' : 'none';
+  });
 }
 
 // ── Collaboration filters ──
 document.querySelectorAll('.fbtn').forEach(b => b.addEventListener('click', () => {
   document.querySelectorAll('.fbtn').forEach(x => x.classList.remove('active')); b.classList.add('active');
 }));
+// ── Senior Chat (WhatsApp-style) ──
+const seniorChats = {
+  AT: { name:'Alex Thompson', color:'#1a3a5c', msgs:[
+    {who:'them', text:"Hey! Happy to help with your Comp-Math or SAD questions. What's on your mind?", time:'2:14 PM'}
+  ]},
+  ER: { name:'Elena Rodriguez', color:'#1a5c3a', msgs:[
+    {who:'them', text:"Hi there! Need help with a code review or system design question?", time:'10:02 AM'}
+  ]},
+  JL: { name:'Jordan Lee', color:'#5c1a3a', msgs:[
+    {who:'them', text:"Hey! Struggling with stats or data cleaning? Let's figure it out together.", time:'Yesterday'}
+  ]},
+  SJ: { name:'Sarah Jenkins', color:'#1a1a5c', msgs:[
+    {who:'them', text:"Hi! I mentor Physics students — happy to help with anything mechanics or thermo related.", time:'9:40 AM'}
+  ]},
+  DC: { name:'David Chen', color:'#5c3a1a', msgs:[
+    {who:'them', text:"Hey, Economics questions? Macro, micro, or stats — fire away.", time:'Mon'}
+  ]},
+};
+let activeContact = 'AT';
 
+function openChat(id, name, color) {
+  switchContact(id, name, color);
+  document.getElementById('chatModalBg').classList.add('show');
+}
+function closeChatWin() {
+  document.getElementById('chatModalBg').classList.remove('show');
+}
+function switchContact(id, name, color) {
+  activeContact = id;
+  document.querySelectorAll('.contact-row').forEach(r => r.classList.toggle('active', r.dataset.id === id));
+  document.getElementById('chatHdrAv').textContent = id;
+  document.getElementById('chatHdrAv').style.background = color;
+  document.getElementById('chatHdrName').textContent = name;
+  renderChatMsgs();
+}
+function renderChatMsgs() {
+  const wrap = document.getElementById('chatWinMsgs');
+  const data = seniorChats[activeContact];
+  wrap.innerHTML = data.msgs.map(m => `
+    <div class="cw-msg ${m.who === 'me' ? 'me' : 'them'}">
+      <div>
+        <div class="cw-bub">${m.text}</div>
+        <div class="cw-time">${m.time}</div>
+      </div>
+    </div>`).join('');
+  wrap.scrollTop = wrap.scrollHeight;
+}
+function sendChatWin() {
+  const inp = document.getElementById('chatWinInput');
+  const txt = inp.value.trim();
+  if (!txt) return;
+  const data = seniorChats[activeContact];
+  const now = new Date().toLocaleTimeString([], {hour:'numeric', minute:'2-digit'});
+  data.msgs.push({who:'me', text:txt, time:now});
+  inp.value = '';
+  renderChatMsgs();
+  setTimeout(() => {
+    data.msgs.push({who:'them', text:"Got it — let me think about that and get back to you shortly!", time:now});
+    renderChatMsgs();
+  }, 900);
+}
 // ── Course tabs ──
 function switchCTab(btn, id) {
   document.querySelectorAll('.ctab').forEach(t => t.classList.remove('active'));
