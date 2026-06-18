@@ -106,6 +106,70 @@ input,select,textarea{font-family:var(--fb)}
 .p3{padding:12px} .p4{padding:16px} .p5{padding:20px}
 .wf{width:100%}
 hr.dv{border:none;border-top:1px solid var(--bdr)}
+  
+/* ── Login Screen ── */
+.login-screen{position:fixed;inset:0;background:linear-gradient(135deg,#7B1C2E,#2c0a10);z-index:2000;display:flex;align-items:center;justify-content:center}
+.login-screen.hide{display:none}
+.login-card{background:#fff;border-radius:16px;padding:40px;width:420px;max-width:92vw;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.login-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:6px}
+.login-logo .bi{width:38px;height:38px;background:var(--p);border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:19px}
+.login-title{font-family:var(--fn);font-size:1.3rem;font-weight:700;color:var(--p);text-align:center}
+.login-sub{text-align:center;color:var(--mut);font-size:.82rem;margin-bottom:24px;margin-top:2px}
+.role-pick{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.role-card{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1.5px solid var(--bdr);border-radius:var(--r);cursor:pointer;transition:all .15s;background:var(--sur)}
+.role-card:hover{border-color:var(--p);background:var(--plt)}
+.role-card.selected{border-color:var(--p);background:var(--plt);box-shadow:0 0 0 2px rgba(123,28,46,.15)}
+.role-ic{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.role-info .rn{font-weight:700;font-size:.88rem}
+.role-info .re{font-size:.74rem;color:var(--mut)}
+.login-foot{font-size:.72rem;color:var(--mut);text-align:center;margin-top:6px;line-height:1.5}
+
+/* ── Role badge / lock ── */
+.role-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:999px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.rb-student{background:#e8f0ff;color:#3b4dc8}
+.rb-lecturer{background:#fff3cd;color:#7d5a00}
+.rb-admin{background:var(--plt);color:var(--p)}
+.nav-hidden{display:none !important}
+
+/* ── Upload Video Modal ── */
+.upload-tabs{display:flex;gap:0;border-bottom:1.5px solid var(--bdr);margin-bottom:16px}
+.upload-tab{padding:9px 14px;font-size:.82rem;font-weight:600;color:var(--mut);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1.5px;background:none;border-top:none;border-left:none;border-right:none;font-family:var(--fb)}
+.upload-tab.active{color:var(--p);border-bottom-color:var(--p)}
+.upload-panel{display:none}
+.upload-panel.active{display:block}
+.drop-zone{border:2px dashed var(--bdr);border-radius:var(--r);padding:32px 20px;text-align:center;cursor:pointer;transition:all .15s;background:var(--bg)}
+.drop-zone:hover{border-color:var(--p);background:var(--plt)}
+.drop-zone .dz-ic{font-size:2rem;margin-bottom:8px}
+.drop-zone .dz-txt{font-size:.84rem;font-weight:600}
+.drop-zone .dz-sub{font-size:.72rem;color:var(--mut);margin-top:4px}
+.file-chip{display:flex;align-items:center;gap:10px;background:var(--plt);border:1px solid #e0b4bc;border-radius:var(--r);padding:10px 12px;margin-top:12px;font-size:.82rem}
+.file-chip span{flex:1;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.video-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:8px;background:var(--sur)}
+.video-row .vthumb{width:54px;height:38px;border-radius:6px;background:var(--bdr);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.video-row .vinfo{flex:1;min-width:0}
+.video-row .vinfo .vt{font-weight:600;font-size:.83rem}
+.video-row .vinfo .vm{font-size:.72rem;color:var(--mut)}
+
+/* ── Admin Panel ── */
+.admlayout{display:grid;grid-template-columns:200px 1fr;flex:1}
+.admsb{background:var(--sur);border-right:1px solid var(--bdr);padding:16px 0;display:flex;flex-direction:column}
+.admmain{padding:28px 32px;overflow-y:auto}
+.adm-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.adm-stat{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--rl);padding:18px}
+.adm-stat .av{font-family:var(--fn);font-size:1.6rem;font-weight:700;color:var(--p)}
+.adm-stat .al{font-size:.72rem;color:var(--mut);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+.adm-tabs{display:flex;gap:0;border-bottom:2px solid var(--bdr);margin-bottom:20px}
+.adm-tab{padding:10px 16px;font-size:.84rem;font-weight:500;color:var(--mut);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;background:none;border-top:none;border-left:none;border-right:none;font-family:var(--fb)}
+.adm-tab.active{color:var(--p);border-bottom-color:var(--p);font-weight:700}
+.adm-panel{display:none}
+.adm-panel.active{display:block}
+.user-row{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:8px;background:var(--sur)}
+.user-row .uinfo{flex:1}
+.user-row .un2{font-weight:600;font-size:.85rem}
+.user-row .ue{font-size:.74rem;color:var(--mut)}
+.mod-row{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:8px;background:var(--sur)}
+.mod-row .mtitle{font-weight:600;font-size:.84rem;margin-bottom:3px}
+.mod-row .mreason{font-size:.78rem;color:var(--mut)}
 
 /* ── Page sections ── */
 .page{display:none} .page.active{display:flex;flex-direction:column;flex:1}
@@ -580,29 +644,59 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 </head>
 <body>
 
+  <!-- ═══════════════════════ LOGIN SCREEN ═══════════════════════ -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="login-logo"><div class="bi">🎓</div></div>
+    <div class="login-title">Academia</div>
+    <div class="login-sub">Select a demo account to sign in</div>
+    <div class="role-pick">
+      <div class="role-card selected" data-role="student" onclick="selectRole(this,'student')">
+        <div class="role-ic" style="background:#e8f0ff;">🎒</div>
+        <div class="role-info"><div class="rn">Student — Julian Smith</div><div class="re">View courses, forums, study tools</div></div>
+      </div>
+      <div class="role-card" data-role="lecturer" onclick="selectRole(this,'lecturer')">
+        <div class="role-ic" style="background:#fff3cd;">🎓</div>
+        <div class="role-info"><div class="rn">Lecturer — Prof. Amara Whitfield</div><div class="re">Manage courses, upload lectures</div></div>
+      </div>
+      <div class="role-card" data-role="admin" onclick="selectRole(this,'admin')">
+        <div class="role-ic" style="background:var(--plt);">🛠</div>
+        <div class="role-info"><div class="rn">Admin — System Administrator</div><div class="re">Manage users, courses &amp; moderation</div></div>
+      </div>
+    </div>
+    <button class="btn bp bfull" onclick="doLogin()">Sign In</button>
+    <div class="login-foot">Demo login — no password required.<br/>Switch accounts anytime from your profile.</div>
+  </div>
+</div>
+
 <!-- ═══════════════════════════════════════════ TOP BAR ═══ -->
 <header class="tb">
   <div class="tb-brand" onclick="go('dashboard')"><div class="bi">🎓</div>Academia</div>
   <nav class="tb-nav">
-    <a id="nav-dashboard" onclick="go('dashboard')">Dashboard</a>
-    <a id="nav-courses"   onclick="go('courses')">Courses</a>
-    <a id="nav-research"  onclick="go('research')">Research</a>
-    <a id="nav-forums"    onclick="go('forums')">Forum</a>
+      <a id="nav-dashboard" onclick="go('dashboard')">Dashboard</a>
+      <a id="nav-courses"   onclick="go('courses')">Courses</a>
+      <a id="nav-research"  onclick="go('research')">Research</a>
+      <a id="nav-forums"    onclick="go('forums')">Forum</a>
+      <a id="nav-mycourses" onclick="go('lecturer-courses')" class="nav-hidden">My Courses</a>
+      <a id="nav-admin"     onclick="go('admin')" class="nav-hidden">Admin Panel</a>
   </nav>
   <div class="tb-search">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     <input type="search" placeholder="Search..."/>
   </div>
-  <div class="tb-acts">
-    <button class="ibt" style="position:relative" onclick="toast('No new notifications')">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-      <span class="bdg">2</span>
-    </button>
-    <div class="upill" onclick="go('profile')">
-      <div class="uav">JS</div>
-      <div class="ui"><div class="un">Dr. Julian Smith</div><div class="ur">Faculty of Science</div></div>
+ <div class="tb-acts">
+  <button class="ibt" style="position:relative" onclick="toast('No new notifications')">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+    <span class="bdg">2</span>
+  </button>
+  <div class="upill" onclick="go('profile')">
+    <div class="uav" id="topUav">JS</div>
+    <div class="ui">
+      <div class="un" id="topUserName">Dr. Julian Smith</div>
+      <div class="ur"><span class="role-badge rb-student" id="topRoleBadge">Student</span></div>
     </div>
   </div>
+</div>
 </header>
 
   <!-- Report Modal -->
@@ -631,6 +725,34 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
             </button>
         </div>
     </div>
+</div>
+
+  <!-- Upload Video Modal -->
+<div id="uploadModal" class="modal">
+  <div class="modal-card" style="width:460px;">
+    <div class="modal-header"><h3 style="color:var(--p);">⬆ Upload Lecture Video</h3><button class="close-btn" onclick="closeUploadModal()">✕</button></div>
+    <div class="upload-tabs">
+      <button class="upload-tab active" onclick="setUploadTab(this,'panel-file')">From Device</button>
+      <button class="upload-tab" onclick="setUploadTab(this,'panel-url')">Paste URL</button>
+    </div>
+    <div id="panel-file" class="upload-panel active">
+      <div class="drop-zone" onclick="document.getElementById('vidFileInput').click()">
+        <div class="dz-ic">🎥</div>
+        <div class="dz-txt">Click to select a video file</div>
+        <div class="dz-sub">MP4, MOV, or WebM — up to 2GB</div>
+      </div>
+      <input type="file" id="vidFileInput" accept="video/*" style="display:none" onchange="handleFileSelect(this)"/>
+      <div id="fileChipWrap"></div>
+    </div>
+    <div id="panel-url" class="upload-panel">
+      <div class="fgrp" style="margin-bottom:10px;"><label>Video URL</label><input type="text" id="vidUrlInput" placeholder="https://..."/></div>
+    </div>
+    <div class="fgrp" style="margin-top:6px;"><label>Title</label><input type="text" id="vidTitleInput" placeholder="e.g. Lecture 7 – Graph Traversal"/></div>
+    <div class="flex gap2 mt3">
+      <button class="btn bo bfull" onclick="closeUploadModal()">Cancel</button>
+      <button class="btn bp bfull" onclick="submitUpload()">Upload</button>
+    </div>
+  </div>
 </div>
   
 <!-- ═══════════════════════ PAGE: DASHBOARD ═══════════════════════ -->
@@ -1052,6 +1174,42 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <div id="ct-more" class="tpanel" style="padding:28px 32px;"><h2 class="fb_ mb4">More Options</h2><p class="tsm tm">Additional course tools and resources.</p></div>
 </div>
 
+  <!-- ═══════════════════════ PAGE: LECTURER COURSES ═══════════════════════ -->
+<div id="page-lecturer-courses" class="page">
+<div class="pw">
+<aside class="sb">
+  <div class="sbl">Teaching</div>
+  <button class="si active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>My Courses</button>
+  <button class="si" onclick="toast('Opening grading...')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/></svg>Grading</button>
+  <button class="si" onclick="go('forums')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Forums</button>
+  <div class="sb-bot"><div class="sb-promo"><div class="pt">Lecturer Account</div><div class="pb">Upload lectures and manage your course content.</div></div></div>
+</aside>
+<main class="main" style="padding:28px 32px;">
+  <div class="flex ic jb mb4">
+    <div><h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">My Courses</h1><p class="tsm tm">Manage lectures, materials, and recordings.</p></div>
+    <button class="btn bp" onclick="openUploadModal()">⬆ Upload Lecture Video</button>
+  </div>
+  <div class="card mb4">
+    <div class="cb">
+      <div class="flex ic jb mb3"><div class="fb_" style="font-size:1rem;">SCJ1013 – Advanced Algorithms &amp; Data Structures</div><span class="tag tgp">142 students</span></div>
+      <div id="lecVideoList">
+        <div class="video-row"><div class="vthumb">🎬</div><div class="vinfo"><div class="vt">Lecture 6 – Dynamic Programming</div><div class="vm">Uploaded 3 days ago · 45:12</div></div><button class="btn bo bsm" onclick="toast('Opening video...')">View</button></div>
+        <div class="video-row"><div class="vthumb">🎬</div><div class="vinfo"><div class="vt">Tutorial – Bellman-Ford Algorithm</div><div class="vm">Uploaded 6 days ago · 22:08</div></div><button class="btn bo bsm" onclick="toast('Opening video...')">View</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="cb">
+      <div class="fb_ mb3" style="font-size:1rem;">SECR1033 – Computer Organization</div>
+      <div id="lecVideoList2">
+        <div class="video-row"><div class="vthumb">🎬</div><div class="vinfo"><div class="vt">CPU Pipelining Explained</div><div class="vm">Uploaded 1 week ago · 38:40</div></div><button class="btn bo bsm" onclick="toast('Opening video...')">View</button></div>
+      </div>
+    </div>
+  </div>
+</main>
+</div>
+</div>
+  
 <!-- ═══════════════════════ PAGE: COLLABORATION ═══════════════════════ -->
 <div id="page-collaboration" class="page">
 <div class="pw" style="flex:1;">
@@ -1140,6 +1298,62 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 </div>
 </div>
 
+  <!-- ═══════════════════════ PAGE: ADMIN ═══════════════════════ -->
+<div id="page-admin" class="page">
+<div class="pw">
+<div class="admlayout" style="flex:1;">
+  <aside class="admsb">
+    <div style="padding:0 16px 16px;border-bottom:1px solid var(--bdr);margin-bottom:8px;"><div class="fb_">Admin Panel</div><div class="txs tm">System Management</div></div>
+    <button class="si active" onclick="setAdmTab('adm-overview')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/></svg>Overview</button>
+    <button class="si" onclick="setAdmTab('adm-users')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Manage Users</button>
+    <button class="si" onclick="setAdmTab('adm-courses')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/></svg>Manage Courses</button>
+    <button class="si" onclick="setAdmTab('adm-mod')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Forum Moderation</button>
+  </aside>
+  <main class="admmain">
+    <div id="adm-overview" class="adm-panel active">
+      <h1 style="font-family:var(--fn);font-size:1.5rem;font-weight:700;margin-bottom:16px;">System Overview</h1>
+      <div class="adm-stat-row">
+        <div class="adm-stat"><div class="av">1,284</div><div class="al">Total Students</div></div>
+        <div class="adm-stat"><div class="av">42</div><div class="al">Lecturers</div></div>
+        <div class="adm-stat"><div class="av">38</div><div class="al">Active Courses</div></div>
+        <div class="adm-stat"><div class="av" id="admReportCount">3</div><div class="al">Pending Reports</div></div>
+      </div>
+      <div class="card p4"><div class="fb_ mb2">Recent Activity</div><p class="tsm tm" style="line-height:1.6;">12 new student registrations this week. 4 lecture videos uploaded. 1 new course pending approval.</p></div>
+    </div>
+
+    <div id="adm-users" class="adm-panel">
+      <div class="flex ic jb mb3"><h1 style="font-family:var(--fn);font-size:1.4rem;font-weight:700;">Manage Users</h1><button class="btn bp bsm" onclick="toast('Add user dialog opened!')">+ Add User</button></div>
+      <div class="adm-tabs"><button class="adm-tab active" onclick="filterUsers(this,'all')">All</button><button class="adm-tab" onclick="filterUsers(this,'student')">Students</button><button class="adm-tab" onclick="filterUsers(this,'lecturer')">Lecturers</button></div>
+      <div id="userList">
+        <div class="user-row" data-type="student"><div class="uav" style="width:34px;height:34px;">JS</div><div class="uinfo"><div class="un2">Dr. Julian Smith</div><div class="ue">julian.smith@academia.edu · Student</div></div><button class="btn bo bsm" onclick="toast('Editing user...')">Edit</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('User removed')">Remove</button></div>
+        <div class="user-row" data-type="lecturer"><div class="uav" style="width:34px;height:34px;background:#1a5276;">AW</div><div class="uinfo"><div class="un2">Prof. Amara Whitfield</div><div class="ue">amara.whitfield@academia.edu · Lecturer</div></div><button class="btn bo bsm" onclick="toast('Editing user...')">Edit</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('User removed')">Remove</button></div>
+        <div class="user-row" data-type="student"><div class="uav" style="width:34px;height:34px;background:#1a5276;">AM</div><div class="uinfo"><div class="un2">Alice Malik</div><div class="ue">alice.malik@academia.edu · Student</div></div><button class="btn bo bsm" onclick="toast('Editing user...')">Edit</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('User removed')">Remove</button></div>
+        <div class="user-row" data-type="lecturer"><div class="uav" style="width:34px;height:34px;background:#1a7a42;">MR</div><div class="uinfo"><div class="un2">Dr. Marcus Reyes</div><div class="ue">marcus.reyes@academia.edu · Lecturer</div></div><button class="btn bo bsm" onclick="toast('Editing user...')">Edit</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('User removed')">Remove</button></div>
+      </div>
+    </div>
+
+    <div id="adm-courses" class="adm-panel">
+      <div class="flex ic jb mb3"><h1 style="font-family:var(--fn);font-size:1.4rem;font-weight:700;">Manage Courses</h1><button class="btn bp bsm" onclick="toast('New course dialog opened!')">+ New Course</button></div>
+      <div class="card"><table class="dt"><thead><tr><th>Course</th><th>Lecturer</th><th>Students</th><th>Status</th><th>Action</th></tr></thead><tbody>
+        <tr><td class="fs_">SCJ1013 – Advanced Algorithms</td><td>Prof. Amara Whitfield</td><td>142</td><td><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;">Active</span></td><td><button class="btn bo bsm" onclick="toast('Editing course...')">Edit</button></td></tr>
+        <tr><td class="fs_">SECR1033 – Computer Org.</td><td>Dr. Marcus Reyes</td><td>98</td><td><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;">Active</span></td><td><button class="btn bo bsm" onclick="toast('Editing course...')">Edit</button></td></tr>
+        <tr><td class="fs_">CSC101 – Intro to CS</td><td>Prof. Amara Whitfield</td><td>210</td><td><span class="tag" style="background:#fff3cd;color:#7d5a00;border-color:#f0d070;">Pending Approval</span></td><td><button class="btn bp bsm" onclick="toast('Course approved!')">Approve</button></td></tr>
+      </tbody></table></div>
+    </div>
+
+    <div id="adm-mod" class="adm-panel">
+      <h1 style="font-family:var(--fn);font-size:1.4rem;font-weight:700;margin-bottom:16px;">Forum Moderation</h1>
+      <div id="modList">
+        <div class="mod-row"><div style="flex:1;"><div class="mtitle">Impact of LLMs on Peer-Reviewed Literature Cycles</div><div class="mreason">Reported for: off-topic self-promotion</div></div><button class="btn bo bsm" onclick="toast('Report dismissed')">Dismiss</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('Thread removed')">Remove Thread</button></div>
+        <div class="mod-row"><div style="flex:1;"><div class="mtitle">Cross-Disciplinary Study: Ethics of CRISPR in Agriculture</div><div class="mreason">Reported for: suspected spam links</div></div><button class="btn bo bsm" onclick="toast('Report dismissed')">Dismiss</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('Thread removed')">Remove Thread</button></div>
+        <div class="mod-row"><div style="flex:1;"><div class="mtitle">Best practices for Digital Archiving of Rare Manuscripts?</div><div class="mreason">Reported for: harassment in comments</div></div><button class="btn bo bsm" onclick="toast('Report dismissed')">Dismiss</button><button class="btn bo bsm" style="color:#c0392b;border-color:#c0392b;" onclick="toast('Thread removed')">Remove Thread</button></div>
+      </div>
+    </div>
+  </main>
+</div>
+</div>
+</div>
+  
 <!-- ═══════════════════════ PAGE: STUDY GUIDE AI ═══════════════════════ -->
 <div id="page-studyguide" class="page">
 <div class="pw" style="flex:1;overflow:hidden;">
@@ -1290,7 +1504,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <main class="main" style="padding:0;">
 <div class="pflayout">
   <div style="display:flex;flex-direction:column;gap:16px;">
-    <div class="pfcard"><div class="pfav">JS</div><h2 class="fb_" style="font-size:1.1rem;">Dr. Julian Smith</h2><p class="tsm tm mt1">Computer Science · Year 3</p><p class="txs tm mt1">julian.smith@academia.edu</p><p class="txs tm">Faculty of Science</p><button class="btn bo bfull mt3" onclick="toast('Edit profile opened!')">Edit Profile</button><hr class="dv" style="margin:16px 0;"/><div class="flex jb" style="gap:8px;"><div class="pfstat"><div class="val">3.52</div><div class="lbl">GPA</div></div><div class="pfstat"><div class="val">94%</div><div class="lbl">Attendance</div></div><div class="pfstat"><div class="val">4</div><div class="lbl">Courses</div></div></div></div>
+    <div class="pfcard"><div class="pfav">JS</div><h2 class="fb_" style="font-size:1.1rem;"> Julian Smith</h2><p class="tsm tm mt1">Computer Science · Year 3</p><p class="txs tm mt1">julian.smith@academia.edu</p><p class="txs tm">Faculty of Science</p><button class="btn bo bfull mt3" onclick="toast('Edit profile opened!')">Edit Profile</button><hr class="dv" style="margin:16px 0;"/><div class="flex jb" style="gap:8px;"><div class="pfstat"><div class="val">3.52</div><div class="lbl">GPA</div></div><div class="pfstat"><div class="val">94%</div><div class="lbl">Attendance</div></div><div class="pfstat"><div class="val">4</div><div class="lbl">Courses</div></div></div></div>
     <div class="card p4"><div class="fb_ tsm mb3">My Courses</div><div onclick="go('course-detail')" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bdr);cursor:pointer;" class="tsm fs_">SCJ1013 – Advanced Algorithms<span class="tpr">›</span></div><div onclick="go('course-detail')" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bdr);cursor:pointer;" class="tsm fs_">SECR1033 – Computer Org.<span class="tpr">›</span></div><div onclick="go('course-detail')" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bdr);cursor:pointer;" class="tsm fs_">CSC101 – Intro to CS<span class="tpr">›</span></div><div onclick="go('course-detail')" style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;cursor:pointer;" class="tsm fs_">MTH201 – Calculus II<span class="tpr">›</span></div></div>
     <div class="card p4"><div class="fb_ tsm mb3">Quick Links</div><button class="btn bo bfull mb2" style="justify-content:flex-start;gap:10px;" onclick="go('pomodoro')">⏱ Pomodoro Timer</button><button class="btn bo bfull mb2" style="justify-content:flex-start;gap:10px;" onclick="go('studyguide')">🤖 AI Study Tools</button><button class="btn bo bfull" style="justify-content:flex-start;gap:10px;" onclick="go('collaboration')">👥 Student Collaboration</button></div>
   </div>
@@ -1437,6 +1651,105 @@ function upvoteThread(e, el) {
   el.style.color = 'var(--p)';
   el.style.fontWeight = '700';
   if (upvoteCount >= 3) completeMission('m2', 10);
+}
+
+  // ── Login / Roles ──
+const pages2 = ['lecturer-courses','admin'];
+pages.push(...pages2);
+navMap['lecturer-courses'] = 'nav-mycourses';
+navMap['admin'] = 'nav-admin';
+
+const accounts = {
+  student:  { name:'Dr. Julian Smith', initials:'JS', badge:'rb-student', label:'Student' },
+  lecturer: { name:'Prof. Amara Whitfield', initials:'AW', badge:'rb-lecturer', label:'Lecturer' },
+  admin:    { name:'System Administrator', initials:'SA', badge:'rb-admin', label:'Admin' },
+};
+let currentRole = 'student';
+
+function selectRole(el, role) {
+  document.querySelectorAll('.role-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  currentRole = role;
+}
+
+function doLogin() {
+  const acc = accounts[currentRole];
+  document.getElementById('topUav').textContent = acc.initials;
+  document.getElementById('topUserName').textContent = acc.name;
+  const badge = document.getElementById('topRoleBadge');
+  badge.className = 'role-badge ' + acc.badge;
+  badge.textContent = acc.label;
+
+  document.getElementById('nav-mycourses').classList.toggle('nav-hidden', currentRole !== 'lecturer');
+  document.getElementById('nav-admin').classList.toggle('nav-hidden', currentRole !== 'admin');
+
+  document.getElementById('loginScreen').classList.add('hide');
+  go(currentRole === 'lecturer' ? 'lecturer-courses' : currentRole === 'admin' ? 'admin' : 'dashboard');
+  toast('Signed in as ' + acc.label);
+}
+
+function switchAccount() {
+  document.getElementById('loginScreen').classList.remove('hide');
+}
+
+// ── Upload Video Modal ──
+let selectedFileName = '';
+function openUploadModal() {
+  document.getElementById('uploadModal').classList.add('show');
+  document.getElementById('vidTitleInput').value = '';
+  document.getElementById('vidUrlInput').value = '';
+  document.getElementById('fileChipWrap').innerHTML = '';
+  selectedFileName = '';
+}
+function closeUploadModal() {
+  document.getElementById('uploadModal').classList.remove('show');
+}
+function setUploadTab(btn, panelId) {
+  document.querySelectorAll('.upload-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.upload-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+function handleFileSelect(input) {
+  if (!input.files.length) return;
+  selectedFileName = input.files[0].name;
+  document.getElementById('fileChipWrap').innerHTML =
+    `<div class="file-chip">🎬 <span>${selectedFileName}</span></div>`;
+  if (!document.getElementById('vidTitleInput').value) {
+    document.getElementById('vidTitleInput').value = selectedFileName.replace(/\.[^/.]+$/, '');
+  }
+}
+function submitUpload() {
+  const title = document.getElementById('vidTitleInput').value.trim();
+  const isUrlTab = document.getElementById('panel-url').classList.contains('active');
+  const url = document.getElementById('vidUrlInput').value.trim();
+  if (!title) { alert('Please enter a title.'); return; }
+  if (isUrlTab && !url) { alert('Please paste a video URL.'); return; }
+  if (!isUrlTab && !selectedFileName) { alert('Please select a video file.'); return; }
+
+  const list = document.getElementById('lecVideoList');
+  const row = document.createElement('div');
+  row.className = 'video-row';
+  row.innerHTML = `<div class="vthumb">🎬</div><div class="vinfo"><div class="vt">${title}</div><div class="vm">Uploaded just now · ${isUrlTab ? 'External link' : selectedFileName}</div></div><button class="btn bo bsm" onclick="toast('Opening video...')">View</button>`;
+  list.insertBefore(row, list.firstChild);
+
+  closeUploadModal();
+  toast('Lecture video uploaded!');
+}
+
+// ── Admin Panel ──
+function setAdmTab(panelId) {
+  document.querySelectorAll('.admsb .si').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  document.querySelectorAll('.adm-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(panelId).classList.add('active');
+}
+function filterUsers(btn, type) {
+  document.querySelectorAll('.adm-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#userList .user-row').forEach(row => {
+    row.style.display = (type === 'all' || row.dataset.type === type) ? 'flex' : 'none';
+  });
 }
 
 // ── Collaboration filters ──
