@@ -1515,7 +1515,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
     <div class="fgrp"><label id="pfYearLabel">Year of Study</label><input type="text" id="pfYearInput" value="Year 3"/></div>
   </div>
   <button class="btn bp mt2" onclick="toast('Profile saved!')">Save Changes</button>
-</div>
+   </div>
   <div style="display:flex;flex-direction:column;gap:16px;">
     <div class="card p5"><div class="fb_ mb4" style="font-size:1rem;">Account Information</div><div class="g2"><div class="fgrp"><label>First Name</label><input type="text" value="Julian"/></div><div class="fgrp"><label>Last Name</label><input type="text" value="Smith"/></div><div class="fgrp"><label>Email</label><input type="email" value="julian.smith@academia.edu"/></div><div class="fgrp"><label>Student ID</label><input type="text" value="2021-CS-0042"/></div><div class="fgrp"><label>Faculty</label><input type="text" value="Faculty of Science"/></div><div class="fgrp"><label>Year of Study</label><input type="text" value="Year 3"/></div></div><button class="btn bp mt2" onclick="toast('Profile saved!')">Save Changes</button></div>
     <div class="card p5"><div class="fb_ mb3" style="font-size:1rem;">Notification Preferences</div><div class="setrow"><div><div class="fs_ tsm">Assignment Reminders</div><div class="txs tm">Get notified before deadlines</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Forum Replies</div><div class="txs tm">When someone replies to your posts</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Grade Updates</div><div class="txs tm">When new grades are posted</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Sound Notifications</div><div class="txs tm">Timer completion sounds</div></div><button class="tgl off" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div></div>
@@ -1668,24 +1668,24 @@ navMap['lecturer-courses'] = 'nav-mycourses';
 navMap['admin'] = 'nav-admin';
 
 const accounts = {
-  student: {
-    name:'Dr. Julian Smith', initials:'JS', badge:'rb-student', label:'Student',
-    email:'julian.smith@academia.edu', sub:'Computer Science · Year 3', faculty:'Faculty of Science',
-    studentId:'2021-CS-0042', year:'Year 3',
-    stats:[{val:'3.52',lbl:'GPA'},{val:'94%',lbl:'Attendance'},{val:'4',lbl:'Courses'}]
-  },
-  lecturer: {
-    name:'Prof. Amara Whitfield', initials:'AW', badge:'rb-lecturer', label:'Lecturer',
-    email:'amara.whitfield@academia.edu', sub:'Computer Science Dept.', faculty:'Faculty of Science',
-    staffId:'STF-1142', year:'Senior Lecturer · 8 yrs',
-    stats:[{val:'2',lbl:'Courses'},{val:'240',lbl:'Students'},{val:'4.7',lbl:'Rating'}]
-  },
-  admin: {
-    name:'System Administrator', initials:'SA', badge:'rb-admin', label:'Admin',
-    email:'admin@academia.edu', sub:'IT &amp; Systems Office', faculty:'University Administration',
-    staffId:'ADM-0001', year:'Full Access',
-    stats:[{val:'1,326',lbl:'Total Users'},{val:'38',lbl:'Courses'},{val:'3',lbl:'Reports'}]
-  },
+    student: {
+      name:'Dr. Julian Smith', initials:'JS', badge:'rb-student', label:'Student',
+      email:'julian.smith@academia.edu', sub:'Computer Science · Year 3', faculty:'Faculty of Science',
+      studentId:'2021-CS-0042', year:'Year 3',
+      stats:[{val:'3.52',lbl:'GPA'},{val:'94%',lbl:'Attendance'},{val:'4',lbl:'Courses'}]
+    },
+    lecturer: {
+      name:'Prof. Amara Whitfield', initials:'AW', badge:'rb-lecturer', label:'Lecturer',
+      email:'amara.whitfield@academia.edu', sub:'Computer Science Dept.', faculty:'Faculty of Science',
+      staffId:'STF-1142', year:'Senior Lecturer · 8 yrs',
+      stats:[{val:'2',lbl:'Courses'},{val:'240',lbl:'Students'},{val:'4.7',lbl:'Rating'}]
+    },
+    admin: {
+      name:'System Administrator', initials:'SA', badge:'rb-admin', label:'Admin',
+      email:'admin@academia.edu', sub:'IT &amp; Systems Office', faculty:'University Administration',
+      staffId:'ADM-0001', year:'Full Access',
+      stats:[{val:'1,326',lbl:'Total Users'},{val:'38',lbl:'Courses'},{val:'3',lbl:'Reports'}]
+    },
 };
 
   function renderProfile() {
