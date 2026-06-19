@@ -1901,19 +1901,19 @@ function rejectVideo(index) {
 }
 
 // ── Admin Panel ──
-function setAdmTab(panelId) {
-  document.querySelectorAll('.admsb .si').forEach(b => b.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-  document.querySelectorAll('.adm-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById(panelId).classList.add('active');
-}
-function filterUsers(btn, type) {
-  document.querySelectorAll('.adm-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('#userList .user-row').forEach(row => {
-    row.style.display = (type === 'all' || row.dataset.type === type) ? 'flex' : 'none';
-  });
-}
+//function setAdmTab(panelId) {
+ // document.querySelectorAll('.admsb .si').forEach(b => b.classList.remove('active'));
+//  event.currentTarget.classList.add('active');
+//  document.querySelectorAll('.adm-panel').forEach(p => p.classList.remove('active'));
+//  document.getElementById(panelId).classList.add('active');
+//} 
+//function filterUsers(btn, type) {
+ // document.querySelectorAll('.adm-tab').forEach(t => t.classList.remove('active'));
+ // btn.classList.add('active');
+ // document.querySelectorAll('#userList .user-row').forEach(row => {
+ //   row.style.display = (type === 'all' || row.dataset.type === type) ? 'flex' : 'none';
+ // });
+//}
 
 // ── Collaboration filters ──
 document.querySelectorAll('.fbtn').forEach(b => b.addEventListener('click', () => {
