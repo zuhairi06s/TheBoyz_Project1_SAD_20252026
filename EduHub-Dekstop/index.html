@@ -156,7 +156,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 .pending-row .vinfo .vm{font-size:.72rem;color:var(--mut)}
 .pending-tag{font-size:.65rem;font-weight:700;color:#7d5a00;background:#fff3cd;border:1px solid #f0d070;border-radius:999px;padding:2px 8px;text-transform:uppercase}
 
-/* ── Admin Panel ── */
+/* ── Admin Panel ── 
 .admlayout{display:grid;grid-template-columns:200px 1fr;flex:1}
 .admsb{background:var(--sur);border-right:1px solid var(--bdr);padding:16px 0;display:flex;flex-direction:column}
 .admmain{padding:28px 32px;overflow-y:auto}
@@ -175,7 +175,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 .user-row .ue{font-size:.74rem;color:var(--mut)}
 .mod-row{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:8px;background:var(--sur)}
 .mod-row .mtitle{font-weight:600;font-size:.84rem;margin-bottom:3px}
-.mod-row .mreason{font-size:.78rem;color:var(--mut)}
+.mod-row .mreason{font-size:.78rem;color:var(--mut)} */
 
 /* ── Page sections ── */
 .page{display:none} .page.active{display:flex;flex-direction:column;flex:1}
@@ -665,11 +665,11 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
         <div class="role-ic" style="background:#fff3cd;">🎓</div>
         <div class="role-info"><div class="rn">Lecturer — Prof. Amara Whitfield</div><div class="re">Manage courses, upload lectures</div></div>
       </div>
-      <div class="role-card" data-role="admin" onclick="selectRole(this,'admin')">
+    <!--  <div class="role-card" data-role="admin" onclick="selectRole(this,'admin')">
         <div class="role-ic" style="background:var(--plt);">🛠</div>
         <div class="role-info"><div class="rn">Admin — System Administrator</div><div class="re">Manage users, courses &amp; moderation</div></div>
-      </div>
-    </div>
+      </div> -->
+    </div> 
     <button class="btn bp bfull" onclick="doLogin()">Sign In</button>
     <div class="login-foot">Demo login — no password required.<br/>Switch accounts anytime from your profile.</div>
   </div>
@@ -1323,7 +1323,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 </div>
 </div>
 
-  <!-- ═══════════════════════ PAGE: ADMIN ═══════════════════════ -->
+  <!-- ═══════════════════════ PAGE: ADMIN ═══════════════════════ 
 <div id="page-admin" class="page">
 <div class="pw">
 <div class="admlayout" style="flex:1;">
@@ -1377,7 +1377,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
   </main>
 </div>
 </div>
-</div>
+</div> -->
   
 <!-- ═══════════════════════ PAGE: STUDY GUIDE AI ═══════════════════════ -->
 <div id="page-studyguide" class="page">
@@ -1901,19 +1901,19 @@ function rejectVideo(index) {
 }
 
 // ── Admin Panel ──
-function setAdmTab(panelId) {
-  document.querySelectorAll('.admsb .si').forEach(b => b.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-  document.querySelectorAll('.adm-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById(panelId).classList.add('active');
-}
-function filterUsers(btn, type) {
-  document.querySelectorAll('.adm-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('#userList .user-row').forEach(row => {
-    row.style.display = (type === 'all' || row.dataset.type === type) ? 'flex' : 'none';
-  });
-}
+//function setAdmTab(panelId) {
+ // document.querySelectorAll('.admsb .si').forEach(b => b.classList.remove('active'));
+//  event.currentTarget.classList.add('active');
+//  document.querySelectorAll('.adm-panel').forEach(p => p.classList.remove('active'));
+//  document.getElementById(panelId).classList.add('active');
+//} 
+//function filterUsers(btn, type) {
+ // document.querySelectorAll('.adm-tab').forEach(t => t.classList.remove('active'));
+ // btn.classList.add('active');
+ // document.querySelectorAll('#userList .user-row').forEach(row => {
+ //   row.style.display = (type === 'all' || row.dataset.type === type) ? 'flex' : 'none';
+ // });
+//}
 
 // ── Collaboration filters ──
 document.querySelectorAll('.fbtn').forEach(b => b.addEventListener('click', () => {
