@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Academia – Learning Platform</title>
+<title>EduHub – Learning Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
 <style>
@@ -177,6 +177,18 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 .mod-row .mtitle{font-weight:600;font-size:.84rem;margin-bottom:3px}
 .mod-row .mreason{font-size:.78rem;color:var(--mut)} */
 
+  /* ── Inline Validation ── */
+.fgrp{position:relative}
+.fgrp input,.fgrp textarea,.fgrp select,.ti_{transition:border-color .15s,box-shadow .15s}
+.fgrp.v-error input,.fgrp.v-error textarea,.fgrp.v-error select{border-color:#dc2626 !important;box-shadow:0 0 0 3px rgba(220,38,38,.08)}
+.fgrp.v-ok input,.fgrp.v-ok textarea,.fgrp.v-ok select{border-color:#2e7d52 !important;box-shadow:0 0 0 3px rgba(46,125,82,.08)}
+.v-err-msg{font-size:.72rem;color:#dc2626;margin-top:3px;display:none;font-weight:500}
+.fgrp.v-error .v-err-msg{display:block}
+.v-ok-icon{position:absolute;right:12px;top:36px;color:#2e7d52;font-size:.85rem;font-weight:700;display:none;pointer-events:none}
+.fgrp.v-ok .v-ok-icon{display:block}
+.ti_.v-error-bare{border-color:#dc2626 !important;box-shadow:0 0 0 3px rgba(220,38,38,.08)}
+.ti_.v-ok-bare{border-color:#2e7d52 !important;box-shadow:0 0 0 3px rgba(46,125,82,.08)}
+.v-field-err{font-size:.72rem;color:#dc2626;margin-top:3px;font-weight:500;display:block}
 /* ── Page sections ── */
 .page{display:none} .page.active{display:flex;flex-direction:column;flex:1}
 
@@ -654,7 +666,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <div class="login-screen" id="loginScreen">
   <div class="login-card">
     <div class="login-logo"><div class="bi">🎓</div></div>
-    <div class="login-title">Academia</div>
+    <div class="login-title">EduHub</div>
     <div class="login-sub">Select a demo account to sign in</div>
     <div class="role-pick">
       <div class="role-card selected" data-role="student" onclick="selectRole(this,'student')">
@@ -677,7 +689,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 
 <!-- ═══════════════════════════════════════════ TOP BAR ═══ -->
 <header class="tb">
-  <div class="tb-brand" onclick="go('dashboard')"><div class="bi">🎓</div>Academia</div>
+  <div class="tb-brand" onclick="go('dashboard')"><div class="bi">🎓</div>EduHub</div>
   <nav class="tb-nav">
       <a id="nav-dashboard" onclick="go('dashboard')">Dashboard</a>
       <a id="nav-courses"   onclick="go('courses')">Courses</a>
@@ -734,7 +746,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 </div>
 
   <!-- Upload Video Modal -->
-<<div id="uploadModal" class="modal">
+<div id="uploadModal" class="modal">
   <div class="modal-card" style="width:460px;">
     <div class="modal-header"><h3 style="color:var(--p);" id="uploadModalTitle">⬆ Upload Lecture Video</h3><button class="close-btn" onclick="closeUploadModal()">✕</button></div>
     <div class="upload-tabs">
@@ -783,7 +795,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <main class="main" style="padding:28px 32px;">
   <div class="flex ic jb mb4">
     <div><h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">Performance Analytics</h1><p class="tsm tm">Real-time tracking of your academic trajectory.</p></div>
-    <div class="flex gap2"><button class="btn bo" onclick="toast('Report exported!')">⬇ Export Report</button><button class="btn bp" onclick="toast('Data updated!')">↻ Update Data</button></div>
+    <div class="flex gap2"><button class="btn bo" onclick="exportReport()">⬇ Export Report</button><button class="btn bp" onclick="toast('Data updated!')">↻ Update Data</button></div>
   </div>
   <!-- Goal Setter -->
   <div class="card mb4">
@@ -1557,7 +1569,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
         <div class="fgrp"><label>Faculty</label><input type="text" id="pfFacultyInput" value="Faculty of Science"/></div>
         <div class="fgrp"><label id="pfYearLabel">Year of Study</label><input type="text" id="pfYearInput" value="Year 3"/></div>
       </div>
-      <button class="btn bp mt2" onclick="toast('Profile saved!')">Save Changes</button>
+      <button class="btn bp mt2" onclick="saveProfile()">Save Changes</button>
     </div>
     <div class="card p5"><div class="fb_ mb3" style="font-size:1rem;">Notification Preferences</div><div class="setrow"><div><div class="fs_ tsm">Assignment Reminders</div><div class="txs tm">Get notified before deadlines</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Forum Replies</div><div class="txs tm">When someone replies to your posts</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Grade Updates</div><div class="txs tm">When new grades are posted</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Sound Notifications</div><div class="txs tm">Timer completion sounds</div></div><button class="tgl off" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div></div>
     <div class="card p5"><div class="fb_ mb3" style="font-size:1rem;">Recent Activity</div><div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--bdr);"><div style="width:32px;height:32px;border-radius:50%;background:var(--plt);color:var(--p);display:flex;align-items:center;justify-content:center;font-size:.9rem;">📋</div><div style="flex:1;"><div class="fs_ tsm">Submitted Assignment 2</div><div class="txs tm">SCJ1013 · 2 hours ago</div></div><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;font-size:.68rem;">Submitted</span></div><div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--bdr);"><div style="width:32px;height:32px;border-radius:50%;background:var(--plt);color:var(--p);display:flex;align-items:center;justify-content:center;font-size:.9rem;">💬</div><div style="flex:1;"><div class="fs_ tsm">Posted in Forums</div><div class="txs tm">Impact of LLMs · 5 hours ago</div></div><span class="tag tgp" style="font-size:.68rem;">Forum</span></div><div style="display:flex;align-items:center;gap:12px;padding:10px 0;"><div style="width:32px;height:32px;border-radius:50%;background:var(--plt);color:var(--p);display:flex;align-items:center;justify-content:center;font-size:.9rem;">⏱</div><div style="flex:1;"><div class="fs_ tsm">Completed 3 Pomodoro Sessions</div><div class="txs tm">Today · 75 min total</div></div><span class="tag" style="background:#e8f0ff;color:#3b4dc8;border-color:#b0bef0;font-size:.68rem;">Study</span></div></div>
@@ -1605,12 +1617,69 @@ function closeReportModal(){
         .classList.remove('show');
 }
 
-function submitReport(){
-  const reason = document.getElementById('reportReason').value.trim();
-  if(!reason){ alert('Please enter a reason.'); return; }
-  closeReportModal();
-  toast(`Report submitted for "${reportTitle}". Moderators will review it.`);
-  completeMission('m3', 5);   // ← add this line
+function submitUpload() {
+  const titleInput = document.getElementById('vidTitleInput');
+  const urlInput   = document.getElementById('vidUrlInput');
+  const isUrlTab   = document.getElementById('panel-url').classList.contains('active');
+  const course     = document.getElementById('vidCourseSelect').value;
+  const titleGrp   = titleInput.closest('.fgrp');
+  const urlGrp     = urlInput.closest('.fgrp');
+  let ok = true;
+
+  if (!titleInput.value.trim()) {
+    vError(titleGrp, 'Please enter a video title'); ok = false;
+  } else vOk(titleGrp);
+
+  if (isUrlTab) {
+    if (!urlInput.value.trim()) {
+      vError(urlGrp, 'Please paste a video URL'); ok = false;
+    } else if (!urlInput.value.startsWith('http')) {
+      vError(urlGrp, 'URL must start with http:// or https://'); ok = false;
+    } else vOk(urlGrp);
+  }
+
+  if (!isUrlTab && !selectedFileName) {
+    const dz = document.querySelector('.drop-zone');
+    dz.style.borderColor = '#dc2626';
+    dz.style.background = '#fff5f5';
+    let errEl = dz.nextElementSibling?.classList?.contains('v-field-err')
+      ? dz.nextElementSibling : null;
+    if (!errEl) {
+      errEl = document.createElement('span');
+      errEl.className = 'v-field-err';
+      dz.parentNode.insertBefore(errEl, dz.nextSibling);
+    }
+    errEl.textContent = 'Please select a video file';
+    ok = false;
+  } else {
+    const dz = document.querySelector('.drop-zone');
+    dz.style.borderColor = '';
+    dz.style.background = '';
+    const next = dz.nextElementSibling;
+    if (next && next.classList.contains('v-field-err')) next.remove();
+  }
+
+  if (!ok) return;
+
+  if (currentRole === 'student') {
+    pendingVideos.push({
+      title: titleInput.value.trim(), course,
+      source: isUrlTab ? urlInput.value.trim() : selectedFileName,
+      submittedBy: accounts.student.name
+    });
+    renderPendingApprovals();
+    closeUploadModal();
+    toast('Video submitted! Waiting for lecturer approval.');
+    return;
+  }
+
+  const list = document.getElementById('lecVideoList');
+  const row = document.createElement('div');
+  row.className = 'video-row';
+  row.innerHTML = `<div class="vthumb">🎬</div><div class="vinfo"><div class="vt">${titleInput.value.trim()}</div><div class="vm">Uploaded just now · ${isUrlTab ? urlInput.value.trim() : selectedFileName}</div></div><button class="btn bo bsm" onclick="toast('Opening video...')">View</button>`;
+  list.insertBefore(row, list.firstChild);
+  closeUploadModal();
+  toast('Lecture video uploaded!');
 }
 
 // ── Toast ──
@@ -1639,14 +1708,32 @@ document.querySelectorAll('.cb_').forEach(b => b.addEventListener('click', () =>
   document.querySelectorAll('.cb_').forEach(x => x.classList.remove('active')); b.classList.add('active');
 }));
 function postThread() {
+  const titleInput = document.querySelector('#threadModal .ti_[type="text"]');
+  const bodyInput  = document.querySelector('#threadModal textarea.ti_');
+
+  let ok = true;
+  if (!titleInput.value.trim()) {
+    vBareError(titleInput, 'Thread title is required');
+    ok = false;
+  } else vBareOk(titleInput);
+  if (!bodyInput.value.trim()) {
+    vBareError(bodyInput, 'Please describe your discussion');
+    ok = false;
+  } else vBareOk(bodyInput);
+  if (!ok) return;
+
+  vBareReset(titleInput);
+  vBareReset(bodyInput);
   document.getElementById('threadModal').classList.remove('show');
   const list = document.getElementById('threadList');
   const c = document.createElement('div');
   c.className = 'tcard';
-  c.innerHTML = `<div class="tmtop"><div class="tav">JS</div><div style="flex:1;"><div class="ttitle">New Discussion Thread</div><div class="tmline">Posted by <strong>Dr. Julian Smith</strong> • Just now</div></div><span class="tag tgp">Research</span></div><p class="texc">Your new thread has been posted successfully.</p><div class="tstat"><span>💬 0</span><span onclick="upvoteThread(event,this)" style="cursor:pointer;">👍 0</span><span>👁 1</span></div>`;
+  c.innerHTML = `<div class="tmtop"><div class="tav">JS</div><div style="flex:1;"><div class="ttitle">${titleInput.value}</div><div class="tmline">Posted by <strong>Julian Smith</strong> • Just now</div></div><span class="tag tgp">Research</span></div><p class="texc">${bodyInput.value}</p><div class="tstat"><span>💬 0</span><span onclick="upvoteThread(event,this)" style="cursor:pointer;">👍 0</span><span>👁 1</span></div>`;
   list.insertBefore(c, list.firstChild);
+  titleInput.value = '';
+  bodyInput.value = '';
   toast('Thread posted!');
-  completeMission('m1', 20);   // ← add this line
+  completeMission('m1', 20);
 }
 
   // ── Rewards / Points System ──
@@ -1900,6 +1987,103 @@ function rejectVideo(index) {
   toast('Video submission rejected', false);
 }
 
+  //Button function save profile
+  function saveProfile() {
+  const fields = [
+    { id:'pfFirstName', msg:'First name is required' },
+    { id:'pfLastName',  msg:'Last name is required' },
+    { id:'pfEmailInput', msg:'Email is required' },
+    { id:'pfIdInput',   msg:'ID is required' },
+  ];
+  let ok = true;
+  fields.forEach(f => {
+    const input = document.getElementById(f.id);
+    const grp = input.closest('.fgrp');
+    if (!input.value.trim()) { vError(grp, f.msg); ok = false; }
+    else vOk(grp);
+  });
+  const emailInput = document.getElementById('pfEmailInput');
+  const emailGrp = emailInput.closest('.fgrp');
+  if (emailInput.value.trim() && !emailInput.value.includes('@')) {
+    vError(emailGrp, 'Please enter a valid email address'); ok = false;
+  }
+  if (!ok) {
+    toast('Please fix the errors before saving', false);
+    return;
+  }
+  toast('Profile saved!');
+}
+
+  // ── Inline Validation System ──
+function vClear(el) {
+  el.classList.remove('v-error','v-ok');
+  const msg = el.querySelector('.v-err-msg');
+  if (msg) msg.style.display = 'none';
+}
+
+function vError(el, msg) {
+  el.classList.add('v-error');
+  el.classList.remove('v-ok');
+  let msgEl = el.querySelector('.v-err-msg');
+  if (!msgEl) {
+    msgEl = document.createElement('span');
+    msgEl.className = 'v-err-msg';
+    el.appendChild(msgEl);
+  }
+  msgEl.textContent = msg;
+  msgEl.style.display = 'block';
+}
+
+function vOk(el) {
+  el.classList.remove('v-error');
+  el.classList.add('v-ok');
+  const msg = el.querySelector('.v-err-msg');
+  if (msg) msg.style.display = 'none';
+}
+
+function vBareError(input, msg) {
+  input.classList.add('v-error-bare');
+  input.classList.remove('v-ok-bare');
+  let msgEl = input.nextElementSibling;
+  if (!msgEl || !msgEl.classList.contains('v-field-err')) {
+    msgEl = document.createElement('span');
+    msgEl.className = 'v-field-err';
+    input.parentNode.insertBefore(msgEl, input.nextSibling);
+  }
+  msgEl.textContent = msg;
+}
+
+function vBareOk(input) {
+  input.classList.remove('v-error-bare');
+  input.classList.add('v-ok-bare');
+  const next = input.nextElementSibling;
+  if (next && next.classList.contains('v-field-err')) next.remove();
+}
+
+function vBareReset(input) {
+  input.classList.remove('v-error-bare','v-ok-bare');
+  const next = input.nextElementSibling;
+  if (next && next.classList.contains('v-field-err')) next.remove();
+}
+
+// Live validation — attach to fgrp inputs on typing
+function attachLiveValidation() {
+  document.querySelectorAll('.fgrp input, .fgrp select, .fgrp textarea').forEach(input => {
+    input.addEventListener('input', () => {
+      const grp = input.closest('.fgrp');
+      if (!grp) return;
+      if (input.value.trim()) vOk(grp);
+      else vClear(grp);
+    });
+    input.addEventListener('blur', () => {
+      const grp = input.closest('.fgrp');
+      if (!grp || !input.required) return;
+      if (!input.value.trim()) vError(grp, 'This field is required');
+      else vOk(grp);
+    });
+  });
+}
+  
 // ── Admin Panel ──
 //function setAdmTab(panelId) {
  // document.querySelectorAll('.admsb .si').forEach(b => b.classList.remove('active'));
@@ -2035,6 +2219,7 @@ function updateDisp() {
   const s = String(tRemain%60).padStart(2,'0');
   document.getElementById('tDisp').textContent = m+':'+s;
   updateRing();
+  attachLiveValidation();
 }
 function toggleTimer() {
   if (tRunning) {
@@ -2055,6 +2240,135 @@ function setMode(btn,time,label){
   const[m,s]=time.split(':').map(Number);tTotal=tRemain=m*60+s;
   document.getElementById('tLbl').textContent=label;
   clearInterval(tInterval);tRunning=false;document.getElementById('startBtn').textContent='Start';updateDisp();
+}
+
+  // ── Export Report ──
+function exportReport() {
+  const acc = accounts[currentRole] || accounts.student;
+  const now = new Date().toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'});
+  const stats = acc.stats || [{val:'71.5%',lbl:'Current Avg'},{val:'12th',lbl:'Class Rank'},{val:'94%',lbl:'Attendance'},{val:'3.52',lbl:'GPA'}];
+
+  const roleSection = currentRole === 'lecturer'
+    ? `<p style="color:#6b6b6b;font-size:13px;margin-bottom:20px;">Lecturer Summary — Courses managed: 2 &nbsp;|&nbsp; Total students: 240 &nbsp;|&nbsp; Average rating: 4.7</p>`
+    : currentRole === 'admin'
+    ? `<p style="color:#6b6b6b;font-size:13px;margin-bottom:20px;">Admin Summary — Total users: 1,326 &nbsp;|&nbsp; Active courses: 38 &nbsp;|&nbsp; Pending reports: 3</p>`
+    : ``;
+
+  const assessmentTable = currentRole === 'student' ? `
+    <h3 style="color:#7B1C2E;border-bottom:1px solid #e5e2de;padding-bottom:8px;">Assessment Results — SCJ1013 Advanced Algorithms</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:28px;">
+      <thead><tr>
+        <th style="background:#f4f3f1;text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;color:#6b6b6b;">Assessment</th>
+        <th style="background:#f4f3f1;text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;color:#6b6b6b;">Score</th>
+        <th style="background:#f4f3f1;text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;color:#6b6b6b;">Grade</th>
+        <th style="background:#f4f3f1;text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;color:#6b6b6b;">Weight</th>
+        <th style="background:#f4f3f1;text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;color:#6b6b6b;">Status</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">Quiz 1: Fundamentals</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;color:#7B1C2E;font-weight:700;">8/10</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">A</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">5%</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;"><span style="background:#e8f5ee;color:#2e7d52;padding:2px 8px;border-radius:999px;font-size:11px;">Completed</span></td></tr>
+        <tr><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">Assignment 1: Logic Systems</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;color:#7B1C2E;font-weight:700;">18/20</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">A</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">15%</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;"><span style="background:#e8f5ee;color:#2e7d52;padding:2px 8px;border-radius:999px;font-size:11px;">Completed</span></td></tr>
+        <tr><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">Midterm Examination</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;color:#7B1C2E;font-weight:700;">65/100</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">C+</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">30%</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;"><span style="background:#e8f5ee;color:#2e7d52;padding:2px 8px;border-radius:999px;font-size:11px;">Completed</span></td></tr>
+        <tr><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">Final Project</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;color:#6b6b6b;">—</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">—</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">25%</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;"><span style="background:#fff3cd;color:#7d5a00;padding:2px 8px;border-radius:999px;font-size:11px;">Pending</span></td></tr>
+        <tr><td style="padding:10px 12px;">Final Exam</td><td style="padding:10px 12px;color:#6b6b6b;">—</td><td style="padding:10px 12px;">—</td><td style="padding:10px 12px;">35%</td><td style="padding:10px 12px;"><span style="background:#fff3cd;color:#7d5a00;padding:2px 8px;border-radius:999px;font-size:11px;">Pending</span></td></tr>
+      </tbody>
+    </table>
+    <h3 style="color:#7B1C2E;border-bottom:1px solid #e5e2de;padding-bottom:8px;">System Insights</h3>
+    <div style="border-left:3px solid #7B1C2E;background:#f8ecee;padding:12px 16px;font-size:13px;line-height:1.7;margin-bottom:28px;border-radius:0 6px 6px 0;">
+      To reach <strong>85%</strong>, you need to average <strong>87%</strong> on the Final Project and Final Exam.<br/>
+      Your Midterm score suggests reviewing <strong>Module 4: Data Structures</strong>.<br/>
+      You are currently ranked <strong>12th out of 140</strong> students — performing 5% above the class median.
+    </div>`
+  : currentRole === 'lecturer' ? `
+    <h3 style="color:#7B1C2E;border-bottom:1px solid #e5e2de;padding-bottom:8px;">Course Overview</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:28px;">
+      <thead><tr>
+        <th style="background:#f4f3f1;text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;color:#6b6b6b;">Course</th>
+        <th style="background:#f4f3f1;text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;color:#6b6b6b;">Students</th>
+        <th style="background:#f4f3f1;text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;color:#6b6b6b;">Videos</th>
+        <th style="background:#f4f3f1;text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;color:#6b6b6b;">Status</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">SCJ1013 – Advanced Algorithms</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">142</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">2</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;"><span style="background:#e8f5ee;color:#2e7d52;padding:2px 8px;border-radius:999px;font-size:11px;">Active</span></td></tr>
+        <tr><td style="padding:10px 12px;">SECR1033 – Computer Organization</td><td style="padding:10px 12px;">98</td><td style="padding:10px 12px;">1</td><td style="padding:10px 12px;"><span style="background:#e8f5ee;color:#2e7d52;padding:2px 8px;border-radius:999px;font-size:11px;">Active</span></td></tr>
+      </tbody>
+    </table>` : `
+    <h3 style="color:#7B1C2E;border-bottom:1px solid #e5e2de;padding-bottom:8px;">System Summary</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:28px;">
+      <thead><tr>
+        <th style="background:#f4f3f1;text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;color:#6b6b6b;">Metric</th>
+        <th style="background:#f4f3f1;text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;color:#6b6b6b;">Value</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">Total Students</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;font-weight:700;color:#7B1C2E;">1,284</td></tr>
+        <tr><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">Total Lecturers</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;font-weight:700;color:#7B1C2E;">42</td></tr>
+        <tr><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;">Active Courses</td><td style="padding:10px 12px;border-bottom:1px solid #e5e2de;font-weight:700;color:#7B1C2E;">38</td></tr>
+        <tr><td style="padding:10px 12px;">Pending Forum Reports</td><td style="padding:10px 12px;font-weight:700;color:#7B1C2E;">3</td></tr>
+      </tbody>
+    </table>`;
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Academia – ${acc.label} Report</title>
+<style>
+  @media print {
+    .no-print { display:none !important; }
+    body { margin:0; }
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Segoe UI',Arial,sans-serif; color:#1a1a1a; padding:40px; background:#fff; }
+  .print-btn { background:#7B1C2E; color:#fff; border:none; padding:10px 22px; border-radius:6px; font-size:13px; font-weight:600; cursor:pointer; margin-bottom:28px; }
+  .print-btn:hover { background:#5a1321; }
+  .header { display:flex; align-items:flex-start; justify-content:space-between; border-bottom:3px solid #7B1C2E; padding-bottom:16px; margin-bottom:24px; }
+  .brand { font-size:22px; font-weight:800; color:#7B1C2E; }
+  .meta { font-size:11px; color:#6b6b6b; text-align:right; line-height:1.8; }
+  .user-header { margin-bottom:24px; }
+  .user-header h2 { font-size:20px; font-weight:700; margin-bottom:4px; }
+  .role-tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:11px; font-weight:700; text-transform:uppercase; }
+  .rb-student { background:#e8f0ff; color:#3b4dc8; }
+  .rb-lecturer { background:#fff3cd; color:#7d5a00; }
+  .rb-admin { background:#f8ecee; color:#7B1C2E; }
+  .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:28px; }
+  .stat-box { border:1px solid #e5e2de; border-radius:8px; padding:14px 16px; }
+  .stat-val { font-size:1.5rem; font-weight:700; color:#7B1C2E; }
+  .stat-lbl { font-size:10px; color:#6b6b6b; text-transform:uppercase; letter-spacing:.05em; margin-top:3px; }
+  h3 { font-size:14px; font-weight:700; color:#7B1C2E; border-bottom:1px solid #e5e2de; padding-bottom:8px; margin-bottom:14px; margin-top:0; }
+  .footer { border-top:1px solid #e5e2de; margin-top:32px; padding-top:14px; font-size:11px; color:#6b6b6b; display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨 Print / Save as PDF</button>
+<div class="header">
+  <div>
+    <div class="brand">🎓 Academia</div>
+    <div style="font-size:12px;color:#6b6b6b;margin-top:4px;">University Learning Platform</div>
+  </div>
+  <div class="meta">
+    Generated: ${now}<br/>
+    Report type: ${acc.label} Summary<br/>
+    Academic Year: 2024/2025
+  </div>
+</div>
+<div class="user-header">
+  <h2>${acc.name} <span class="role-tag ${acc.badge}">${acc.label}</span></h2>
+  <div style="font-size:13px;color:#6b6b6b;">${acc.email} &nbsp;·&nbsp; ${acc.faculty}</div>
+  ${roleSection}
+</div>
+<div class="stats-grid">
+  ${stats.map(s => `<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.lbl}</div></div>`).join('')}
+</div>
+${assessmentTable}
+<div class="footer">
+  <span>🎓 Academia · University eLearning Portal</span>
+  <span>Confidential — for internal use only</span>
+</div>
+</body>
+</html>`;
+
+  const win = window.open('', '_blank');
+  win.document.write(html);
+  win.document.close();
 }
 
 // ── Resources ──
