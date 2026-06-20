@@ -177,6 +177,18 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 .mod-row .mtitle{font-weight:600;font-size:.84rem;margin-bottom:3px}
 .mod-row .mreason{font-size:.78rem;color:var(--mut)} */
 
+  /* ── Inline Validation ── */
+.fgrp{position:relative}
+.fgrp input,.fgrp textarea,.fgrp select,.ti_{transition:border-color .15s,box-shadow .15s}
+.fgrp.v-error input,.fgrp.v-error textarea,.fgrp.v-error select{border-color:#dc2626 !important;box-shadow:0 0 0 3px rgba(220,38,38,.08)}
+.fgrp.v-ok input,.fgrp.v-ok textarea,.fgrp.v-ok select{border-color:#2e7d52 !important;box-shadow:0 0 0 3px rgba(46,125,82,.08)}
+.v-err-msg{font-size:.72rem;color:#dc2626;margin-top:3px;display:none;font-weight:500}
+.fgrp.v-error .v-err-msg{display:block}
+.v-ok-icon{position:absolute;right:12px;top:36px;color:#2e7d52;font-size:.85rem;font-weight:700;display:none;pointer-events:none}
+.fgrp.v-ok .v-ok-icon{display:block}
+.ti_.v-error-bare{border-color:#dc2626 !important;box-shadow:0 0 0 3px rgba(220,38,38,.08)}
+.ti_.v-ok-bare{border-color:#2e7d52 !important;box-shadow:0 0 0 3px rgba(46,125,82,.08)}
+.v-field-err{font-size:.72rem;color:#dc2626;margin-top:3px;font-weight:500;display:block}
 /* ── Page sections ── */
 .page{display:none} .page.active{display:flex;flex-direction:column;flex:1}
 
@@ -1557,7 +1569,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
         <div class="fgrp"><label>Faculty</label><input type="text" id="pfFacultyInput" value="Faculty of Science"/></div>
         <div class="fgrp"><label id="pfYearLabel">Year of Study</label><input type="text" id="pfYearInput" value="Year 3"/></div>
       </div>
-      <button class="btn bp mt2" onclick="toast('Profile saved!')">Save Changes</button>
+      <button class="btn bp mt2" onclick="saveProfile()">Save Changes</button>
     </div>
     <div class="card p5"><div class="fb_ mb3" style="font-size:1rem;">Notification Preferences</div><div class="setrow"><div><div class="fs_ tsm">Assignment Reminders</div><div class="txs tm">Get notified before deadlines</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Forum Replies</div><div class="txs tm">When someone replies to your posts</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Grade Updates</div><div class="txs tm">When new grades are posted</div></div><button class="tgl on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><div class="setrow"><div><div class="fs_ tsm">Sound Notifications</div><div class="txs tm">Timer completion sounds</div></div><button class="tgl off" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div></div>
     <div class="card p5"><div class="fb_ mb3" style="font-size:1rem;">Recent Activity</div><div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--bdr);"><div style="width:32px;height:32px;border-radius:50%;background:var(--plt);color:var(--p);display:flex;align-items:center;justify-content:center;font-size:.9rem;">📋</div><div style="flex:1;"><div class="fs_ tsm">Submitted Assignment 2</div><div class="txs tm">SCJ1013 · 2 hours ago</div></div><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;font-size:.68rem;">Submitted</span></div><div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--bdr);"><div style="width:32px;height:32px;border-radius:50%;background:var(--plt);color:var(--p);display:flex;align-items:center;justify-content:center;font-size:.9rem;">💬</div><div style="flex:1;"><div class="fs_ tsm">Posted in Forums</div><div class="txs tm">Impact of LLMs · 5 hours ago</div></div><span class="tag tgp" style="font-size:.68rem;">Forum</span></div><div style="display:flex;align-items:center;gap:12px;padding:10px 0;"><div style="width:32px;height:32px;border-radius:50%;background:var(--plt);color:var(--p);display:flex;align-items:center;justify-content:center;font-size:.9rem;">⏱</div><div style="flex:1;"><div class="fs_ tsm">Completed 3 Pomodoro Sessions</div><div class="txs tm">Today · 75 min total</div></div><span class="tag" style="background:#e8f0ff;color:#3b4dc8;border-color:#b0bef0;font-size:.68rem;">Study</span></div></div>
@@ -1605,12 +1617,69 @@ function closeReportModal(){
         .classList.remove('show');
 }
 
-function submitReport(){
-  const reason = document.getElementById('reportReason').value.trim();
-  if(!reason){ alert('Please enter a reason.'); return; }
-  closeReportModal();
-  toast(`Report submitted for "${reportTitle}". Moderators will review it.`);
-  completeMission('m3', 5);   // ← add this line
+function submitUpload() {
+  const titleInput = document.getElementById('vidTitleInput');
+  const urlInput   = document.getElementById('vidUrlInput');
+  const isUrlTab   = document.getElementById('panel-url').classList.contains('active');
+  const course     = document.getElementById('vidCourseSelect').value;
+  const titleGrp   = titleInput.closest('.fgrp');
+  const urlGrp     = urlInput.closest('.fgrp');
+  let ok = true;
+
+  if (!titleInput.value.trim()) {
+    vError(titleGrp, 'Please enter a video title'); ok = false;
+  } else vOk(titleGrp);
+
+  if (isUrlTab) {
+    if (!urlInput.value.trim()) {
+      vError(urlGrp, 'Please paste a video URL'); ok = false;
+    } else if (!urlInput.value.startsWith('http')) {
+      vError(urlGrp, 'URL must start with http:// or https://'); ok = false;
+    } else vOk(urlGrp);
+  }
+
+  if (!isUrlTab && !selectedFileName) {
+    const dz = document.querySelector('.drop-zone');
+    dz.style.borderColor = '#dc2626';
+    dz.style.background = '#fff5f5';
+    let errEl = dz.nextElementSibling?.classList?.contains('v-field-err')
+      ? dz.nextElementSibling : null;
+    if (!errEl) {
+      errEl = document.createElement('span');
+      errEl.className = 'v-field-err';
+      dz.parentNode.insertBefore(errEl, dz.nextSibling);
+    }
+    errEl.textContent = 'Please select a video file';
+    ok = false;
+  } else {
+    const dz = document.querySelector('.drop-zone');
+    dz.style.borderColor = '';
+    dz.style.background = '';
+    const next = dz.nextElementSibling;
+    if (next && next.classList.contains('v-field-err')) next.remove();
+  }
+
+  if (!ok) return;
+
+  if (currentRole === 'student') {
+    pendingVideos.push({
+      title: titleInput.value.trim(), course,
+      source: isUrlTab ? urlInput.value.trim() : selectedFileName,
+      submittedBy: accounts.student.name
+    });
+    renderPendingApprovals();
+    closeUploadModal();
+    toast('Video submitted! Waiting for lecturer approval.');
+    return;
+  }
+
+  const list = document.getElementById('lecVideoList');
+  const row = document.createElement('div');
+  row.className = 'video-row';
+  row.innerHTML = `<div class="vthumb">🎬</div><div class="vinfo"><div class="vt">${titleInput.value.trim()}</div><div class="vm">Uploaded just now · ${isUrlTab ? urlInput.value.trim() : selectedFileName}</div></div><button class="btn bo bsm" onclick="toast('Opening video...')">View</button>`;
+  list.insertBefore(row, list.firstChild);
+  closeUploadModal();
+  toast('Lecture video uploaded!');
 }
 
 // ── Toast ──
@@ -1639,14 +1708,32 @@ document.querySelectorAll('.cb_').forEach(b => b.addEventListener('click', () =>
   document.querySelectorAll('.cb_').forEach(x => x.classList.remove('active')); b.classList.add('active');
 }));
 function postThread() {
+  const titleInput = document.querySelector('#threadModal .ti_[type="text"]');
+  const bodyInput  = document.querySelector('#threadModal textarea.ti_');
+
+  let ok = true;
+  if (!titleInput.value.trim()) {
+    vBareError(titleInput, 'Thread title is required');
+    ok = false;
+  } else vBareOk(titleInput);
+  if (!bodyInput.value.trim()) {
+    vBareError(bodyInput, 'Please describe your discussion');
+    ok = false;
+  } else vBareOk(bodyInput);
+  if (!ok) return;
+
+  vBareReset(titleInput);
+  vBareReset(bodyInput);
   document.getElementById('threadModal').classList.remove('show');
   const list = document.getElementById('threadList');
   const c = document.createElement('div');
   c.className = 'tcard';
-  c.innerHTML = `<div class="tmtop"><div class="tav">JS</div><div style="flex:1;"><div class="ttitle">New Discussion Thread</div><div class="tmline">Posted by <strong>Julian Smith</strong> • Just now</div></div><span class="tag tgp">Research</span></div><p class="texc">Your new thread has been posted successfully.</p><div class="tstat"><span>💬 0</span><span onclick="upvoteThread(event,this)" style="cursor:pointer;">👍 0</span><span>👁 1</span></div>`;
+  c.innerHTML = `<div class="tmtop"><div class="tav">JS</div><div style="flex:1;"><div class="ttitle">${titleInput.value}</div><div class="tmline">Posted by <strong>Julian Smith</strong> • Just now</div></div><span class="tag tgp">Research</span></div><p class="texc">${bodyInput.value}</p><div class="tstat"><span>💬 0</span><span onclick="upvoteThread(event,this)" style="cursor:pointer;">👍 0</span><span>👁 1</span></div>`;
   list.insertBefore(c, list.firstChild);
+  titleInput.value = '';
+  bodyInput.value = '';
   toast('Thread posted!');
-  completeMission('m1', 20);   // ← add this line
+  completeMission('m1', 20);
 }
 
   // ── Rewards / Points System ──
@@ -1900,6 +1987,103 @@ function rejectVideo(index) {
   toast('Video submission rejected', false);
 }
 
+  //Button function save profile
+  function saveProfile() {
+  const fields = [
+    { id:'pfFirstName', msg:'First name is required' },
+    { id:'pfLastName',  msg:'Last name is required' },
+    { id:'pfEmailInput', msg:'Email is required' },
+    { id:'pfIdInput',   msg:'ID is required' },
+  ];
+  let ok = true;
+  fields.forEach(f => {
+    const input = document.getElementById(f.id);
+    const grp = input.closest('.fgrp');
+    if (!input.value.trim()) { vError(grp, f.msg); ok = false; }
+    else vOk(grp);
+  });
+  const emailInput = document.getElementById('pfEmailInput');
+  const emailGrp = emailInput.closest('.fgrp');
+  if (emailInput.value.trim() && !emailInput.value.includes('@')) {
+    vError(emailGrp, 'Please enter a valid email address'); ok = false;
+  }
+  if (!ok) {
+    toast('Please fix the errors before saving', false);
+    return;
+  }
+  toast('Profile saved!');
+}
+
+  // ── Inline Validation System ──
+function vClear(el) {
+  el.classList.remove('v-error','v-ok');
+  const msg = el.querySelector('.v-err-msg');
+  if (msg) msg.style.display = 'none';
+}
+
+function vError(el, msg) {
+  el.classList.add('v-error');
+  el.classList.remove('v-ok');
+  let msgEl = el.querySelector('.v-err-msg');
+  if (!msgEl) {
+    msgEl = document.createElement('span');
+    msgEl.className = 'v-err-msg';
+    el.appendChild(msgEl);
+  }
+  msgEl.textContent = msg;
+  msgEl.style.display = 'block';
+}
+
+function vOk(el) {
+  el.classList.remove('v-error');
+  el.classList.add('v-ok');
+  const msg = el.querySelector('.v-err-msg');
+  if (msg) msg.style.display = 'none';
+}
+
+function vBareError(input, msg) {
+  input.classList.add('v-error-bare');
+  input.classList.remove('v-ok-bare');
+  let msgEl = input.nextElementSibling;
+  if (!msgEl || !msgEl.classList.contains('v-field-err')) {
+    msgEl = document.createElement('span');
+    msgEl.className = 'v-field-err';
+    input.parentNode.insertBefore(msgEl, input.nextSibling);
+  }
+  msgEl.textContent = msg;
+}
+
+function vBareOk(input) {
+  input.classList.remove('v-error-bare');
+  input.classList.add('v-ok-bare');
+  const next = input.nextElementSibling;
+  if (next && next.classList.contains('v-field-err')) next.remove();
+}
+
+function vBareReset(input) {
+  input.classList.remove('v-error-bare','v-ok-bare');
+  const next = input.nextElementSibling;
+  if (next && next.classList.contains('v-field-err')) next.remove();
+}
+
+// Live validation — attach to fgrp inputs on typing
+function attachLiveValidation() {
+  document.querySelectorAll('.fgrp input, .fgrp select, .fgrp textarea').forEach(input => {
+    input.addEventListener('input', () => {
+      const grp = input.closest('.fgrp');
+      if (!grp) return;
+      if (input.value.trim()) vOk(grp);
+      else vClear(grp);
+    });
+    input.addEventListener('blur', () => {
+      const grp = input.closest('.fgrp');
+      if (!grp || !input.required) return;
+      if (!input.value.trim()) vError(grp, 'This field is required');
+      else vOk(grp);
+    });
+  });
+}
+  
 // ── Admin Panel ──
 //function setAdmTab(panelId) {
  // document.querySelectorAll('.admsb .si').forEach(b => b.classList.remove('active'));
@@ -2035,6 +2219,7 @@ function updateDisp() {
   const s = String(tRemain%60).padStart(2,'0');
   document.getElementById('tDisp').textContent = m+':'+s;
   updateRing();
+  attachLiveValidation();
 }
 function toggleTimer() {
   if (tRunning) {
