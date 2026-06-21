@@ -1646,15 +1646,43 @@ function go(page) {
 
 let reportTitle = '';
 
-function reportThread(e, title){
-    e.stopPropagation();
+function reportThread(e, title) {
+  e.stopPropagation();
+  reportTitle = title;
+  const reasonEl = document.getElementById('reportReason');
+  reasonEl.value = '';
+  reasonEl.style.borderColor = '';
+  reasonEl.style.boxShadow = '';
+  const errEl = document.getElementById('reportReasonErr');
+  if (errEl) errEl.remove();
+  document.getElementById('reportModal').classList.add('show');
+}
 
-    reportTitle = title;
-    document.getElementById('reportReason').value = '';
+  function submitReport() {
+  const reasonEl = document.getElementById('reportReason');
+  if (!reasonEl.value.trim()) {
+    reasonEl.style.borderColor = '#dc2626';
+    reasonEl.style.boxShadow = '0 0 0 3px rgba(220,38,38,.08)';
+    let errEl = document.getElementById('reportReasonErr');
+    if (!errEl) {
+      errEl = document.createElement('span');
+      errEl.id = 'reportReasonErr';
+      errEl.className = 'v-field-err';
+      reasonEl.parentNode.insertBefore(errEl, reasonEl.nextSibling);
+    }
+    errEl.textContent = 'Please describe the issue before submitting';
+    return;
+  }
+    
+  // clear error state
+  reasonEl.style.borderColor = '';
+  reasonEl.style.boxShadow = '';
+  const errEl = document.getElementById('reportReasonErr');
+  if (errEl) errEl.remove();
 
-    document
-        .getElementById('reportModal')
-        .classList.add('show');
+  closeReportModal();
+  toast(`Report submitted for "${reportTitle}". Moderators will review it.`);
+  completeMission('m3', 5);
 }
 
 function closeReportModal(){
@@ -2022,36 +2050,6 @@ function handleFileSelect(input) {
   
 let pendingVideos = [];
 
-/*function submitUpload() {
-  const title = document.getElementById('vidTitleInput').value.trim();
-  const isUrlTab = document.getElementById('panel-url').classList.contains('active');
-  const url = document.getElementById('vidUrlInput').value.trim();
-  const course = document.getElementById('vidCourseSelect').value;
-  if (!title) { alert('Please enter a title.'); return; }
-  if (isUrlTab && !url) { alert('Please paste a video URL.'); return; }
-  if (!isUrlTab && !selectedFileName) { alert('Please select a video file.'); return; }
-
-  if (currentRole === 'student') {
-    pendingVideos.push({
-      title, course,
-      source: isUrlTab ? 'External link' : selectedFileName,
-      submittedBy: accounts.student.name
-    });
-    renderPendingApprovals();
-    closeUploadModal();
-    toast('Video submitted! Waiting for lecturer approval.');
-    return;
-  }
-
-  const list = document.getElementById('lecVideoList');
-  const row = document.createElement('div');
-  row.className = 'video-row';
-  row.innerHTML = `<div class="vthumb">🎬</div><div class="vinfo"><div class="vt">${title}</div><div class="vm">Uploaded just now · ${isUrlTab ? 'External link' : selectedFileName}</div></div><button class="btn bo bsm" onclick="toast('Opening video...')">View</button>`;
-  list.insertBefore(row, list.firstChild);
-
-  closeUploadModal();
-  toast('Lecture video uploaded!');
-} */
 
 function renderPendingApprovals() {
   const card = document.getElementById('pendingApprovalCard');
@@ -2346,7 +2344,6 @@ function updateDisp() {
   const s = String(tRemain%60).padStart(2,'0');
   document.getElementById('tDisp').textContent = m+':'+s;
   updateRing();
-  attachLiveValidation();
 }
 function toggleTimer() {
   if (tRunning) {
@@ -2509,6 +2506,7 @@ document.querySelectorAll('.tchip').forEach(c=>c.addEventListener('click',()=>c.
 
 // Init
 updateDisp();
+attachLiveValidation();
 </script>
 </body>
 </html>
