@@ -176,7 +176,45 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 .mod-row{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:8px;background:var(--sur)}
 .mod-row .mtitle{font-weight:600;font-size:.84rem;margin-bottom:3px}
 .mod-row .mreason{font-size:.78rem;color:var(--mut)} */
+  
+/* ── Grade Tracker ── */
+.arow-input{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--bdr)}
+.arow-input:last-child{border-bottom:none}
+.arow-input input[type="text"]{flex:2;padding:5px 8px;border:1.5px solid var(--bdr);border-radius:var(--r);font-size:.78rem;font-family:var(--fb);outline:none}
+.arow-input input[type="text"]:focus{border-color:var(--p)}
+.arow-input input[type="number"]{width:58px;padding:5px 8px;border:1.5px solid var(--bdr);border-radius:var(--r);font-size:.78rem;font-family:var(--fb);outline:none;text-align:center}
+.arow-input input[type="number"]:focus{border-color:var(--p)}
+.arow-input .grade-badge{min-width:34px;text-align:center;font-weight:700;font-size:.75rem;color:var(--p)}
+.arow-input button.del-btn{background:none;border:none;color:var(--mut);font-size:1rem;cursor:pointer;padding:0 4px;line-height:1}
+.arow-input button.del-btn:hover{color:#c0392b}
+.arow-input .wt-lbl{font-size:.7rem;color:var(--mut);white-space:nowrap}
 
+  /* ── GPA / CGPA Page ── */
+.gpa-layout{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:28px 32px;align-items:start}
+.gpa-sem-card{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--rl);margin-bottom:16px;overflow:hidden}
+.gpa-sem-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--bg);border-bottom:1px solid var(--bdr)}
+.gpa-sem-title{font-weight:700;font-size:.92rem}
+.gpa-sem-badge{font-family:var(--fn);font-size:1.1rem;font-weight:700;color:var(--p)}
+.gpa-table{width:100%;border-collapse:collapse;font-size:.83rem}
+.gpa-table th{text-align:left;padding:8px 14px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);border-bottom:1px solid var(--bdr)}
+.gpa-table td{padding:10px 14px;border-bottom:1px solid var(--bdr);vertical-align:middle}
+.gpa-table tr:last-child td{border-bottom:none}
+.gpa-table tr:hover td{background:var(--bg)}
+.gpa-grade-sel{border:1.5px solid var(--bdr);border-radius:var(--r);padding:5px 8px;font-family:var(--fb);font-size:.8rem;background:var(--bg);outline:none;cursor:pointer;min-width:70px}
+.gpa-grade-sel:focus{border-color:var(--p)}
+.gpa-big{font-family:var(--fn);font-size:3rem;font-weight:700;color:var(--p);line-height:1}
+.gpa-ring-wrap{position:relative;display:flex;justify-content:center;margin-bottom:16px}
+.gpa-ring-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.sem-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.sem-tab{padding:5px 14px;border-radius:999px;border:1.5px solid var(--bdr);background:var(--sur);font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;font-family:var(--fb)}
+.sem-tab.active{background:var(--p);color:#fff;border-color:var(--p)}
+.cgpa-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.cgpa-bar-label{font-size:.75rem;font-weight:600;min-width:60px}
+.cgpa-bar-track{flex:1;background:var(--bdr);border-radius:999px;height:8px;overflow:hidden}
+.cgpa-bar-fill{height:100%;border-radius:999px;background:var(--p);transition:width .4s ease}
+.cgpa-bar-val{font-size:.75rem;font-weight:700;color:var(--p);min-width:32px;text-align:right}
+
+  
   /* ── Inline Validation ── */
 .fgrp{position:relative}
 .fgrp input,.fgrp textarea,.fgrp select,.ti_{transition:border-color .15s,box-shadow .15s}
@@ -384,6 +422,16 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 .eitem:hover{border-color:var(--p);color:var(--p)}
 .probanner{background:linear-gradient(135deg,#7B1C2E,#3d0e17);border-radius:var(--r);padding:16px;color:#fff;margin-top:auto}
 
+  /* ── Lecturer Dashboard ── */
+.lec-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.lec-stat{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--rl);padding:18px;text-align:center}
+.lec-stat .lsv{font-family:var(--fn);font-size:1.8rem;font-weight:700;color:var(--p)}
+.lec-stat .lsl{font-size:.7rem;color:var(--mut);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.student-row-lec{display:flex;align-items:center;gap:12px;padding:10px 12px;border-bottom:1px solid var(--bdr);cursor:pointer;transition:background .12s}
+.student-row-lec:hover{background:var(--bg)}
+.student-row-lec:last-child{border-bottom:none}
+.student-av-sm{width:32px;height:32px;border-radius:50%;background:var(--p);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700;flex-shrink:0}
+  
 /* ── Pomodoro ── */
 .pomolayout{display:grid;grid-template-columns:200px 1fr 280px;flex:1}
 .pomosb{background:var(--sur);border-right:1px solid var(--bdr);padding:16px 0;display:flex;flex-direction:column}
@@ -807,53 +855,109 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <div class="pw">
 <aside class="sb">
   <div class="sbl">Main</div>
-  <button class="si active" id="sb-dash" onclick="go('dashboard')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</button>
-  <button class="si" onclick="go('pomodoro')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Pomodoro Timer</button>
-  <button class="si" onclick="go('courses')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Grade Tracker</button>
-  <button class="si" onclick="go('resources')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Resources</button>
+ <button class="si" data-page="dashboard" onclick="go('dashboard')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</button>
+ <button class="si" data-page="pomodoro" onclick="go('pomodoro')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Pomodoro Timer</button>
+ <button class="si" data-page="gpa" onclick="go('gpa')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>GPA / CGPA</button>
+ <button class="si" data-page="resources" onclick="go('resources')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Resources</button>
   <div class="sb-bot"><div class="sb-promo"><div class="pt">Premium Member</div><div class="pb">Access to advanced citation tools and AI study features.</div></div></div>
 </aside>
-<main class="main" style="padding:28px 32px;">
+<main class="main" style="padding:28px 32px;" id="dashMain">
+  <div id="dashStudentView">
   <div class="flex ic jb mb4">
-    <div><h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">Performance Analytics</h1><p class="tsm tm">Real-time tracking of your academic trajectory.</p></div>
+    <div><h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">Performance Analytics</h1>
     <div class="flex gap2"><button class="btn bo" onclick="exportReport()">⬇ Export Report</button><button class="btn bp" onclick="toast('Data updated!')">↻ Update Data</button></div>
   </div>
-  <!-- Goal Setter -->
-  <div class="card mb4">
-    <div class="cb">
-      <div class="fb_ mb3" style="font-size:1.05rem;">Your Goal Setter</div>
-      <div class="flex ic gap5" style="flex-wrap:wrap;">
-        <div><div class="dl">Select Course</div><select class="dsel"><option>Intro to Computer Science</option><option>SCJ1013 – Advanced Algorithms</option><option>SECR1033 – Computer Org.</option></select></div>
-        <div><div class="dl">Target Grade</div><div class="tg" id="gradeDisp">85% / A</div></div>
-        <div style="flex:1;min-width:180px;"><div class="dl">Progress to Target</div><input type="range" class="gsl wf" min="50" max="100" value="85" oninput="updateGrade(this.value)"/><div class="txs tm mt1">You are 13.5% away from your goal grade.</div></div>
-        <button class="btn bp" style="align-self:flex-end;" onclick="go('studyguide')">✦ Generate Study Plan</button>
+ <!-- Goal Setter -->
+<div class="card mb4">
+  <div class="cb">
+    <div class="fb_ mb3" style="font-size:1.05rem;">Your Goal Setter</div>
+    <div class="flex ic gap5" style="flex-wrap:wrap;">
+      <div>
+        <div class="dl">Select Course</div>
+       <select class="dsel" id="goalCourseSelect" onchange="switchGradeCourse(this.value)">
+        <option value="SCJ1013">SCJ1013 – Advanced Algorithms</option>
+        <option value="SECR1033">SECR1033 – Computer Organization</option>
+        <option value="MTH201">MTH201 – Calculus II</option>
+        <option value="CSC101">CSC101 – Intro to Computer Science</option>
+      </select>
       </div>
+      <div><div class="dl">Target Grade</div><div class="tg" id="gradeDisp">85% / A</div></div>
+      <div style="flex:1;min-width:180px;">
+        <div class="dl">Target (%)</div>
+        <input type="range" class="gsl wf" min="50" max="100" value="85" id="targetSlider" oninput="updateGrade(this.value)"/>
+        <div class="txs tm mt1" id="targetGap">Calculating...</div>
+      </div>
+      <button class="btn bp" style="align-self:flex-end;" onclick="go('studyguide')">✦ Generate Study Plan</button>
     </div>
   </div>
-  <!-- Where You Are + Insights -->
-  <div class="g2 mb4" style="grid-template-columns:1.4fr 1fr;">
+</div>
+
+<!-- Where You Are + Insights -->
+<div class="g2 mb4" style="grid-template-columns:1.4fr 1fr;">
+  <div class="card">
+    <div class="cb">
+      <div class="flex ic jb mb3">
+        <div class="fb_" style="font-size:1rem;">Where You Are Now</div>
+        <span class="tag tgp" style="font-size:.68rem;">● LIVE DATA</span>
+      </div>
+      <div class="flex gap5">
+        <div style="position:relative;flex-shrink:0;">
+          <svg width="120" height="120" viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="48" fill="none" stroke="#e5e2de" stroke-width="11"/>
+            <circle cx="60" cy="60" r="48" fill="none" stroke="#7B1C2E" stroke-width="11"
+              stroke-dasharray="301.6" id="donutRing"
+              stroke-dashoffset="90" stroke-linecap="round" transform="rotate(-90 60 60)"/>
+          </svg>
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+            <div style="font-size:1.3rem;font-weight:700;color:var(--p);" id="avgDisplay">—</div>
+            <div style="font-size:.62rem;color:var(--mut);line-height:1.3;">CURRENT<br>AVG</div>
+          </div>
+        </div>
+        <div style="flex:1;">
+          <div class="fs_ mb1">Current Weighted Average</div>
+          <p class="txs tm mb3" style="line-height:1.5;" id="avgDesc">Based on completed assessments.</p>
+          <div class="flex gap4">
+            <div><div class="dl">Class Rank</div><div class="fb_">12th / 140</div></div>
+            <div><div class="dl">Attendance</div><div class="fb_">94%</div></div>
+          </div>
+        </div>
+      </div>
+      <hr class="dv mt3 mb3"/>
+      <div class="flex ic jb mb2">
+        <div class="dl">Assessments</div>
+        <button class="btn bo bsm" onclick="addAssessmentRow()">+ Add</button>
+      </div>
+      <div id="assessmentRows" style="display:flex;flex-direction:column;gap:6px;"></div>
+    </div>
+  </div>
+
+  <div class="flex fc gap4">
+    <div class="card" style="flex:1;">
+      <div class="cb">
+        <div class="flex ic gap2 mb3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="2"><path d="M2 20h.01M7 20v-4M12 20V10M17 20V4"/></svg>
+          <div class="fb_" style="font-size:1rem;">System Insights &amp; Pathways</div>
+        </div>
+        <div class="alert mb3" id="insightBox">
+          <em>Add your assessment scores to get personalised insights.</em>
+        </div>
+        <div class="tsm flex fc gap2" id="insightTips"></div>
+      </div>
+    </div>
     <div class="card">
       <div class="cb">
-        <div class="flex ic jb mb3"><div class="fb_" style="font-size:1rem;">Where You Are Now</div><span class="tag tgp" style="font-size:.68rem;">● LIVE DATA</span></div>
-        <div class="flex gap5">
-          <div style="position:relative;flex-shrink:0;">
-            <svg width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e5e2de" stroke-width="11"/><circle cx="60" cy="60" r="48" fill="none" stroke="#7B1C2E" stroke-width="11" stroke-dasharray="301.6" stroke-dashoffset="87" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg>
-            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;"><div style="font-size:1.3rem;font-weight:700;color:var(--p);">71.5%</div><div style="font-size:.62rem;color:var(--mut);line-height:1.3;">CURRENT<br>AVG</div></div>
-          </div>
-          <div style="flex:1;"><div class="fs_ mb1">Current Weighted Average</div><p class="txs tm mb3" style="line-height:1.5;">Based on 40% of total course weight. You are performing 5% above the class median.</p><div class="flex gap4"><div><div class="dl">Class Rank</div><div class="fb_">12th / 140</div></div><div><div class="dl">Attendance</div><div class="fb_">94%</div></div></div></div>
-        </div>
-        <hr class="dv mt3 mb3"/>
-        <div class="dl mb2">Completed Assessments</div>
-        <div class="arow"><div class="aico">📋</div><div style="flex:1;"><div class="fs_ tsm">Quiz 1: Fundamentals</div><div class="txs tm">Completed Sept 15</div></div><div style="text-align:right;"><div class="fb_ tpr">8/10</div><div class="txs tm">80%</div></div></div>
-        <div class="arow"><div class="aico">📝</div><div style="flex:1;"><div class="fs_ tsm">Assignment 1: Logic Systems</div><div class="txs tm">Completed Oct 02</div></div><div style="text-align:right;"><div class="fb_ tpr">18/20</div><div class="txs tm">90%</div></div></div>
-        <div class="arow"><div class="aico">📖</div><div style="flex:1;"><div class="fs_ tsm">Midterm Examination</div><div class="txs tm">Completed Oct 28</div></div><div style="text-align:right;"><div class="fb_ tpr">65/100</div><div class="txs tm">65%</div></div></div>
+        <div class="fb_ mb3" style="font-size:1rem;">Priority Action Plan</div>
+        <table class="dt">
+          <thead><tr><th>Upcoming</th><th>Weight</th><th>Need</th><th>Action</th></tr></thead>
+          <tbody id="actionPlanBody">
+            <tr><td colspan="4" class="tm txs" style="padding:12px;">Calculating...</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
-    <div class="flex fc gap4">
-      <div class="card" style="flex:1;"><div class="cb"><div class="flex ic gap2 mb3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="2"><path d="M2 20h.01M7 20v-4M12 20V10M17 20V4"/></svg><div class="fb_" style="font-size:1rem;">System Insights &amp; Pathways</div></div><div class="alert mb3"><em>To reach <strong>85%</strong>, you need to average <strong>87%</strong> on the Final Project and Final Exam. Your Midterm score suggests reviewing Module 4: Data Structures.</em></div><div class="tsm flex fc gap2"><div class="flex gap2"><span>✓</span><span>Improve participation grade to secure final 5% weighting.</span></div><div class="flex gap2"><span>✓</span><span>Complete 3 past papers to improve midterm retrieval speed.</span></div></div></div></div>
-      <div class="card"><div class="cb"><div class="fb_ mb3" style="font-size:1rem;">Priority Action Plan</div><table class="dt"><thead><tr><th>Upcoming</th><th>Weight</th><th>Target</th><th>Action</th></tr></thead><tbody><tr><td><div class="fs_">Final Project</div><div class="txs tm">Due Nov 15</div></td><td>25%</td><td><span class="tag tgp">87%</span></td><td><button class="btn bg_ bsm" onclick="go('pomodoro')">Start Pomodoro</button></td></tr><tr><td><div class="fs_">Final Exam</div><div class="txs tm">Due Dec 10</div></td><td>35%</td><td><span class="tag tgp">87%</span></td><td><button class="btn bo bsm" onclick="toast('Reminder set!')">Set Reminder</button></td></tr></tbody></table></div></div>
-    </div>
   </div>
+</div>
+  
   <!-- Study Guide -->
   <div class="card">
     <div class="cb">
@@ -881,7 +985,99 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
         <button class="si" onclick="go('resources')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Resources</button>
         <button class="si" id="sb-studentUpload" onclick="openUploadModal()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Submit a Video</button>
     </div>
-  </div>
+  </div><!-- end dashStudentView -->
+
+  <!-- ── Lecturer Dashboard View ── -->
+  <div id="dashLecturerView" style="display:none;">
+    <div class="flex ic jb mb4">
+      <div>
+        <h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">Lecturer Dashboard</h1>
+        <p class="tsm tm">Overview of your courses and student performance.</p>
+      </div>
+      <div class="flex gap2">
+        <button class="btn bo" onclick="exportReport()">⬇ Export Report</button>
+        <button class="btn bp" onclick="openUploadModal()">⬆ Upload Lecture</button>
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="lec-stat-grid mb4">
+      <div class="lec-stat"><div class="lsv">2</div><div class="lsl">Active Courses</div></div>
+      <div class="lec-stat"><div class="lsv">240</div><div class="lsl">Total Students</div></div>
+      <div class="lec-stat"><div class="lsv" id="lecPendingCount">0</div><div class="lsl">Pending Submissions</div></div>
+    </div>
+
+    <div class="g2 mb4">
+      <!-- Student performance picker -->
+      <div class="card">
+        <div class="cb">
+          <div class="flex ic jb mb3">
+            <div class="fb_" style="font-size:1rem;">Student Performance Viewer</div>
+            <select class="ssel" id="lecStudentSelect" onchange="loadStudentGrades(this.value)">
+              <option value="">— Select a student —</option>
+              <option value="JS">Julian Smith (JS)</option>
+              <option value="AM">Alice Malik (AM)</option>
+              <option value="BL">Ben Lim (BL)</option>
+              <option value="RK">Raj Kumar (RK)</option>
+              <option value="FZ">Fatimah Zahra (FZ)</option>
+            </select>
+          </div>
+          <div id="lecStudentGradeView">
+            <div class="txs tm" style="text-align:center;padding:24px;">Select a student to view their grades.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course quick stats -->
+      <div class="card">
+        <div class="cb">
+          <div class="fb_ mb3" style="font-size:1rem;">Course Averages</div>
+          <div class="mb3">
+            <div class="flex ic jb mb1"><span class="tsm fs_">SCJ1013 – Advanced Algorithms</span><span class="tsm fb_ tpr">72.4%</span></div>
+            <div class="ptrack"><div class="pfill" style="width:72%;"></div></div>
+            <div class="txs tm mt1">142 students · Class median 68%</div>
+          </div>
+          <div>
+            <div class="flex ic jb mb1"><span class="tsm fs_">SECR1033 – Computer Org.</span><span class="tsm fb_ tpr">78.1%</span></div>
+            <div class="ptrack"><div class="pfill" style="width:78%;"></div></div>
+            <div class="txs tm mt1">98 students · Class median 75%</div>
+          </div>
+          <hr class="dv mt3 mb3"/>
+          <div class="fb_ tsm mb2">Top Performers</div>
+          <div id="topStudentList">
+            <div class="student-row-lec"><div class="student-av-sm">AM</div><div style="flex:1;"><div class="fs_ tsm">Alice Malik</div><div class="txs tm">SCJ1013 · Avg 91%</div></div><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;font-size:.65rem;">Top 5%</span></div>
+            <div class="student-row-lec"><div class="student-av-sm" style="background:#1a5276;">RK</div><div style="flex:1;"><div class="fs_ tsm">Raj Kumar</div><div class="txs tm">SCJ1013 · Avg 87%</div></div><span class="tag tgp" style="font-size:.65rem;">Top 10%</span></div>
+            <div class="student-row-lec"><div class="student-av-sm" style="background:#1a7a42;">FZ</div><div style="flex:1;"><div class="fs_ tsm">Fatimah Zahra</div><div class="txs tm">SECR1033 · Avg 85%</div></div><span class="tag tgp" style="font-size:.65rem;">Top 10%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pending submissions -->
+    <div class="card mb4" id="lecDashPending">
+      <div class="cb">
+        <div class="flex ic jb mb3">
+          <div class="fb_" style="font-size:1rem;color:#7d5a00;">⏳ Pending Student Submissions</div>
+          <button class="btn bo bsm" onclick="go('lecturer-courses')">View All</button>
+        </div>
+        <div id="lecDashPendingList"><div class="txs tm">No pending submissions.</div></div>
+      </div>
+    </div>
+
+    <!-- Announcements quick post -->
+    <div class="card">
+      <div class="cb">
+        <div class="fb_ mb3" style="font-size:1rem;">Quick Announcement</div>
+        <input class="ti_ mb2" type="text" placeholder="Announcement title..." id="lecAnnTitle"/>
+        <textarea class="ti_ mb2" rows="2" placeholder="Message to students..." id="lecAnnBody"></textarea>
+        <div class="flex gap2">
+          <select class="ssel"><option>SCJ1013 – Advanced Algorithms</option><option>SECR1033 – Computer Org.</option><option>All Courses</option></select>
+          <button class="btn bp" onclick="postLecAnnouncement()">Post Announcement</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- end dashLecturerView -->
+</main>
   
 </main>
 </div>
@@ -892,8 +1088,8 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <div class="pw">
 <aside class="sb">
   <div class="sbl">Main</div>
-  <button class="si" onclick="go('dashboard')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</button>
-  <button class="si active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>All Forums</button>
+ <button class="si" data-page="dashboard" onclick="go('dashboard')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</button>
+ <button class="si" data-page="forums"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>All Forums</button>
   <div class="sbl" style="margin-top:8px;">Recently Visited</div>
   <span class="ssi" onclick="go('dashboard')">Performance Analytics</span>
   <span class="ssi" onclick="go('studyguide')">AI Study Tools</span>
@@ -1254,9 +1450,9 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <div class="pw">
 <aside class="sb">
   <div class="sbl">Teaching</div>
-  <button class="si active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>My Courses</button>
-  <button class="si" onclick="toast('Opening grading...')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/></svg>Grading</button>
-  <button class="si" onclick="go('forums')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Forums</button>
+  <button class="si" data-page="lecturer-courses"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>My Courses</button>
+ <button class="si" onclick="toast('Opening grading...')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/></svg>Grading</button>
+  <button class="si" data-page="forums" onclick="go('forums')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Forums</button>
   <div class="sb-bot"><div class="sb-promo"><div class="pt">Lecturer Account</div><div class="pb">Upload lectures and manage your course content.</div></div></div>
 </aside>
 <main class="main" style="padding:28px 32px;">
@@ -1299,11 +1495,11 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <div class="collayout" style="flex:1;">
   <aside class="colsb">
     <div style="padding:12px 16px;border-bottom:1px solid var(--bdr);margin-bottom:8px;display:flex;align-items:center;gap:10px;"><div class="uav" style="width:36px;height:36px;margin-right:4px;">JS</div><div><div class="fs_ tsm">CS50: Introduction</div><div class="txs tm">Computer Science</div></div></div>
-    <button class="si" onclick="go('course-detail')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Syllabus</button>
-    <button class="si" onclick="go('courses')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>Lectures</button>
-    <button class="si" onclick="go('course-detail')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>Assignments</button>
-    <button class="si active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Collaboration</button>
-    <button class="si" onclick="go('dashboard')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>Grades</button>
+    <button class="si" data-page="course-detail" onclick="go('course-detail')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Syllabus</button>
+   <button class="si" data-page="courses" onclick="go('courses')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>Lectures</button>
+   <button class="si" data-page="course-detail" onclick="go('course-detail')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>Assignments</button>
+    <button class="si" data-page="collaboration"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Collaboration</button>
+   <button class="si" data-page="dashboard" onclick="go('dashboard')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>Grades</button>
     <div class="sb-bot"><button class="btn bp bfull" onclick="toast('Study group created!')">+ Join Study Group</button></div>
   </aside>
   <main class="colmain">
@@ -1476,10 +1672,10 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <div class="pomolayout" style="flex:1;">
   <aside class="pomosb">
     <div style="padding:0 16px 16px;border-bottom:1px solid var(--bdr);margin-bottom:8px;"><div class="fb_">Academic Focus</div><div class="txs tm">University Portal</div></div>
-    <button class="si active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Timer</button>
-    <button class="si" onclick="toast('Opening statistics...')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h.01M7 20v-4M12 20V10M17 20V4"/></svg>Statistics</button>
+   <button class="si" data-page="pomodoro"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Timer</button>
+   <button class="si" onclick="toast('Opening statistics...')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h.01M7 20v-4M12 20V10M17 20V4"/></svg>Statistics</button>
     <button class="si" onclick="toast('Opening tasks...')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/></svg>Tasks</button>
-    <button class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</button>
+   <button class="si" onclick="toast('Opening settings...')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</button>
     <div class="sb-bot"><button class="btn bp bfull" onclick="resetTimer()">Start New Session</button></div>
   </aside>
   <main class="pomomain">
@@ -1557,24 +1753,24 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 </div>
 </div>
 
-<!-- ═══════════════════════ PAGE: RESEARCH ═══════════════════════ -->
+<!-- ═══════════════════════ PAGE: PAST YEAR PAPER REPO ═══════════════════════ -->
 <div id="page-research" class="page">
 <div class="pw" style="flex:1;">
 <aside class="sb">
   <div class="sbl">Main</div>
-  <button class="si" onclick="go('dashboard')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</button>
-  <button class="si active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Research</button>
+  <button class="si" data-page="dashboard" onclick="go('dashboard')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</button>
+  <button class="si" data-page="research"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Research</button>
   <div class="sb-bot"><div class="sb-promo"><div class="pt">Premium Member</div><div class="pb">Access to advanced citation tools.</div></div></div>
 </aside>
 <main class="main" style="padding:32px 40px;">
-  <div class="flex ic jb mb4"><div><h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">Research Repository</h1><p class="tsm tm">Academic papers and publications for your courses.</p></div><button class="btn bp" onclick="toast('Upload dialog opened!')">+ Upload Paper</button></div>
+  <div class="flex ic jb mb4"><div><h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">Past Year Paper Repository</h1><p class="tsm tm">Academic papers and publications for your courses.</p></div><button class="btn bp" onclick="toast('Upload dialog opened!')">+ Upload Paper</button></div>
   <div class="g3">
-    <div class="card p4"><div class="tag tgp mb2" style="font-size:.68rem;">COMPUTER SCIENCE</div><div class="fb_ mb2" style="line-height:1.4;">Computer Organization: A Modern Perspective</div><div class="txs tm mb3">IEEE Transactions on Computers, 2024. Covers CPU design, memory hierarchies, and I/O systems.</div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Opening paper...')">View Paper</button><button class="btn bg_ bsm" onclick="toast('Saved!')">Save</button></div></div>
-    <div class="card p4"><div class="tag tgp mb2" style="font-size:.68rem;">ALGORITHMS</div><div class="fb_ mb2" style="line-height:1.4;">Emerging Trends in Microprocessor Architecture</div><div class="txs tm mb3">ACM Computing Surveys, 2025. RISC-V, heterogeneous computing, and energy efficiency.</div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Opening paper...')">View Paper</button><button class="btn bg_ bsm" onclick="toast('Saved!')">Save</button></div></div>
-    <div class="card p4"><div class="tag tgp mb2" style="font-size:.68rem;">SYSTEMS</div><div class="fb_ mb2" style="line-height:1.4;">Cache Coherency Protocols for Multi-Core Systems</div><div class="txs tm mb3">Journal of Parallel and Distributed Computing, 2024.</div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Opening paper...')">View Paper</button><button class="btn bg_ bsm" onclick="toast('Saved!')">Save</button></div></div>
-    <div class="card p4"><div class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;margin-bottom:8px;font-size:.68rem;">DATA SCIENCE</div><div class="fb_ mb2" style="line-height:1.4;">Deep Learning for Natural Language Processing</div><div class="txs tm mb3">NeurIPS 2024. Transformer architectures and their applications.</div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Opening paper...')">View Paper</button><button class="btn bg_ bsm" onclick="toast('Saved!')">Save</button></div></div>
-    <div class="card p4"><div class="tag" style="background:#fff3cd;color:#7d5a00;border-color:#f0d070;margin-bottom:8px;font-size:.68rem;">ETHICS</div><div class="fb_ mb2" style="line-height:1.4;">The Ethics of AI in Academic Research</div><div class="txs tm mb3">Philosophy of Technology, 2025. Implications of LLM-assisted research.</div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Opening paper...')">View Paper</button><button class="btn bg_ bsm" onclick="toast('Saved!')">Save</button></div></div>
-    <div class="card p4"><div class="tag tgp mb2" style="font-size:.68rem;">NETWORKS</div><div class="fb_ mb2" style="line-height:1.4;">5G Network Slicing: A Survey</div><div class="txs tm mb3">IEEE Communications Surveys &amp; Tutorials, 2024. Resource management and QoS.</div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Opening paper...')">View Paper</button><button class="btn bg_ bsm" onclick="toast('Saved!')">Save</button></div></div>
+    <div class="card p4"><div class="tag tgp mb2" style="font-size:.68rem;">COMPUTER SCIENCE</div><div class="fb_ mb2" style="line-height:1.4;">Computer Organization and Architecture</div><div class="txs tm mb3">24/25</div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Opening paper...')">View Paper</button><button class="btn bg_ bsm" onclick="toast('Saved!')">Save</button></div></div>
+    <div class="card p4"><div class="tag tgp mb2" style="font-size:.68rem;">ALGORITHMS</div><div class="fb_ mb2" style="line-height:1.4;">System Analysis and Design</div><div class="txs tm mb3">27/28</div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Opening paper...')">View Paper</button><button class="btn bg_ bsm" onclick="toast('Saved!')">Save</button></div></div>
+    <div class="card p4"><div class="tag tgp mb2" style="font-size:.68rem;">SYSTEMS</div><div class="fb_ mb2" style="line-height:1.4;">Discrete Structure</div><div class="txs tm mb3">23/24</div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Opening paper...')">View Paper</button><button class="btn bg_ bsm" onclick="toast('Saved!')">Save</button></div></div>
+    <div class="card p4"><div class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;margin-bottom:8px;font-size:.68rem;">PROBABILITY & STATISTICAL DATA ANALYSIS </div><div class="fb_ mb2" style="line-height:1.4;">19/20</div><div class="txs tm mb3">NeurIPS 2024. Transformer architectures and their applications.</div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Opening paper...')">View Paper</button><button class="btn bg_ bsm" onclick="toast('Saved!')">Save</button></div></div>
+    <div class="card p4"><div class="tag" style="background:#fff3cd;color:#7d5a00;border-color:#f0d070;margin-bottom:8px;font-size:.68rem;">ETHICS</div><div class="fb_ mb2" style="line-height:1.4;">20/21</div><div class="txs tm mb3">Philosophy of Technology, 2025. Implications of LLM-assisted research.</div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Opening paper...')">View Paper</button><button class="btn bg_ bsm" onclick="toast('Saved!')">Save</button></div></div>
+    <div class="card p4"><div class="tag tgp mb2" style="font-size:.68rem;">NETWORKS</div><div class="fb_ mb2" style="line-height:1.4;">Network Communication</div><div class="txs tm mb3">17/18</div><div class="flex gap2"><button class="btn bo bsm" onclick="toast('Opening paper...')">View Paper</button><button class="btn bg_ bsm" onclick="toast('Saved!')">Save</button></div></div>
   </div>
 </main>
 </div>
@@ -1627,21 +1823,171 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <footer class="ft"><div class="ftb">🎓 Academia</div><div class="ftl"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></footer>
 </div>
 
+  <!-- ═══════════════════════ PAGE: GPA / CGPA ═══════════════════════ -->
+<div id="page-gpa" class="page">
+<div class="pw" style="flex:1;">
+<aside class="sb">
+  <div class="sbl">Analytics</div>
+ <button class="si" data-page="dashboard" onclick="go('dashboard')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</button>
+  <button class="si" data-page="gpa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>GPA / CGPA</button>
+  <button class="si" data-page="course-detail" onclick="go('course-detail')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>My Courses</button>
+  <button class="si" data-page="research" onclick="go('research')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Research</button>
+  <div class="sb-bot"><div class="sb-promo"><div class="pt">Academic Standing</div><div class="pb">Track your GPA every semester to stay on top.</div></div></div>
+</aside>
+<main class="main" style="padding:0;">
+  <div style="padding:24px 32px 0;">
+    <div class="flex ic jb mb4">
+      <div>
+        <h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">GPA &amp; CGPA Tracker</h1>
+        <p class="tsm tm">Track your grade points across all semesters.</p>
+      </div>
+      <div class="flex gap2">
+        <button class="btn bo" onclick="addGpaCourse()">+ Add Course</button>
+        <button class="btn bp" onclick="exportReport()">⬇ Export Report</button>
+      </div>
+    </div>
+    <!-- Semester tabs -->
+    <div class="sem-tabs" id="semTabs"></div>
+  </div>
+
+  <div class="gpa-layout">
+    <!-- LEFT: semester course table -->
+    <div>
+      <div class="gpa-sem-card">
+        <div class="gpa-sem-hdr">
+          <div>
+            <div class="gpa-sem-title" id="gpaSemTitle">Semester 5 — 2024/2025</div>
+            <div class="txs tm mt1" id="gpaSemCredit"></div>
+          </div>
+          <div class="gpa-sem-badge" id="gpaSemGpa">GPA: —</div>
+        </div>
+        <table class="gpa-table">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Credit Hours</th>
+              <th>Grade</th>
+              <th>Grade Point</th>
+              <th>Quality Pts</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="gpaCourseRows"></tbody>
+          <tfoot>
+            <tr style="background:var(--bg);">
+              <td class="fb_">Total / GPA</td>
+              <td class="fb_ tpr" id="gpaTotalCredit">—</td>
+              <td></td>
+              <td></td>
+              <td class="fb_ tpr" id="gpaTotalQp">—</td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- All semesters CGPA breakdown -->
+      <div class="card">
+        <div class="cb">
+          <div class="fb_ mb4" style="font-size:1rem;">Semester GPA History</div>
+          <div id="cgpaBarChart"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: CGPA summary -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+
+      <!-- CGPA ring -->
+      <div class="card p4" style="text-align:center;">
+        <div class="fb_ mb3" style="font-size:1rem;">Cumulative GPA (CGPA)</div>
+        <div class="gpa-ring-wrap">
+          <svg width="140" height="140" viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="56" fill="none" stroke="#e5e2de" stroke-width="12"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="#7B1C2E" stroke-width="12"
+              stroke-dasharray="351.9" stroke-dashoffset="351.9"
+              stroke-linecap="round" transform="rotate(-90 70 70)" id="cgpaRing"/>
+          </svg>
+          <div class="gpa-ring-label">
+            <div class="gpa-big" id="cgpaDisplay">—</div>
+            <div style="font-size:.62rem;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;">CGPA</div>
+          </div>
+        </div>
+        <div class="txs tm" id="cgpaStanding">Enter your grades to calculate CGPA</div>
+      </div>
+
+      <!-- GPA scale reference -->
+      <div class="card p4">
+        <div class="fb_ tsm mb3">Grade Scale (UTM)</div>
+        <table class="dt" style="font-size:.78rem;">
+          <thead><tr><th>Grade</th><th>Marks</th><th>Points</th></tr></thead>
+          <tbody>
+            <tr><td class="fb_" style="color:#2e7d52;">A+</td><td>90–100</td><td class="fb_">4.00</td></tr>
+            <tr><td class="fb_" style="color:#2e7d52;">A</td><td>80–89</td><td class="fb_">4.00</td></tr>
+            <tr><td class="fb_" style="color:#2e7d52;">A-</td><td>75–79</td><td class="fb_">3.67</td></tr>
+            <tr><td class="fb_" style="color:#b45309;">B+</td><td>70–74</td><td class="fb_">3.33</td></tr>
+            <tr><td class="fb_" style="color:#b45309;">B</td><td>65–69</td><td class="fb_">3.00</td></tr>
+            <tr><td class="fb_" style="color:#b45309;">B-</td><td>60–64</td><td class="fb_">2.67</td></tr>
+            <tr><td class="fb_" style="color:#c0392b;">C+</td><td>55–59</td><td class="fb_">2.33</td></tr>
+            <tr><td class="fb_" style="color:#c0392b;">C</td><td>50–54</td><td class="fb_">2.00</td></tr>
+            <tr><td class="fb_" style="color:#c0392b;">D</td><td>45–49</td><td class="fb_">1.67</td></tr>
+            <tr><td class="fb_" style="color:#c0392b;">E</td><td>40–44</td><td class="fb_">1.33</td></tr>
+            <tr><td class="fb_" style="color:#c0392b;">F</td><td>0–39</td><td class="fb_">0.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Dean's List indicator -->
+      <div class="card p4" id="deansCard" style="display:none;background:linear-gradient(135deg,#7B1C2E,#5a1321);color:#fff;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🏆</div>
+        <div class="fb_" style="font-size:1rem;margin-bottom:4px;">Dean's List Eligible!</div>
+        <div class="txs" style="opacity:.85;line-height:1.5;">Your CGPA is above 3.50. You may qualify for the Dean's List this semester. Congratulations!</div>
+      </div>
+    </div>
+  </div>
+</main>
+</div>
+</div>
+  
 <!-- ═══════════════════════════ JS ═══════════════════════════ -->
 <script>
 // ── Router ──
-const pages = ['dashboard','forums','courses','course-detail','collaboration','studyguide','pomodoro','resources','research','profile'];
-const navMap = {dashboard:'nav-dashboard',courses:'nav-courses',research:'nav-research',forums:'nav-forums','course-detail':'nav-courses',collaboration:'nav-forums',studyguide:'nav-research',pomodoro:'nav-dashboard',resources:'nav-courses',profile:null};
+const pages = ['dashboard','forums','courses','course-detail','collaboration','studyguide','pomodoro','resources','research','profile','gpa'];
 
+const navMap = {
+  dashboard:          'nav-dashboard',
+  gpa:                'nav-dashboard',
+  pomodoro:           'nav-dashboard',
+  profile:            null,
+  courses:            'nav-courses',
+  'course-detail':    'nav-courses',
+  resources:          'nav-courses',
+  research:           'nav-research',
+  studyguide:         'nav-research',
+  forums:             'nav-forums',
+  collaboration:      'nav-forums',
+  'lecturer-courses': 'nav-mycourses',
+  admin:              'nav-admin',
+};
+  
 function go(page) {
+  // Hide all pages
   pages.forEach(p => {
     const el = document.getElementById('page-'+p);
     if (el) el.classList.toggle('active', p === page);
   });
+
+  // Topbar nav — clear all, set correct one
   document.querySelectorAll('.tb-nav a').forEach(a => a.classList.remove('active'));
   const navId = navMap[page];
   if (navId) document.getElementById(navId)?.classList.add('active');
-  window.scrollTo(0,0);
+
+  // Sidebar .si buttons — clear ALL across every sidebar, then set correct one
+  document.querySelectorAll('.si[data-page]').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll(`.si[data-page="${page}"]`).forEach(b => b.classList.add('active'));
+
+  window.scrollTo(0, 0);
+  if (page === 'gpa') renderGpaPage();
 }
 
 let reportTitle = '';
@@ -1767,10 +2113,217 @@ function toast(msg, ok=true) {
 }
 
 // ── Dashboard ──
-function updateGrade(v) {
-  const l = v>=90?'A+':v>=85?'A':v>=80?'A-':v>=75?'B+':v>=70?'B':v>=65?'C+':v>=60?'C':v>=55?'D+':v>=50?'D':'F';
-  document.getElementById('gradeDisp').textContent = v+'% / '+l;
+  
+// ── Grade Tracker ──
+const gradeData = {
+  SCJ1013: [
+    { name:'Quiz 1: Fundamentals',        scored:8,  outOf:10,  weight:5,  done:true  },
+    { name:'Assignment 1: Logic Systems', scored:18, outOf:20,  weight:15, done:true  },
+    { name:'Midterm Examination',         scored:65, outOf:100, weight:30, done:true  },
+    { name:'Final Project',               scored:0,  outOf:100, weight:25, done:false },
+    { name:'Final Exam',                  scored:0,  outOf:100, weight:35, done:false },
+  ],
+  SECR1033: [
+    { name:'Lab Report 1',                scored:42, outOf:50,  weight:20, done:true  },
+    { name:'Lab Report 2',                scored:38, outOf:50,  weight:20, done:true  },
+    { name:'Midterm Test',                scored:58, outOf:100, weight:20, done:true  },
+    { name:'Final Project',               scored:0,  outOf:100, weight:20, done:false },
+    { name:'Final Exam',                  scored:0,  outOf:100, weight:20, done:false },
+  ],
+  MTH201: [
+    { name:'Assignment 1: Integration',   scored:22, outOf:25,  weight:10, done:true  },
+    { name:'Assignment 2: Series',        scored:19, outOf:25,  weight:10, done:true  },
+    { name:'Quiz 1',                      scored:14, outOf:20,  weight:10, done:true  },
+    { name:'Midterm Exam',                scored:72, outOf:100, weight:30, done:true  },
+    { name:'Final Exam',                  scored:0,  outOf:100, weight:40, done:false },
+  ],
+  CSC101: [
+    { name:'Participation & Attendance',  scored:18, outOf:20,  weight:10, done:true  },
+    { name:'Programming Assignment 1',    scored:88, outOf:100, weight:15, done:true  },
+    { name:'Programming Assignment 2',    scored:76, outOf:100, weight:15, done:true  },
+    { name:'Midterm Exam',                scored:80, outOf:100, weight:25, done:true  },
+    { name:'Final Project',               scored:0,  outOf:100, weight:15, done:false },
+    { name:'Final Exam',                  scored:0,  outOf:100, weight:20, done:false },
+  ],
+};
+let currentGradeCourse = 'SCJ1013';
+
+function gradeLabel(pct) {
+  return pct>=90?'A+':pct>=85?'A':pct>=80?'A-':pct>=75?'B+':pct>=70?'B':pct>=65?'C+':pct>=60?'C':pct>=55?'D+':pct>=50?'D':'F';
 }
+
+function gradeColor(pct) {
+  return pct>=70?'var(--ok)':pct>=50?'#b45309':'#c0392b';
+}
+
+function calcWeightedAvg(rows) {
+  let totalWeight = 0, weightedSum = 0;
+  rows.forEach(r => {
+    if (r.done && r.outOf > 0) {
+      const pct = (r.scored / r.outOf) * 100;
+      weightedSum += pct * r.weight;
+      totalWeight += r.weight;
+    }
+  });
+  return totalWeight > 0 ? weightedSum / totalWeight : null;
+}
+
+function calcNeeded(rows, target) {
+  // What average is needed on remaining assessments to hit target overall?
+  let doneWeight = 0, doneSum = 0, remainWeight = 0;
+  rows.forEach(r => {
+    if (r.done && r.outOf > 0) {
+      doneSum += (r.scored / r.outOf) * 100 * r.weight;
+      doneWeight += r.weight;
+    } else if (!r.done) {
+      remainWeight += r.weight;
+    }
+  });
+  if (remainWeight === 0) return null;
+  const totalWeight = doneWeight + remainWeight;
+  const needed = (target * totalWeight - doneSum) / remainWeight;
+  return Math.round(needed * 10) / 10;
+}
+
+function renderAssessmentRows() {
+  const rows = gradeData[currentGradeCourse];
+  const container = document.getElementById('assessmentRows');
+  container.innerHTML = rows.map((r, i) => {
+    const pct = r.done && r.outOf > 0 ? Math.round((r.scored / r.outOf) * 100) : null;
+    return `
+    <div class="arow-input">
+      <input type="text" value="${r.name}" placeholder="Assessment name"
+        onchange="gradeData['${currentGradeCourse}'][${i}].name=this.value"/>
+      <input type="number" value="${r.done ? r.scored : ''}" placeholder="Score" min="0"
+        max="${r.outOf}" style="width:54px;"
+        oninput="updateScore(${i},this.value,'${currentGradeCourse}')"/>
+      <span class="wt-lbl">/ ${r.outOf}</span>
+      <input type="number" value="${r.weight}" min="1" max="100" style="width:46px;"
+        oninput="updateWeight(${i},this.value,'${currentGradeCourse}')"/>
+      <span class="wt-lbl">%wt</span>
+      <span class="grade-badge" id="gb-${i}" style="color:${pct!==null?gradeColor(pct):'var(--mut)'}">
+        ${pct !== null ? gradeLabel(pct) : '—'}
+      </span>
+      <button class="del-btn" onclick="deleteRow(${i},'${currentGradeCourse}')">✕</button>
+    </div>`;
+  }).join('');
+  recalcAll();
+}
+
+function updateScore(i, val, course) {
+  const row = gradeData[course][i];
+  const num = parseFloat(val);
+  if (isNaN(num) || val === '') { row.done = false; row.scored = 0; }
+  else { row.scored = Math.min(num, row.outOf); row.done = true; }
+  recalcAll();
+  // update grade badge inline
+  const pct = row.done ? Math.round((row.scored / row.outOf) * 100) : null;
+  const gb = document.getElementById('gb-' + i);
+  if (gb) {
+    gb.textContent = pct !== null ? gradeLabel(pct) : '—';
+    gb.style.color = pct !== null ? gradeColor(pct) : 'var(--mut)';
+  }
+}
+
+function updateWeight(i, val, course) {
+  const num = parseFloat(val);
+  if (!isNaN(num) && num > 0) gradeData[course][i].weight = num;
+  recalcAll();
+}
+
+function deleteRow(i, course) {
+  gradeData[course].splice(i, 1);
+  renderAssessmentRows();
+}
+
+function addAssessmentRow() {
+  gradeData[currentGradeCourse].push({ name:'New Assessment', scored:0, outOf:100, weight:10, done:false });
+  renderAssessmentRows();
+}
+
+function switchGradeCourse(course) {
+  currentGradeCourse = course;
+  renderAssessmentRows();
+}
+
+function recalcAll() {
+  const rows = gradeData[currentGradeCourse];
+  const avg = calcWeightedAvg(rows);
+  const target = parseInt(document.getElementById('targetSlider').value);
+
+  // Donut
+  const circ = 301.6;
+  const pct = avg !== null ? avg : 0;
+  const offset = circ - (circ * pct / 100);
+  document.getElementById('donutRing').style.strokeDashoffset = offset;
+  document.getElementById('avgDisplay').textContent = avg !== null ? Math.round(avg) + '%' : '—';
+  document.getElementById('avgDisplay').style.color = avg !== null ? gradeColor(avg) : 'var(--mut)';
+
+  // Desc
+  const doneCount = rows.filter(r => r.done).length;
+  const totalWeight = rows.filter(r => r.done).reduce((s, r) => s + r.weight, 0);
+  document.getElementById('avgDesc').textContent =
+    avg !== null
+      ? `Based on ${doneCount} assessment${doneCount!==1?'s':''} (${totalWeight}% of total weight). `
+      : 'No scores entered yet.';
+
+  // Insight
+  const needed = calcNeeded(rows, target);
+  const insightBox = document.getElementById('insightBox');
+  const insightTips = document.getElementById('insightTips');
+  if (avg !== null && needed !== null) {
+    const gap = target - avg;
+    insightBox.innerHTML = needed > 100
+      ? `<em>With a current average of <strong>${Math.round(avg)}%</strong>, reaching <strong>${target}%</strong> is no longer mathematically possible — but aim as high as you can!</em>`
+      : `<em>To reach <strong>${target}%</strong>, you need to average <strong>${needed}%</strong> on remaining assessments. ${gap > 0 ? `You are ${Math.round(gap)}% away from your goal.` : `You've already hit your target! 🎉`}</em>`;
+    insightTips.innerHTML = [
+      needed <= 70 ? '✓ You are on track — keep up the consistency.' : '✓ Focus study time on highest-weight assessments first.',
+      '✓ Complete 3 past papers to improve exam retrieval speed.',
+      avg < 60 ? '✓ Consider visiting your lecturer during office hours.' : '✓ Review weak topics from your lowest-scoring assessment.',
+    ].map(t => `<div class="flex gap2"><span>✓</span><span>${t.replace('✓ ','')}</span></div>`).join('');
+  } else {
+    insightBox.innerHTML = `<em>Enter your assessment scores to get personalised insights.</em>`;
+    insightTips.innerHTML = '';
+  }
+
+  // Target gap text
+  if (avg !== null) {
+    const gap = target - avg;
+    document.getElementById('targetGap').textContent =
+      gap > 0
+        ? `You are ${Math.round(gap * 10) / 10}% away from your ${target}% goal.`
+        : `🎉 You've already hit your ${target}% target!`;
+  } else {
+    document.getElementById('targetGap').textContent = 'Enter scores to see your gap.';
+  }
+
+  // Action plan
+  const pending = rows.filter(r => !r.done);
+  const tbody = document.getElementById('actionPlanBody');
+  if (pending.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="4" class="tm txs" style="padding:12px;">All assessments completed!</td></tr>`;
+  } else {
+    tbody.innerHTML = pending.map(r => {
+      const needPct = needed !== null ? Math.min(needed, 100) : '—';
+      const urgency = r.weight >= 30 ? '#c0392b' : r.weight >= 20 ? '#b45309' : 'var(--mut)';
+      return `<tr>
+        <td><div class="fs_">${r.name}</div><div class="txs tm">Pending · ${r.weight}% weight</div></td>
+        <td>${r.weight}%</td>
+        <td><span class="tag tgp" style="color:${urgency};border-color:${urgency};">${needPct !== '—' ? needPct + '%' : '—'}</span></td>
+        <td><button class="btn bg_ bsm" onclick="go('pomodoro')">Study</button></td>
+      </tr>`;
+    }).join('');
+  }
+}
+
+function updateGrade(v) {
+  const l = gradeLabel(v);
+  document.getElementById('gradeDisp').textContent = v + '% / ' + l;
+  recalcAll();
+}
+
+// Init grade tracker
+renderAssessmentRows();
 function setGTab(el, id) {
   document.querySelectorAll('.gtab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
@@ -1922,11 +2475,6 @@ function renderAdMiniList(type) {
 // Init ads on load
 renderAdMiniList('sports');
 
-  // ── Login / Roles ──
-const pages2 = ['lecturer-courses','admin'];
-pages.push(...pages2);
-navMap['lecturer-courses'] = 'nav-mycourses';
-navMap['admin'] = 'nav-admin';
 
 let currentRole = 'student';
 
@@ -1991,13 +2539,25 @@ function doLogin() {
   badge.className = 'role-badge ' + acc.badge;
   badge.textContent = acc.label;
 
+  // Nav visibility
   document.getElementById('nav-mycourses').classList.toggle('nav-hidden', currentRole !== 'lecturer');
   document.getElementById('nav-admin').classList.toggle('nav-hidden', currentRole !== 'admin');
 
-  renderProfile();   // ← add this line
+  // Dashboard view swap
+  const isLecturer = currentRole === 'lecturer';
+  document.getElementById('dashStudentView').style.display = isLecturer ? 'none' : 'block';
+  document.getElementById('dashLecturerView').style.display = isLecturer ? 'block' : 'none';
 
+  // Show/hide student-only sidebar items
+  const studentUploadBtn = document.getElementById('sb-studentUpload');
+  if (studentUploadBtn) studentUploadBtn.style.display = isLecturer ? 'none' : 'flex';
+
+  // Sync pending count on lecturer dashboard
+  if (isLecturer) syncLecturerDashboard();
+
+  renderProfile();
   document.getElementById('loginScreen').classList.add('hide');
-  go(currentRole === 'lecturer' ? 'lecturer-courses' : currentRole === 'admin' ? 'admin' : 'dashboard');
+  go(currentRole === 'lecturer' ? 'dashboard' : currentRole === 'admin' ? 'admin' : 'dashboard');
   toast('Signed in as ' + acc.label);
 }
 
@@ -2013,6 +2573,132 @@ function switchAccount() {
   document.getElementById('loginScreen').classList.remove('hide');
 }
 
+  // ── Lecturer: Student Grade Viewer ──
+const studentGrades = {
+  JS: {
+    name: 'Julian Smith', initials: 'JS', avg: 71.5,
+    assessments: [
+      { name:'Quiz 1', score:'8/10', pct:80, grade:'A-' },
+      { name:'Assignment 1', score:'18/20', pct:90, grade:'A' },
+      { name:'Midterm', score:'65/100', pct:65, grade:'C+' },
+      { name:'Final Project', score:'Pending', pct:null, grade:'—' },
+      { name:'Final Exam', score:'Pending', pct:null, grade:'—' },
+    ]
+  },
+  AM: {
+    name: 'Alice Malik', initials: 'AM', avg: 91.2,
+    assessments: [
+      { name:'Quiz 1', score:'10/10', pct:100, grade:'A+' },
+      { name:'Assignment 1', score:'20/20', pct:100, grade:'A+' },
+      { name:'Midterm', score:'88/100', pct:88, grade:'A' },
+      { name:'Final Project', score:'Pending', pct:null, grade:'—' },
+      { name:'Final Exam', score:'Pending', pct:null, grade:'—' },
+    ]
+  },
+  BL: {
+    name: 'Ben Lim', initials: 'BL', avg: 63.0,
+    assessments: [
+      { name:'Quiz 1', score:'6/10', pct:60, grade:'C' },
+      { name:'Assignment 1', score:'14/20', pct:70, grade:'B' },
+      { name:'Midterm', score:'60/100', pct:60, grade:'C' },
+      { name:'Final Project', score:'Pending', pct:null, grade:'—' },
+      { name:'Final Exam', score:'Pending', pct:null, grade:'—' },
+    ]
+  },
+  RK: {
+    name: 'Raj Kumar', initials: 'RK', avg: 87.3,
+    assessments: [
+      { name:'Quiz 1', score:'9/10', pct:90, grade:'A' },
+      { name:'Assignment 1', score:'19/20', pct:95, grade:'A+' },
+      { name:'Midterm', score:'82/100', pct:82, grade:'A-' },
+      { name:'Final Project', score:'Pending', pct:null, grade:'—' },
+      { name:'Final Exam', score:'Pending', pct:null, grade:'—' },
+    ]
+  },
+  FZ: {
+    name: 'Fatimah Zahra', initials: 'FZ', avg: 85.0,
+    assessments: [
+      { name:'Quiz 1', score:'9/10', pct:90, grade:'A' },
+      { name:'Assignment 1', score:'17/20', pct:85, grade:'A' },
+      { name:'Midterm', score:'80/100', pct:80, grade:'A-' },
+      { name:'Final Project', score:'Pending', pct:null, grade:'—' },
+      { name:'Final Exam', score:'Pending', pct:null, grade:'—' },
+    ]
+  },
+};
+
+function loadStudentGrades(id) {
+  const wrap = document.getElementById('lecStudentGradeView');
+  if (!id) {
+    wrap.innerHTML = `<div class="txs tm" style="text-align:center;padding:24px;">Select a student to view their grades.</div>`;
+    return;
+  }
+  const s = studentGrades[id];
+  const color = s.avg >= 80 ? '#2e7d52' : s.avg >= 65 ? '#b45309' : '#c0392b';
+  wrap.innerHTML = `
+    <div class="flex ic gap3 mb3">
+      <div class="student-av-sm" style="width:42px;height:42px;font-size:.85rem;">${s.initials}</div>
+      <div>
+        <div class="fb_">${s.name}</div>
+        <div class="txs tm">SCJ1013 – Advanced Algorithms</div>
+      </div>
+      <div style="margin-left:auto;text-align:right;">
+        <div style="font-family:var(--fn);font-size:1.4rem;font-weight:700;color:${color};">${s.avg}%</div>
+        <div class="txs tm">Weighted Avg</div>
+      </div>
+    </div>
+    <div class="ptrack mb3" style="height:8px;">
+      <div class="pfill" style="width:${s.avg}%;background:${color};"></div>
+    </div>
+    <table class="dt" style="font-size:.78rem;">
+      <thead><tr><th>Assessment</th><th>Score</th><th>Pct</th><th>Grade</th></tr></thead>
+      <tbody>
+        ${s.assessments.map(a => `
+          <tr>
+            <td>${a.name}</td>
+            <td class="fb_">${a.score}</td>
+            <td>${a.pct !== null ? a.pct + '%' : '<span class="txs tm">—</span>'}</td>
+            <td><span class="tag ${a.pct !== null ? (a.pct>=80?'':'') : ''}" style="${a.pct!==null?`background:${a.pct>=80?'#e8f5ee':a.pct>=65?'#fff3cd':'#f8ecee'};color:${a.pct>=80?'#2e7d52':a.pct>=65?'#7d5a00':'#7B1C2E'};border-color:${a.pct>=80?'#a8d8b8':a.pct>=65?'#f0d070':'#e0b4bc'}`:''}">${a.grade}</span></td>
+          </tr>`).join('')}
+      </tbody>
+    </table>
+    <div class="flex gap2 mt3">
+      <button class="btn bo bsm bfull" onclick="toast('Sending message to ${s.name}...')">✉ Message Student</button>
+      <button class="btn bp bsm bfull" onclick="toast('Opening full report...')">📊 Full Report</button>
+    </div>`;
+}
+
+function syncLecturerDashboard() {
+  // sync pending count from pendingVideos array
+  const count = pendingVideos ? pendingVideos.length : 0;
+  const el = document.getElementById('lecPendingCount');
+  if (el) el.textContent = count;
+
+  // sync pending list preview
+  const listEl = document.getElementById('lecDashPendingList');
+  if (listEl) {
+    listEl.innerHTML = count === 0
+      ? '<div class="txs tm">No pending submissions.</div>'
+      : pendingVideos.slice(0, 3).map((v, i) => `
+          <div class="student-row-lec">
+            <div class="student-av-sm">🎬</div>
+            <div style="flex:1;">
+              <div class="fs_ tsm">${v.title}</div>
+              <div class="txs tm">${v.submittedBy} · ${v.course}</div>
+            </div>
+            <button class="btn bp bsm" onclick="approveVideo(${i});syncLecturerDashboard()">Approve</button>
+          </div>`).join('');
+  }
+}
+
+function postLecAnnouncement() {
+  const title = document.getElementById('lecAnnTitle').value.trim();
+  const body = document.getElementById('lecAnnBody').value.trim();
+  if (!title) { toast('Please enter an announcement title', false); return; }
+  document.getElementById('lecAnnTitle').value = '';
+  document.getElementById('lecAnnBody').value = '';
+  toast('Announcement posted to students!');
+}
 // ── Upload Video Modal ──
 let selectedFileName = '';
 function openUploadModal() {
@@ -2493,6 +3179,232 @@ ${assessmentTable}
   const win = window.open('', '_blank');
   win.document.write(html);
   win.document.close();
+}
+
+  // ── GPA / CGPA Tracker ──
+const gradePoints = {
+  'A+':4.00,'A':4.00,'A-':3.67,
+  'B+':3.33,'B':3.00,'B-':2.67,
+  'C+':2.33,'C':2.00,
+  'D':1.67,'E':1.33,'F':0.00
+};
+
+const semesterData = [
+  {
+    label:'Sem 1 — 2022/2023',
+    locked: true,
+    courses:[
+      {code:'MPU3113', name:'Pengajian Malaysia', credit:2, grade:'A'},
+      {code:'ULAB1012', name:'English for Academic Purposes', credit:2, grade:'B+'},
+      {code:'SCJ1013',  name:'Intro to Computer Science', credit:3, grade:'A-'},
+      {code:'MTH1012',  name:'Calculus I', credit:3, grade:'B+'},
+    ]
+  },
+  {
+    label:'Sem 2 — 2022/2023',
+    locked: true,
+    courses:[
+      {code:'MPU3122', name:'Ethnic Relations', credit:2, grade:'A'},
+      {code:'SCJ1023',  name:'Programming I', credit:3, grade:'A-'},
+      {code:'SCJ1033',  name:'Discrete Mathematics', credit:3, grade:'B+'},
+      {code:'MTH1022',  name:'Calculus II', credit:3, grade:'B'},
+    ]
+  },
+  {
+    label:'Sem 3 — 2023/2024',
+    locked: true,
+    courses:[
+      {code:'SCJ2013',  name:'Data Structures', credit:3, grade:'A-'},
+      {code:'SCJ2023',  name:'Object Oriented Programming', credit:3, grade:'A'},
+      {code:'SECR1033', name:'Computer Organization', credit:3, grade:'B+'},
+      {code:'MPU3312', name:'Co-curriculum', credit:1, grade:'A'},
+    ]
+  },
+  {
+    label:'Sem 4 — 2023/2024',
+    locked: true,
+    courses:[
+      {code:'SCJ3013',  name:'Database Systems', credit:3, grade:'B+'},
+      {code:'SCJ3023',  name:'Operating Systems', credit:3, grade:'B'},
+      {code:'SECD2613', name:'System Analysis & Design', credit:3, grade:'B+'},
+      {code:'MTH2013',  name:'Statistics', credit:3, grade:'A-'},
+    ]
+  },
+  {
+    label:'Sem 5 — 2024/2025',
+    locked: false,
+    courses:[
+      {code:'SCJ1013',  name:'Advanced Algorithms & DS', credit:3, grade:'B'},
+      {code:'SECR1033', name:'Computer Organization', credit:3, grade:'B+'},
+      {code:'MTH201',   name:'Calculus II', credit:3, grade:'A-'},
+      {code:'CSC101',   name:'Intro to Computer Science', credit:3, grade:'A'},
+    ]
+  },
+];
+
+let currentSemIdx = 4; // default to latest semester
+
+function calcSemGpa(courses) {
+  let totalCredit = 0, totalQp = 0;
+  courses.forEach(c => {
+    const gp = gradePoints[c.grade] ?? 0;
+    totalQp += gp * c.credit;
+    totalCredit += c.credit;
+  });
+  return totalCredit > 0 ? { gpa: totalQp / totalCredit, credit: totalCredit, qp: totalQp } : null;
+}
+
+function calcCgpa() {
+  let totalCredit = 0, totalQp = 0;
+  semesterData.forEach(sem => {
+    sem.courses.forEach(c => {
+      const gp = gradePoints[c.grade] ?? 0;
+      totalQp += gp * c.credit;
+      totalCredit += c.credit;
+    });
+  });
+  return totalCredit > 0 ? totalQp / totalCredit : null;
+}
+
+function gpaBadgeColor(gpa) {
+  return gpa >= 3.5 ? '#2e7d52' : gpa >= 3.0 ? '#b45309' : gpa >= 2.0 ? '#c0392b' : '#6b6b6b';
+}
+
+function gpaStanding(gpa) {
+  if (gpa >= 3.67) return "First Class Honours standing";
+  if (gpa >= 3.50) return "Dean's List eligible — excellent work!";
+  if (gpa >= 3.00) return "Second Class Upper — good standing";
+  if (gpa >= 2.67) return "Second Class Lower — keep pushing";
+  if (gpa >= 2.00) return "Passing — improvement needed";
+  return "At risk — please seek academic counselling";
+}
+
+function renderSemTabs() {
+  const tabs = document.getElementById('semTabs');
+  if (!tabs) return;
+  tabs.innerHTML = semesterData.map((s, i) => `
+    <button class="sem-tab ${i === currentSemIdx ? 'active' : ''}"
+      onclick="switchSem(${i})">${s.label.split('—')[0].trim()}</button>
+  `).join('');
+}
+
+function renderGpaTable() {
+  const sem = semesterData[currentSemIdx];
+  const tbody = document.getElementById('gpaCourseRows');
+  if (!tbody) return;
+
+  tbody.innerHTML = sem.courses.map((c, i) => {
+    const gp = gradePoints[c.grade] ?? 0;
+    const qp = (gp * c.credit).toFixed(2);
+    const gradeColor = gp >= 3.5 ? '#2e7d52' : gp >= 2.67 ? '#b45309' : '#c0392b';
+    const locked = sem.locked;
+    return `<tr>
+      <td>
+        <div class="fs_" style="font-size:.82rem;">${c.code}</div>
+        <div class="txs tm">${c.name}</div>
+      </td>
+      <td>
+        ${locked
+          ? `<span class="fb_">${c.credit}</span>`
+          : `<input type="number" min="1" max="6" value="${c.credit}"
+               style="width:50px;padding:4px 6px;border:1.5px solid var(--bdr);border-radius:var(--r);font-size:.8rem;text-align:center;outline:none;font-family:var(--fb);"
+               oninput="semesterData[${currentSemIdx}].courses[${i}].credit=parseInt(this.value)||1;renderGpaPage()"/>`
+        }
+      </td>
+      <td>
+        ${locked
+          ? `<span class="fb_" style="color:${gradeColor}">${c.grade}</span>`
+          : `<select class="gpa-grade-sel" onchange="semesterData[${currentSemIdx}].courses[${i}].grade=this.value;renderGpaPage()">
+              ${Object.keys(gradePoints).map(g =>
+                `<option value="${g}" ${g===c.grade?'selected':''}>${g}</option>`
+              ).join('')}
+            </select>`
+        }
+      </td>
+      <td class="fb_" style="color:${gradeColor}">${gp.toFixed(2)}</td>
+      <td class="fb_">${qp}</td>
+      <td>
+        ${!locked ? `<button class="btn bo bsm" style="padding:3px 8px;color:#c0392b;border-color:#c0392b;"
+          onclick="removeGpaCourse(${i})">✕</button>` : ''}
+      </td>
+    </tr>`;
+  }).join('');
+
+  // footer totals
+  const result = calcSemGpa(sem.courses);
+  if (result) {
+    document.getElementById('gpaTotalCredit').textContent = result.credit + ' hrs';
+    document.getElementById('gpaTotalQp').textContent = result.qp.toFixed(2);
+    document.getElementById('gpaSemGpa').textContent = 'GPA: ' + result.gpa.toFixed(2);
+    document.getElementById('gpaSemGpa').style.color = gpaBadgeColor(result.gpa);
+  }
+  document.getElementById('gpaSemTitle').textContent = sem.label;
+  document.getElementById('gpaSemCredit').textContent =
+    `${sem.locked ? '🔒 Locked (past semester)' : '✏️ Current semester — editable'} · ${sem.courses.length} courses`;
+}
+
+function renderCgpaRing() {
+  const cgpa = calcCgpa();
+  const ring = document.getElementById('cgpaRing');
+  const disp = document.getElementById('cgpaDisplay');
+  const stand = document.getElementById('cgpaStanding');
+  const deansCard = document.getElementById('deansCard');
+  if (!ring) return;
+
+  if (cgpa !== null) {
+    const circ = 351.9;
+    ring.style.strokeDashoffset = circ - (circ * cgpa / 4.0);
+    ring.style.stroke = gpaBadgeColor(cgpa);
+    disp.textContent = cgpa.toFixed(2);
+    disp.style.color = gpaBadgeColor(cgpa);
+    stand.textContent = gpaStanding(cgpa);
+    deansCard.style.display = cgpa >= 3.5 ? 'block' : 'none';
+  }
+}
+
+function renderCgpaBarChart() {
+  const wrap = document.getElementById('cgpaBarChart');
+  if (!wrap) return;
+  wrap.innerHTML = semesterData.map((sem, i) => {
+    const result = calcSemGpa(sem.courses);
+    const gpa = result ? result.gpa : 0;
+    const pct = (gpa / 4.0) * 100;
+    const color = gpaBadgeColor(gpa);
+    return `
+      <div class="cgpa-bar-row">
+        <div class="cgpa-bar-label" style="font-size:.7rem;">Sem ${i+1}</div>
+        <div class="cgpa-bar-track">
+          <div class="cgpa-bar-fill" style="width:${pct}%;background:${color};"></div>
+        </div>
+        <div class="cgpa-bar-val" style="color:${color};">${gpa.toFixed(2)}</div>
+      </div>`;
+  }).join('');
+}
+
+function renderGpaPage() {
+  renderSemTabs();
+  renderGpaTable();
+  renderCgpaRing();
+  renderCgpaBarChart();
+}
+
+function switchSem(idx) {
+  currentSemIdx = idx;
+  renderGpaPage();
+}
+
+function addGpaCourse() {
+  const sem = semesterData[currentSemIdx];
+  if (sem.locked) { toast('Past semesters are locked', false); return; }
+  sem.courses.push({ code:'NEW000', name:'New Course', credit:3, grade:'B' });
+  renderGpaPage();
+}
+
+function removeGpaCourse(i) {
+  const sem = semesterData[currentSemIdx];
+  if (sem.locked) return;
+  sem.courses.splice(i, 1);
+  renderGpaPage();
 }
 
 // ── Resources ──
