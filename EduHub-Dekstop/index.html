@@ -1972,6 +1972,9 @@ const navMap = {
 };
   
 function go(page) {
+  // Redirect any request for 'resources' to the PYQ repository ('research')
+  if (page === 'resources') page = 'research';
+
   // show/hide all pages including lecturer-courses
   pages.forEach(p => {
     const el = document.getElementById('page-' + p);
@@ -1998,7 +2001,6 @@ function go(page) {
     syncLecturerDashboard();
   }
 }
-
 let reportTitle = '';
 
 function reportThread(e, title) {
