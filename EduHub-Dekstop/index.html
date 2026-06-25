@@ -859,12 +859,14 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
  <button class="si" data-page="pomodoro" onclick="go('pomodoro')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Pomodoro Timer</button>
  <button class="si" data-page="gpa" onclick="go('gpa')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>GPA / CGPA</button>
  <button class="si" data-page="resources" onclick="go('resources')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Resources</button>
+ <button class="si" onclick="go('resources')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Resources</button>
+ <button class="si" id="sb-studentUpload" onclick="openUploadModal()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Submit a Video</button>
   <div class="sb-bot"><div class="sb-promo"><div class="pt">Premium Member</div><div class="pb">Access to advanced citation tools and AI study features.</div></div></div>
 </aside>
 <main class="main" style="padding:28px 32px;" id="dashMain">
   <div id="dashStudentView">
-  <div class="flex ic jb mb4">
-    <div><h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">Performance Analytics</h1>
+ <div class="flex ic jb mb4">
+    <div><h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">Performance Analytics</h1></div>
     <div class="flex gap2"><button class="btn bo" onclick="exportReport()">⬇ Export Report</button><button class="btn bp" onclick="toast('Data updated!')">↻ Update Data</button></div>
   </div>
  <!-- Goal Setter -->
@@ -982,8 +984,6 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
         <div class="gcard" onclick="go('resources')"><div class="gthumb" style="background:linear-gradient(135deg,#c0392b,#8e1a28);">⏰</div><div class="ginfo"><div class="fs_ mb1">Timed Exam Strategies</div><div class="txs tm">Manage high-pressure assessments.</div></div><button class="btn bo bsm bpill">Read More</button></div>
         <div class="gcard" onclick="go('resources')"><div class="gthumb" style="background:linear-gradient(135deg,#1a5276,#2980b9);">🎯</div><div class="ginfo"><div class="fs_ mb1">Final Week Checklist</div><div class="txs tm">Step-by-step final week guide.</div></div><button class="btn bo bsm bpill">Read More</button></div>
       </div>
-         <button class="si" onclick="go('resources')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Resources</button>
-         <button class="si" id="sb-studentUpload" onclick="openUploadModal()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Submit a Video</button>
     </div>
   </div><!-- end study guide card cb -->
   </div><!-- end study guide card -->
