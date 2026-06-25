@@ -1971,23 +1971,31 @@ const navMap = {
 };
   
 function go(page) {
-  // Hide all pages
+  // show/hide all pages including lecturer-courses
   pages.forEach(p => {
-    const el = document.getElementById('page-'+p);
+    const el = document.getElementById('page-' + p);
     if (el) el.classList.toggle('active', p === page);
   });
 
-  // Topbar nav — clear all, set correct one
+  // topbar nav highlight
   document.querySelectorAll('.tb-nav a').forEach(a => a.classList.remove('active'));
   const navId = navMap[page];
-  if (navId) document.getElementById(navId)?.classList.add('active');
+  if (navId) {
+    const navEl = document.getElementById(navId);
+    if (navEl) navEl.classList.add('active');
+  }
 
-  // Sidebar .si buttons — clear ALL across every sidebar, then set correct one
+  // sidebar .si highlight — only match data-page buttons
   document.querySelectorAll('.si[data-page]').forEach(b => b.classList.remove('active'));
   document.querySelectorAll(`.si[data-page="${page}"]`).forEach(b => b.classList.add('active'));
 
   window.scrollTo(0, 0);
   if (page === 'gpa') renderGpaPage();
+
+  // sync lecturer dashboard when visiting it
+  if (page === 'dashboard' && currentRole === 'lecturer') {
+    syncLecturerDashboard();
+  }
 }
 
 let reportTitle = '';
