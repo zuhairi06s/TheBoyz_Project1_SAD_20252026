@@ -987,10 +987,10 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
   </div><!-- end study guide card -->
 </div><!-- end dashStudentView -->
 
-  <main class="main" style="padding:28px 32px;">
+
 
   <!-- ── Lecturer Dashboard View ── -->
-  <div id="dashLecturerView">
+  <div id="dashLecturerView" style="display:none;">
     <div class="flex ic jb mb4">
       <div>
         <h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">Lecturer Dashboard</h1>
@@ -1982,7 +1982,9 @@ const navMap = {
 };
   
 function go(page) {
- 
+  // Lock the output routing to the PYQ repository setup
+  if (page === 'resources') page = 'research';
+
   // show/hide all pages including lecturer-courses
   pages.forEach(p => {
     const el = document.getElementById('page-' + p);
