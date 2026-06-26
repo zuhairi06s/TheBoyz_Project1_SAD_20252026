@@ -985,26 +985,101 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
     </div>
   </div><!-- end study guide card cb -->
   </div><!-- end study guide card -->
-  </div><!-- end dashStudentView -->
+</div><!-- end dashStudentView -->
 
+  <!-- ── Lecturer Dashboard View ── -->
+  <div id="dashLecturerView" style="display:none;">
+    <div class="flex ic jb mb4">
+      <div>
+        <h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">Lecturer Dashboard</h1>
+        <p class="tsm tm">Overview of your courses and student performance.</p>
+      </div>
+      <div class="flex gap2">
+        <button class="btn bo" onclick="exportReport()">⬇ Export Report</button>
+        <button class="btn bp" onclick="openUploadModal()">⬆ Upload Lecture</button>
+      </div>
+    </div>
 
- <!-- ── Lecturer Dashboard View ── --> <div id="dashLecturerView" style="display:none;"> <div class="flex ic jb mb4"> <div> <h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">Lecturer Dashboard</h1> <p class="tsm tm">Overview of your courses and student performance.</p> </div> <div class="flex gap2"> <button class="btn bo" onclick="exportReport()">⬇ Export Report</button> <button class="btn bp" onclick="openUploadModal()">⬆ Upload Lecture</button> </div> </div> <div class="lec-stat-grid mb4"> <div class="lec-stat"> <div class="lsv">2</div> <div class="lsl">Active Courses</div> </div> <div class="lec-stat"> <div class="lsv">240</div> <div class="lsl">Total Students</div> </div> <div class="lec-stat"> <div class="lsv" id="lecPendingCount">0</div> <div class="lsl">Pending Submissions</div> </div> </div> 
-   
-   <div class="g2 mb4"> <div class="card"> <div class="cb"> <div class="flex ic jb mb3"> <div class="fb_" style="font-size:1rem;">Student Performance Viewer</div> <select class="ssel" id="lecStudentSelect" onchange="loadStudentGrades(this.value)"> <option value="">— Select a student —</option> <option value="JS">Julian Smith (JS)</option> <option value="AM">Alice Malik (AM)</option> <option value="BL">Ben Lim (BL)</option> <option value="RK">Raj Kumar (RK)</option> <option value="FZ">Fatimah Zahra (FZ)</option> </select> </div> <div id="lecStudentGradeView"> <div class="txs tm" style="text-align:center;padding:24px;"> Select a student to view their grades.
-   </div> </div> </div> </div>
-     <div class="card"> <div class="cb"> <div class="fb_ mb3" style="font-size:1rem;">Course Averages</div> <div class="mb3"> <div class="flex ic jb mb1"> <span class="tsm fs_">SCJ1013 – Advanced Algorithms</span> <span class="tsm fb_ tpr">72.4%</span> </div> <div class="ptrack"><div class="pfill" style="width:72%;"></div></div> <div class="txs tm mt1">142 students · Class median 68%</div> </div> <div> 
-       <div class="flex ic jb mb1"> <span class="tsm fs_">SECR1033 – Computer Org.</span> <span class="tsm fb_ tpr">78.1%</span> </div> <div class="ptrack"><div class="pfill" style="width:78%;"></div></div> 
-       <div class="txs tm mt1">98 students · Class median 75%</div> </div> <hr class="dv mt3 mb3"/> <div class="fb_ tsm mb2">Top Performers</div> <div id="topStudentList"> <div class="student-row-lec"> 
-         <div class="student-av-sm">AM</div> <div style="flex:1;"> <div class="fs_ tsm">Alice Malik</div> <div class="txs tm">SCJ1013 · Avg 91%</div> </div> <span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;font-size:.65rem;">Top 5%</span> </div> 
-         <div class="student-row-lec"> <div class="student-av-sm" style="background:#1a5276;">RK</div> <div style="flex:1;"> <div class="fs_ tsm">Raj Kumar</div> <div class="txs tm">SCJ1013 · Avg 87%</div> </div> <span class="tag tgp" style="font-size:.65rem;">Top 10%</span> </div> <div class="student-row-lec"> <div class="student-av-sm" style="background:#1a7a42;">FZ</div>
-           <div style="flex:1;"> <div class="fs_ tsm">Fatimah Zahra</div> <div class="txs tm">SECR1033 · Avg 85%</div> </div> <span class="tag tgp" style="font-size:.65rem;">Top 10%</span> </div> </div> </div> </div> </div> <div class="card mb4" id="lecDashPending"> <div class="cb"> <div class="flex ic jb mb3"> <div class="fb_" style="font-size:1rem;color:#7d5a00;">⏳ Pending Student Submissions</div> 
-             <button class="btn bo bsm" onclick="go('lecturer-courses')">View All</button> </div> <div id="lecDashPendingList"> <div class="txs tm">No pending submissions.</div> </div> </div> </div> <div class="card"> <div class="cb"> <div class="fb_ mb3" style="font-size:1rem;">Quick Announcement</div> <input class="ti_ mb2" type="text" placeholder="Announcement title..." id="lecAnnTitle"/> <textarea class="ti_ mb2" rows="2" placeholder="Message to students..." id="lecAnnBody"></textarea> 
-               <div class="flex gap2"> <select class="ssel"> <option>SCJ1013 – Advanced Algorithms</option> <option>SECR1033 – Computer Org.</option> <option>All Courses</option> </select> <button class="btn bp" onclick="postLecAnnouncement()">Post Announcement</button>
-              </div><!-- end quick announcement card -->
-        </div><!-- end #dashLecturerView -->
-      </main>
-    </div><!-- end .pw -->
-  </div><!-- end #page-dashboard -->
+    <!-- Stats row -->
+    <div class="lec-stat-grid mb4">
+      <div class="lec-stat"><div class="lsv">2</div><div class="lsl">Active Courses</div></div>
+      <div class="lec-stat"><div class="lsv">240</div><div class="lsl">Total Students</div></div>
+      <div class="lec-stat"><div class="lsv" id="lecPendingCount">0</div><div class="lsl">Pending Submissions</div></div>
+    </div>
+
+    <div class="g2 mb4">
+      <!-- Student performance picker -->
+      <div class="card">
+        <div class="cb">
+          <div class="flex ic jb mb3">
+            <div class="fb_" style="font-size:1rem;">Student Performance Viewer</div>
+            <select class="ssel" id="lecStudentSelect" onchange="loadStudentGrades(this.value)">
+              <option value="">— Select a student —</option>
+              <option value="JS">Julian Smith (JS)</option>
+              <option value="AM">Alice Malik (AM)</option>
+              <option value="BL">Ben Lim (BL)</option>
+              <option value="RK">Raj Kumar (RK)</option>
+              <option value="FZ">Fatimah Zahra (FZ)</option>
+            </select>
+          </div>
+          <div id="lecStudentGradeView">
+            <div class="txs tm" style="text-align:center;padding:24px;">Select a student to view their grades.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course quick stats -->
+      <div class="card">
+        <div class="cb">
+          <div class="fb_ mb3" style="font-size:1rem;">Course Averages</div>
+          <div class="mb3">
+            <div class="flex ic jb mb1"><span class="tsm fs_">SCJ1013 – Advanced Algorithms</span><span class="tsm fb_ tpr">72.4%</span></div>
+            <div class="ptrack"><div class="pfill" style="width:72%;"></div></div>
+            <div class="txs tm mt1">142 students · Class median 68%</div>
+          </div>
+          <div>
+            <div class="flex ic jb mb1"><span class="tsm fs_">SECR1033 – Computer Org.</span><span class="tsm fb_ tpr">78.1%</span></div>
+            <div class="ptrack"><div class="pfill" style="width:78%;"></div></div>
+            <div class="txs tm mt1">98 students · Class median 75%</div>
+          </div>
+          <hr class="dv mt3 mb3"/>
+          <div class="fb_ tsm mb2">Top Performers</div>
+          <div id="topStudentList">
+            <div class="student-row-lec"><div class="student-av-sm">AM</div><div style="flex:1;"><div class="fs_ tsm">Alice Malik</div><div class="txs tm">SCJ1013 · Avg 91%</div></div><span class="tag" style="background:#e8f5ee;color:#2e7d52;border-color:#a8d8b8;font-size:.65rem;">Top 5%</span></div>
+            <div class="student-row-lec"><div class="student-av-sm" style="background:#1a5276;">RK</div><div style="flex:1;"><div class="fs_ tsm">Raj Kumar</div><div class="txs tm">SCJ1013 · Avg 87%</div></div><span class="tag tgp" style="font-size:.65rem;">Top 10%</span></div>
+            <div class="student-row-lec"><div class="student-av-sm" style="background:#1a7a42;">FZ</div><div style="flex:1;"><div class="fs_ tsm">Fatimah Zahra</div><div class="txs tm">SECR1033 · Avg 85%</div></div><span class="tag tgp" style="font-size:.65rem;">Top 10%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pending submissions -->
+    <div class="card mb4" id="lecDashPending">
+      <div class="cb">
+        <div class="flex ic jb mb3">
+          <div class="fb_" style="font-size:1rem;color:#7d5a00;">⏳ Pending Student Submissions</div>
+          <button class="btn bo bsm" onclick="go('lecturer-courses')">View All</button>
+        </div>
+        <div id="lecDashPendingList"><div class="txs tm">No pending submissions.</div></div>
+      </div>
+    </div>
+
+    <!-- Announcements quick post -->
+    <div class="card">
+      <div class="cb">
+        <div class="fb_ mb3" style="font-size:1rem;">Quick Announcement</div>
+        <input class="ti_ mb2" type="text" placeholder="Announcement title..." id="lecAnnTitle"/>
+        <textarea class="ti_ mb2" rows="2" placeholder="Message to students..." id="lecAnnBody"></textarea>
+        <div class="flex gap2">
+          <select class="ssel"><option>SCJ1013 – Advanced Algorithms</option><option>SECR1033 – Computer Org.</option><option>All Courses</option></select>
+          <button class="btn bp" onclick="postLecAnnouncement()">Post Announcement</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- end dashLecturerView -->
+</main>
+</div><!-- end .pw -->
+</div><!-- end #page-dashboard -->
   
 <!-- ═══════════════════════ PAGE: FORUMS ═══════════════════════ -->
 <div id="page-forums" class="page">
