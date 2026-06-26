@@ -986,7 +986,7 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
   </div><!-- end study guide card cb -->
   </div><!-- end study guide card -->
   </div><!-- end dashStudentView -->
-</div><!-- end dashStudentView -->
+
 
  <!-- ── Lecturer Dashboard View ── --> <div id="dashLecturerView" style="display:none;"> <div class="flex ic jb mb4"> <div> <h1 style="font-family:var(--fn);font-size:1.6rem;font-weight:700;">Lecturer Dashboard</h1> <p class="tsm tm">Overview of your courses and student performance.</p> </div> <div class="flex gap2"> <button class="btn bo" onclick="exportReport()">⬇ Export Report</button> <button class="btn bp" onclick="openUploadModal()">⬆ Upload Lecture</button> </div> </div> <div class="lec-stat-grid mb4"> <div class="lec-stat"> <div class="lsv">2</div> <div class="lsl">Active Courses</div> </div> <div class="lec-stat"> <div class="lsv">240</div> <div class="lsl">Total Students</div> </div> <div class="lec-stat"> <div class="lsv" id="lecPendingCount">0</div> <div class="lsl">Pending Submissions</div> </div> </div> 
    
@@ -1000,13 +1000,11 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
            <div style="flex:1;"> <div class="fs_ tsm">Fatimah Zahra</div> <div class="txs tm">SECR1033 · Avg 85%</div> </div> <span class="tag tgp" style="font-size:.65rem;">Top 10%</span> </div> </div> </div> </div> </div> <div class="card mb4" id="lecDashPending"> <div class="cb"> <div class="flex ic jb mb3"> <div class="fb_" style="font-size:1rem;color:#7d5a00;">⏳ Pending Student Submissions</div> 
              <button class="btn bo bsm" onclick="go('lecturer-courses')">View All</button> </div> <div id="lecDashPendingList"> <div class="txs tm">No pending submissions.</div> </div> </div> </div> <div class="card"> <div class="cb"> <div class="fb_ mb3" style="font-size:1rem;">Quick Announcement</div> <input class="ti_ mb2" type="text" placeholder="Announcement title..." id="lecAnnTitle"/> <textarea class="ti_ mb2" rows="2" placeholder="Message to students..." id="lecAnnBody"></textarea> 
                <div class="flex gap2"> <select class="ssel"> <option>SCJ1013 – Advanced Algorithms</option> <option>SECR1033 – Computer Org.</option> <option>All Courses</option> </select> <button class="btn bp" onclick="postLecAnnouncement()">Post Announcement</button>
-               </div> 
-             </div>
-             </div> 
- </div> 
-</main> 
-</div>
-</div>
+              </div><!-- end quick announcement card -->
+        </div><!-- end #dashLecturerView -->
+      </main>
+    </div><!-- end .pw -->
+  </div><!-- end #page-dashboard -->
   
 <!-- ═══════════════════════ PAGE: FORUMS ═══════════════════════ -->
 <div id="page-forums" class="page">
@@ -1669,6 +1667,9 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
     </div>
     <aside>
       <div class="card p4 mb3"><div class="fb_ tsm mb3">Quick Access</div><button class="qbtn" onclick="go('pomodoro')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Pomodoro Timer</button><button class="qbtn ol" onclick="go('dashboard')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/></svg>Grade Calculator</button><button class="qbtn ol" onclick="toast('Opening study planner...')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/></svg>Study Planner</button></div>
+      <button class="qbtn ol" onclick="go('research')">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Past Year Papers
+</button>
       <div class="card p4 mb3"><div class="fb_ tsm mb3">Popular Articles</div><div class="popitem" onclick="toast('Opening...')"><div class="popthumb">📖</div><div><div class="popt">How to Read 3x Faster with Retention</div><div class="txs tm">15.2k views</div></div></div><div class="popitem" onclick="toast('Opening...')"><div class="popthumb">👥</div><div><div class="popt">Successful Group Projects 101</div><div class="txs tm">12.8k views</div></div></div><div class="popitem" onclick="toast('Opening...')"><div class="popthumb">🔬</div><div><div class="popt">Best Digital Tools for PhD Research</div><div class="txs tm">10.1k views</div></div></div><div class="popitem" onclick="toast('Opening...')"><div class="popthumb">🤖</div><div><div class="popt">The Ethics of AI in University Essays</div><div class="txs tm">9.4k views</div></div></div></div>
       <div class="card p4"><div class="fb_ tsm mb3">Browse by Topic</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><button class="tchip">#Focus</button><button class="tchip">#Anxiety</button><button class="tchip">#Diet</button><button class="tchip">#Sleep</button><button class="tchip">#ExamTips</button><button class="tchip">#Productivity</button><button class="tchip">#Motivation</button><button class="tchip">#Tech</button></div></div>
     </aside>
@@ -1683,9 +1684,15 @@ hr.dv{border:none;border-top:1px solid var(--bdr)}
 <div class="pw" style="flex:1;">
 <aside class="sb">
   <div class="sbl">Main</div>
-  <button class="si" data-page="dashboard" onclick="go('dashboard')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</button>
-  <button class="si" data-page="resources" onclick="go('resources')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Resources</button>
-  <button class="si" data-page="research"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>PYQ repo</button>
+ <button class="si" data-page="dashboard" onclick="go('dashboard')">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard
+  </button>
+  <button class="si" data-page="resources" onclick="go('resources')">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Resources Hub
+  </button>
+  <button class="si" data-page="research">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>PYQ Repo
+  </button>
   <div class="sb-bot"><div class="sb-promo"><div class="pt">Premium Member</div><div class="pb">Access to advanced citation tools.</div></div></div>
 </aside>
 <main class="main" style="padding:32px 40px;">
@@ -1897,9 +1904,7 @@ const navMap = {
 };
   
 function go(page) {
-  // Redirect any request for 'resources' to the PYQ repository ('research')
-  if (page === 'resources') page = 'research';
-
+ 
   // show/hide all pages including lecturer-courses
   pages.forEach(p => {
     const el = document.getElementById('page-' + p);
